@@ -21,24 +21,53 @@ SELECT
     c.customer_id,
     c.region,
     c.acquisition_chan,
-
     ROUND(SUM(o.net_amount), 2) AS total_spend,
-
     COUNT(o.order_id) AS order_count,
-
     ROUND(AVG(o.net_amount), 2) AS average_order_value
-
 FROM customers AS c
-
 INNER JOIN orders AS o
     ON c.customer_id = o.customer_id
-
 GROUP BY
     c.customer_id,
     c.region,
     c.acquisition_chan
 
+
+    -- 1.3. Для кожної категорії товарів порахуйте: загальну виручку, середню маржу (margin_pct) і частку повернень. Потрібно об'єднати order_items, products та orders.
+SELECT
+    p.category,
+    ROUND(SUM(oi.line_total), 2) AS total_item_revenue,
+    ROUND(
+        SUM(p.margin_pct * oi.line_total)
+        / NULLIF(SUM(oi.line_total), 0),
+        2
+    ) AS avg_margin_pct,
+    COUNT(DISTINCT o.order_id) AS order_count,
+    COUNT(
+        DISTINCT CASE
+            WHEN o.is_returned = 1 THEN o.order_id
+        END
+    ) AS returned_order_count,
+    ROUND(
+        100.0
+        * COUNT(
+            DISTINCT CASE
+                WHEN o.is_returned = 1 THEN o.order_id
+            END
+        )
+        / NULLIF(COUNT(DISTINCT o.order_id), 0),
+        2
+    ) AS return_rate_pct
+
+FROM order_items AS oi
+INNER JOIN products AS p
+    ON oi.product_id = p.product_id
+INNER JOIN orders AS o
+    ON oi.order_id = o.order_id
+GROUP BY
+    p.category
+ORDER BY
+    total_item_revenue DESC;
 ORDER BY
     total_spend DESC
-
 LIMIT 10;
