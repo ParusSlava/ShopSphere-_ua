@@ -1,0 +1,251 @@
+product_id,category,product_name,price,cost,margin_pct
+5001,Home & Kitchen,Home Mini 787,134.88,87.67,35
+5002,Electronics,Electronics Prime 307,460.37,405.13,12
+5003,Electronics,Electronics Pro 395,904.76,796.19,12
+5004,Toys,Toys Mini 137,28.35,17.01,40
+5005,Electronics,Electronics Plus 678,466.82,410.8,12
+5006,Beauty,Beauty Pro 114,29.79,13.41,55
+5007,Sports,Sports Ultra 685,87.89,61.52,30
+5008,Electronics,Electronics Plus 482,18.74,16.49,12
+5009,Beauty,Beauty Prime 562,33.11,14.9,55
+5010,Home & Kitchen,Home Mini 442,91.19,59.27,35
+5011,Beauty,Beauty Prime 402,41.93,18.87,55
+5012,Sports,Sports Classic 445,105.44,73.81,30
+5013,Home & Kitchen,Home Plus 615,73.85,48,35
+5014,Home & Kitchen,Home Pro 108,73.96,48.07,35
+5015,Books,Books Lite 934,18.22,13.66,25
+5016,Home & Kitchen,Home Pro 851,134.76,87.59,35
+5017,Electronics,Electronics Ultra 381,5,4.4,12
+5018,Home & Kitchen,Home Classic 464,76.3,49.59,35
+5019,Clothing,Clothing Eco 238,58.12,31.97,45
+5020,Home & Kitchen,Home Ultra 676,55.03,35.77,35
+5021,Clothing,Clothing Lite 224,87.96,48.38,45
+5022,Sports,Sports Classic 532,39.09,27.36,30
+5023,Sports,Sports Lite 710,51.88,36.32,30
+5024,Clothing,Clothing Eco 503,66.92,36.81,45
+5025,Electronics,Electronics Ultra 958,309.83,272.65,12
+5026,Beauty,Beauty Pro 102,26.75,12.04,55
+5027,Beauty,Beauty Lite 634,19.59,8.82,55
+5028,Clothing,Clothing Eco 942,48.5,26.68,45
+5029,Books,Books Lite 694,19.52,14.64,25
+5030,Home & Kitchen,Home Eco 753,68.87,44.77,35
+5031,Toys,Toys Ultra 664,47.31,28.39,40
+5032,Clothing,Clothing Pro 533,32.31,17.77,45
+5033,Electronics,Electronics Max 375,382.22,336.35,12
+5034,Beauty,Beauty Classic 410,36.33,16.35,55
+5035,Home & Kitchen,Home Prime 861,110.22,71.64,35
+5036,Home & Kitchen,Home Max 736,86.97,56.53,35
+5037,Books,Books Elite 909,21.01,15.76,25
+5038,Books,Books Pro 290,32.45,24.34,25
+5039,Toys,Toys Max 713,26.29,15.77,40
+5040,Clothing,Clothing Lite 767,66.89,36.79,45
+5041,Sports,Sports Plus 703,117.42,82.19,30
+5042,Clothing,Clothing Mini 253,29.15,16.03,45
+5043,Home & Kitchen,Home Ultra 838,124.51,80.93,35
+5044,Books,Books Ultra 507,26.38,19.79,25
+5045,Clothing,Clothing Elite 903,83.2,45.76,45
+5046,Toys,Toys Plus 407,34.12,20.47,40
+5047,Clothing,Clothing Ultra 231,5,2.75,45
+5048,Home & Kitchen,Home Pro 120,157.23,102.2,35
+5049,Electronics,Electronics Max 728,279.32,245.8,12
+5050,Electronics,Electronics Eco 834,617.56,543.45,12
+5051,Books,Books Lite 768,12.46,9.35,25
+5052,Toys,Toys Max 479,31.38,18.83,40
+5053,Clothing,Clothing Lite 563,59.98,32.99,45
+5054,Toys,Toys Ultra 921,25.52,15.31,40
+5055,Books,Books Lite 986,29.64,22.23,25
+5056,Sports,Sports Classic 911,85.1,59.57,30
+5057,Electronics,Electronics Prime 705,557.97,491.01,12
+5058,Clothing,Clothing Max 730,34.8,19.14,45
+5059,Home & Kitchen,Home Eco 538,87.4,56.81,35
+5060,Clothing,Clothing Mini 314,69.44,38.19,45
+5061,Home & Kitchen,Home Max 621,77.91,50.64,35
+5062,Electronics,Electronics Max 368,393.24,346.05,12
+5063,Toys,Toys Classic 595,26.94,16.16,40
+5064,Clothing,Clothing Pro 417,33.04,18.17,45
+5065,Beauty,Beauty Max 267,46.21,20.79,55
+5066,Sports,Sports Max 401,74.1,51.87,30
+5067,Clothing,Clothing Lite 977,59.16,32.54,45
+5068,Clothing,Clothing Ultra 469,61.74,33.96,45
+5069,Sports,Sports Classic 800,98.14,68.7,30
+5070,Electronics,Electronics Prime 467,608.29,535.3,12
+5071,Beauty,Beauty Elite 639,18.78,8.45,55
+5072,Home & Kitchen,Home Eco 929,68.39,44.45,35
+5073,Home & Kitchen,Home Pro 365,52.13,33.88,35
+5074,Clothing,Clothing Ultra 597,72.48,39.86,45
+5075,Clothing,Clothing Plus 990,71.43,39.29,45
+5076,Sports,Sports Classic 469,45.12,31.58,30
+5077,Home & Kitchen,Home Eco 322,133.5,86.78,35
+5078,Sports,Sports Prime 641,55.4,38.78,30
+5079,Sports,Sports Pro 916,54.97,38.48,30
+5080,Beauty,Beauty Eco 763,29.43,13.24,55
+5081,Beauty,Beauty Plus 666,24.64,11.09,55
+5082,Home & Kitchen,Home Ultra 353,137.9,89.64,35
+5083,Clothing,Clothing Lite 750,68.44,37.64,45
+5084,Beauty,Beauty Eco 698,38.01,17.1,55
+5085,Books,Books Elite 449,17.78,13.34,25
+5086,Sports,Sports Eco 612,118.92,83.24,30
+5087,Books,Books Classic 533,12.69,9.52,25
+5088,Books,Books Prime 497,26.01,19.51,25
+5089,Beauty,Beauty Plus 784,29.62,13.33,55
+5090,Clothing,Clothing Plus 895,23.37,12.85,45
+5091,Clothing,Clothing Elite 391,48.79,26.83,45
+5092,Toys,Toys Pro 769,18.2,10.92,40
+5093,Clothing,Clothing Prime 545,56.17,30.89,45
+5094,Home & Kitchen,Home Max 495,134.91,87.69,35
+5095,Electronics,Electronics Prime 550,516.16,454.22,12
+5096,Beauty,Beauty Ultra 812,24.68,11.11,55
+5097,Clothing,Clothing Plus 130,40.45,22.25,45
+5098,Beauty,Beauty Elite 398,29.95,13.48,55
+5099,Beauty,Beauty Eco 851,26.13,11.76,55
+5100,Clothing,Clothing Lite 270,69.04,37.97,45
+5101,Beauty,Beauty Pro 766,17.26,7.77,55
+5102,Toys,Toys Elite 108,34.83,20.9,40
+5103,Home & Kitchen,Home Plus 676,110.49,71.82,35
+5104,Clothing,Clothing Prime 378,65.78,36.18,45
+5105,Electronics,Electronics Pro 997,247.09,217.44,12
+5106,Home & Kitchen,Home Ultra 768,103.08,67,35
+5107,Books,Books Max 443,18.64,13.98,25
+5108,Clothing,Clothing Plus 181,152.8,84.04,45
+5109,Home & Kitchen,Home Mini 664,102.65,66.72,35
+5110,Clothing,Clothing Mini 964,47.53,26.14,45
+5111,Beauty,Beauty Prime 732,24.63,11.08,55
+5112,Clothing,Clothing Prime 175,27.02,14.86,45
+5113,Sports,Sports Classic 611,81.85,57.29,30
+5114,Books,Books Prime 487,5,3.75,25
+5115,Clothing,Clothing Classic 585,71.54,39.35,45
+5116,Beauty,Beauty Eco 436,27.95,12.58,55
+5117,Books,Books Max 177,15.28,11.46,25
+5118,Sports,Sports Plus 875,50.73,35.51,30
+5119,Clothing,Clothing Max 474,35.79,19.68,45
+5120,Home & Kitchen,Home Pro 798,70.42,45.77,35
+5121,Toys,Toys Mini 900,41.02,24.61,40
+5122,Electronics,Electronics Classic 883,303.62,267.19,12
+5123,Clothing,Clothing Ultra 970,56.86,31.27,45
+5124,Beauty,Beauty Ultra 354,45.95,20.68,55
+5125,Books,Books Eco 163,35.82,26.87,25
+5126,Beauty,Beauty Mini 737,18.86,8.49,55
+5127,Electronics,Electronics Pro 882,444.81,391.43,12
+5128,Electronics,Electronics Pro 915,580.97,511.25,12
+5129,Clothing,Clothing Prime 471,34.55,19,45
+5130,Clothing,Clothing Prime 891,74.25,40.84,45
+5131,Beauty,Beauty Prime 273,50.56,22.75,55
+5132,Electronics,Electronics Mini 550,367.78,323.65,12
+5133,Clothing,Clothing Eco 497,32.28,17.75,45
+5134,Home & Kitchen,Home Lite 471,89.45,58.14,35
+5135,Books,Books Plus 556,21.71,16.28,25
+5136,Electronics,Electronics Eco 187,366.92,322.89,12
+5137,Electronics,Electronics Plus 996,839.18,738.48,12
+5138,Clothing,Clothing Prime 330,86.03,47.32,45
+5139,Beauty,Beauty Mini 449,43.41,19.53,55
+5140,Clothing,Clothing Lite 299,80.15,44.08,45
+5141,Home & Kitchen,Home Eco 605,82.5,53.62,35
+5142,Electronics,Electronics Ultra 370,375.25,330.22,12
+5143,Sports,Sports Lite 799,62.96,44.07,30
+5144,Clothing,Clothing Elite 339,73.17,40.24,45
+5145,Home & Kitchen,Home Mini 469,98.84,64.25,35
+5146,Books,Books Plus 857,24.99,18.74,25
+5147,Clothing,Clothing Eco 917,69.88,38.43,45
+5148,Electronics,Electronics Mini 359,620.1,545.69,12
+5149,Toys,Toys Pro 901,14.82,8.89,40
+5150,Home & Kitchen,Home Eco 545,120.32,78.21,35
+5151,Electronics,Electronics Prime 647,360.16,316.94,12
+5152,Beauty,Beauty Prime 364,7.8,3.51,55
+5153,Electronics,Electronics Max 471,443.78,390.53,12
+5154,Books,Books Elite 848,31.11,23.33,25
+5155,Home & Kitchen,Home Elite 783,64.93,42.2,35
+5156,Clothing,Clothing Max 885,35.92,19.76,45
+5157,Books,Books Ultra 365,17.78,13.34,25
+5158,Home & Kitchen,Home Classic 480,41.36,26.88,35
+5159,Clothing,Clothing Classic 234,68.99,37.94,45
+5160,Beauty,Beauty Plus 278,17.66,7.95,55
+5161,Home & Kitchen,Home Pro 592,129.26,84.02,35
+5162,Toys,Toys Plus 216,18.62,11.17,40
+5163,Electronics,Electronics Plus 247,537.37,472.89,12
+5164,Sports,Sports Pro 851,77.81,54.47,30
+5165,Toys,Toys Eco 329,38.74,23.24,40
+5166,Clothing,Clothing Max 596,72.77,40.02,45
+5167,Clothing,Clothing Max 950,35.65,19.61,45
+5168,Beauty,Beauty Ultra 306,32.66,14.7,55
+5169,Beauty,Beauty Plus 793,5,2.25,55
+5170,Beauty,Beauty Prime 202,27.89,12.55,55
+5171,Home & Kitchen,Home Plus 350,27.61,17.95,35
+5172,Toys,Toys Prime 166,48.56,29.14,40
+5173,Beauty,Beauty Lite 378,41.31,18.59,55
+5174,Home & Kitchen,Home Eco 731,39.95,25.97,35
+5175,Sports,Sports Eco 627,94.38,66.07,30
+5176,Sports,Sports Ultra 241,60.31,42.22,30
+5177,Sports,Sports Eco 801,62.84,43.99,30
+5178,Home & Kitchen,Home Max 378,44.62,29,35
+5179,Clothing,Clothing Pro 383,26.53,14.59,45
+5180,Home & Kitchen,Home Ultra 983,29.46,19.15,35
+5181,Electronics,Electronics Plus 326,573.23,504.44,12
+5182,Clothing,Clothing Max 997,48.83,26.86,45
+5183,Sports,Sports Ultra 580,71.65,50.16,30
+5184,Electronics,Electronics Eco 138,451.97,397.73,12
+5185,Sports,Sports Plus 246,70.22,49.15,30
+5186,Clothing,Clothing Mini 763,37.58,20.67,45
+5187,Home & Kitchen,Home Prime 758,129.17,83.96,35
+5188,Books,Books Eco 734,18.37,13.78,25
+5189,Electronics,Electronics Classic 327,309.96,272.76,12
+5190,Electronics,Electronics Mini 905,424.13,373.23,12
+5191,Clothing,Clothing Eco 398,71.46,39.3,45
+5192,Home & Kitchen,Home Ultra 706,56.91,36.99,35
+5193,Home & Kitchen,Home Eco 287,92.29,59.99,35
+5194,Books,Books Max 641,36.02,27.02,25
+5195,Home & Kitchen,Home Mini 551,99.55,64.71,35
+5196,Clothing,Clothing Mini 713,93.29,51.31,45
+5197,Clothing,Clothing Prime 988,58.69,32.28,45
+5198,Clothing,Clothing Eco 746,57.66,31.71,45
+5199,Toys,Toys Elite 651,43.66,26.2,40
+5200,Electronics,Electronics Ultra 318,551.18,485.04,12
+5201,Clothing,Clothing Mini 705,22.71,12.49,45
+5202,Toys,Toys Mini 666,37.17,22.3,40
+5203,Clothing,Clothing Pro 139,29.73,16.35,45
+5204,Toys,Toys Eco 951,28.99,17.39,40
+5205,Beauty,Beauty Plus 606,29.04,13.07,55
+5206,Clothing,Clothing Elite 840,66.33,36.48,45
+5207,Clothing,Clothing Pro 107,41.31,22.72,45
+5208,Home & Kitchen,Home Lite 823,64.16,41.7,35
+5209,Beauty,Beauty Mini 493,36.61,16.47,55
+5210,Books,Books Classic 526,18.04,13.53,25
+5211,Beauty,Beauty Prime 456,36.69,16.51,55
+5212,Sports,Sports Ultra 622,29.01,20.31,30
+5213,Toys,Toys Mini 115,27.76,16.66,40
+5214,Electronics,Electronics Ultra 194,338.45,297.84,12
+5215,Beauty,Beauty Mini 656,45.75,20.59,55
+5216,Electronics,Electronics Elite 145,537.33,472.85,12
+5217,Home & Kitchen,Home Eco 384,65.17,42.36,35
+5218,Clothing,Clothing Prime 650,57.63,31.7,45
+5219,Sports,Sports Eco 473,95.76,67.03,30
+5220,Toys,Toys Mini 567,27.38,16.43,40
+5221,Clothing,Clothing Lite 737,62.1,34.16,45
+5222,Electronics,Electronics Elite 778,101.71,89.5,12
+5223,Clothing,Clothing Elite 234,34.63,19.05,45
+5224,Beauty,Beauty Lite 202,60.41,27.18,55
+5225,Books,Books Max 529,25.41,19.06,25
+5226,Home & Kitchen,Home Eco 577,62.25,40.46,35
+5227,Beauty,Beauty Eco 978,42.45,19.1,55
+5228,Books,Books Lite 352,26.25,19.69,25
+5229,Sports,Sports Lite 158,75.63,52.94,30
+5230,Electronics,Electronics Prime 272,251.07,220.94,12
+5231,Home & Kitchen,Home Plus 928,131.61,85.55,35
+5232,Electronics,Electronics Eco 104,373.73,328.88,12
+5233,Clothing,Clothing Prime 606,67,36.85,45
+5234,Clothing,Clothing Mini 495,52.54,28.9,45
+5235,Home & Kitchen,Home Eco 955,118.13,76.78,35
+5236,Books,Books Ultra 912,22.5,16.88,25
+5237,Books,Books Classic 936,11.8,8.85,25
+5238,Beauty,Beauty Prime 129,32.37,14.57,55
+5239,Home & Kitchen,Home Elite 498,52.36,34.03,35
+5240,Sports,Sports Lite 795,64.03,44.82,30
+5241,Beauty,Beauty Lite 755,53.48,24.07,55
+5242,Home & Kitchen,Home Mini 433,126.31,82.1,35
+5243,Books,Books Ultra 802,20.54,15.4,25
+5244,Clothing,Clothing Ultra 747,55.64,30.6,45
+5245,Clothing,Clothing Plus 534,47.26,25.99,45
+5246,Beauty,Beauty Pro 470,41.07,18.48,55
+5247,Clothing,Clothing Prime 255,63.74,35.06,45
+5248,Clothing,Clothing Pro 160,30.41,16.73,45
+5249,Home & Kitchen,Home Pro 818,92.52,60.14,35
+5250,Home & Kitchen,Home Plus 882,82.96,53.92,35
