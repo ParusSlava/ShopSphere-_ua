@@ -71,3 +71,42 @@ ORDER BY
 ORDER BY
     total_spend DESC
 LIMIT 10;
+
+-- 1.4. За допомогою підзапиту знайдіть клієнтів, чия загальна сума витрат перевищує середню суму витрат по всій базі. Скільки їх? Яка їхня частка у загальній виручці?
+WITH customer_spend AS (
+    SELECT
+        c.customer_id,
+        c.region,
+        c.acquisition_chan,
+
+        COUNT(o.order_id) AS order_count,
+
+        COALESCE(SUM(o.net_amount), 0) AS total_spend
+
+    FROM customers AS c
+
+    LEFT JOIN orders AS o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY
+        c.customer_id,
+        c.region,
+        c.acquisition_chan
+)
+
+SELECT
+    customer_id,
+    region,
+    acquisition_chan,
+    order_count,
+    ROUND(total_spend, 2) AS total_spend
+
+FROM customer_spend
+
+WHERE total_spend > (
+    SELECT AVG(total_spend)
+    FROM customer_spend
+)
+
+ORDER BY
+    total_spend DESC;
