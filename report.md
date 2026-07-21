@@ -70,8 +70,8 @@ Gesamtleistung → Entwicklung → regionale Wachstumstreiber → Qualität des 
 Diese Reihenfolge wurde gewählt, weil ein CEO zuerst wissen muss, was passiert, danach wo und warum es passiert und schließlich, welche strategischen Risiken oder Chancen daraus entstehen.     
 Такий порядок обраний тому, що CEO спочатку має зрозуміти, що відбувається з бізнесом, потім — де і чому це відбувається, а вже після цього — які стратегічні можливості та ризики виникають.     
 
-### Frage 2. Welche drei Insights sollte der Leser innerhalb der ersten 30 Sekunden erkennen?     
-### Питання 2. Які три інсайти читач має зрозуміти за перші 30 секунд?   
+# Frage 2. Welche drei Insights sollte der Leser innerhalb der ersten 30 Sekunden erkennen?     
+## Питання 2. Які три інсайти читач має зрозуміти за перші 30 секунд?   
 
 #### Insight 1: Das Umsatzwachstum beschleunigt sich stark     
 #### Інсайт 1: Зростання виручки суттєво прискорюється     
@@ -110,8 +110,8 @@ Genau diese Unterschiede bilden die Grundlage für die strategischen Entscheidun
 Компанія активно зростає, але зростання, прибутковість і цінність клієнтів розподілені нерівномірно.     
 Саме ці відмінності стають основою стратегічних рішень у наступних кейсах.    
 
-### Frage 3. Welcher Kanal bringt den höchsten ROI? Welcher den niedrigsten? Wohin fließt aktuell der größte Budgetanteil und ist das sinnvoll?    
-### Питання 3. Який канал має найбільший ROI? Який — найменший? Куди зараз іде найбільша частина бюджету і чи це розумно?  
+# Frage 3. Welcher Kanal bringt den höchsten ROI? Welcher den niedrigsten? Wohin fließt aktuell der größte Budgetanteil und ist das sinnvoll?    
+## Питання 3. Який канал має найбільший ROI? Який — найменший? Куди зараз іде найбільша частина бюджету і чи це розумно?  
 
 #### Vorgehensweise    
 #### Методика    
@@ -178,8 +178,8 @@ Visualisierung
 Marketingeffizienz: Budget vs. ROI
 — Ефективність маркетингу: бюджет проти ROI
 
-### Frage 4. Wie unterscheiden sich die Kanäle nach ROI und langfristigem Kundenwert (LTV)? Stimmen die Ergebnisse     überein?    
-### Питання 4. Як відрізняються канали за ROI та довгостроковою цінністю клієнта (LTV)? Чи збігаються результати?
+# Frage 4. Wie unterscheiden sich die Kanäle nach ROI und langfristigem Kundenwert (LTV)? Stimmen die Ergebnisse     überein?    
+## Питання 4. Як відрізняються канали за ROI та довгостроковою цінністю клієнта (LTV)? Чи збігаються результати?
 
 #### Vorgehensweise
 #### Методика
@@ -234,8 +234,8 @@ Marketingeffizienz: Budget vs. ROI — Бюджет проти ROI
 Durchschnittlicher vs. medianer LTV nach Akquisitionskanal — Середній проти медіанного LTV
 Verteilung des Kunden-LTV nach Akquisitionskanal — Розподіл LTV за каналами
 
-### Frage 5. Wie sollte das Marketingbudget neu verteilt werden? Welche Risiken bestehen?    
-### Питання 5. Як варто перерозподілити маркетинговий бюджет? Які ризики має рекомендація?    
+# Frage 5. Wie sollte das Marketingbudget neu verteilt werden? Welche Risiken bestehen?    
+## Питання 5. Як варто перерозподілити маркетинговий бюджет? Які ризики має рекомендація?    
 #### Ausgangslage     
 #### Вихідна ситуація     
 Das gesamte Marketingbudget beträgt rund:
@@ -316,8 +316,8 @@ Kleine, sehr effiziente Kanäle lassen sich möglicherweise nicht unbegrenzt ska
 Die Budgetverschiebung sollte deshalb schrittweise erfolgen. Nach jeder Stufe sollten ROI, CAC, Conversion Rate und LTV der neu gewonnenen Kunden erneut überprüft werden.    
 Перерозподіл бюджету варто проводити поступово, перевіряючи після кожного етапу ROI, CAC, конверсію та LTV нових клієнтів.    
 
-### Frage 6. Welche Kategorie erzeugt eine „Volumenillusion“?
-### Питання 6. Яка категорія створює «ілюзію обсягу»?
+# Frage 6. Welche Kategorie erzeugt eine „Volumenillusion“?
+## Питання 6. Яка категорія створює «ілюзію обсягу»?
 #### Vorgehensweise
 #### Методика
 
