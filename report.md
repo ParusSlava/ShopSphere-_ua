@@ -37,6 +37,8 @@ Dadurch kann der Benutzer die gesamte Analyse interaktiv auf einen bestimmten Ze
 
 Als Nächstes folgen:        
 
+![Dashboard з Tableau]( Tableau/2.4_Regionen%20im%20Wandel.jpg)
+
 Umsatzentwicklung 2022–2024 — динаміка виручки 2022–2024         
 Regionale Umsatzentwicklung 2022–2024 — динаміка виручки за регіонами          
 
