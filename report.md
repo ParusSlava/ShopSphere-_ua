@@ -7,7 +7,9 @@
 Das CEO-Dashboard wurde nach dem Prinzip „vom Überblick zur Erklärung“ aufgebaut.    
 Der Leser soll zuerst innerhalb weniger Sekunden den aktuellen Zustand des Unternehmens verstehen und danach schrittweise erkennen, wodurch dieser Zustand entsteht und wo Chancen oder Risiken liegen.         
 
-CEO-дашборд побудований за принципом «від загальної картини до пояснення». Спочатку читач за кілька секунд має зрозуміти поточний стан бізнесу, а потім поступово побачити, що формує цей результат і де знаходяться можливості та ризики.     
+CEO-дашборд побудований за принципом «від загальної картини до пояснення». Спочатку читач за кілька секунд має зрозуміти поточний стан бізнесу, а потім поступово побачити, що формує цей результат і де знаходяться можливості та ризики.    
+
+![Dashboard з Tableau]( Tableau/CEO_Dashboard-Endfassung.jpg)
 
 ### Ebene 1: Zentrale Unternehmens-KPIs    
 ### Рівень 1: Ключові KPI компанії    
@@ -43,6 +45,8 @@ Nach dem Überblick über die KPIs wird damit gezeigt, wie sich das Geschäft ü
 
 ### Ebene 3: Qualität des Umsatzes und Kundenkonzentration    
 ### Рівень 3: Якість виручки та концентрація клієнтів     
+
+![Dashboard з Tableau]( Tableau/CEO_Dashboard-Endfassung_2.jpg)
 
 Im unteren Bereich werden zwei strategische Fragen beantwortet:     
 
@@ -118,6 +122,8 @@ Genau diese Unterschiede bilden die Grundlage für die strategischen Entscheidun
 Für jeden Marketingkanal wurden das Gesamtbudget, der zugerechnete Umsatz und die im Projekt verwendete ROI-Kennzahl miteinander verglichen.    
 Для кожного маркетингового каналу були порівняні загальний бюджет, attributed revenue — виручка, віднесена до цього каналу, — та показник ROI, використаний у проєкті.    
 
+![Dashboard з Tableau]( Tableau/2.2_Marketing%20Budget%20vs%20ROI.jpg)
+
 Die Visualisierung „Marketingeffizienz: Budget vs. ROI“ zeigt:
 
 `X-Achse` = Marketingbudget    
@@ -174,9 +180,7 @@ während deutlich effizientere Kanäle wie Organic und Email nur einen sehr klei
 Paid Search ist aktuell übergewichtet. Organic, Email und Influencer zeigen ein deutlich besseres Verhältnis zwischen eingesetztem Budget und erzieltem Ergebnis.    
 Paid Search зараз має надто велику частку бюджету. Organic, Email та Influencer демонструють значно кращу ефективність вкладених коштів.     
 
-Visualisierung
-Marketingeffizienz: Budget vs. ROI
-— Ефективність маркетингу: бюджет проти ROI
+
 
 # Frage 4. Wie unterscheiden sich die Kanäle nach ROI und langfristigem Kundenwert (LTV)? Stimmen die Ergebnisse     überein?    
 ## Питання 4. Як відрізняються канали за ROI та довгостроковою цінністю клієнта (LTV)? Чи збігаються результати?
@@ -186,6 +190,10 @@ Marketingeffizienz: Budget vs. ROI
 
 Zusätzlich zum kurzfristigen Marketing-ROI wurde für jeden Kunden die gesamte Kaufsumme berechnet und anschließend der durchschnittliche und mediane LTV nach Acquisition Channel verglichen.    
 Окрім короткострокового ROI маркетингу, для кожного клієнта була розрахована його загальна сума покупок, після чого порівняно середній та медіанний LTV за каналами залучення.     
+
+![Dashboard з Tableau]( Tableau/2.2_Marketing%20Budget%20vs%20ROI.jpg)
+![Dashboard з Tableau]( Tableau/4.1_LTV-Verteilung%20nach%20Akquisitionskanal.jpg)
+![Dashboard з Tableau]( Tableau/4.2_Durchschnitt%20vs%20Median%20LTV.jpg)
 
 #### Ergebnis
 #### Результат
@@ -229,10 +237,7 @@ Paid Search bleibt in beiden Perspektiven schwach.
 ROI та LTV дають лише частково однакові висновки. Organic та Email сильні за короткостроковою ефективністю, Influencer і Referral — за довгостроковою цінністю клієнтів. 
 Paid Search залишається слабким за обома напрямами.    
 
-Visualisierungen
-Marketingeffizienz: Budget vs. ROI — Бюджет проти ROI
-Durchschnittlicher vs. medianer LTV nach Akquisitionskanal — Середній проти медіанного LTV
-Verteilung des Kunden-LTV nach Akquisitionskanal — Розподіл LTV за каналами
+
 
 # Frage 5. Wie sollte das Marketingbudget neu verteilt werden? Welche Risiken bestehen?    
 ## Питання 5. Як варто перерозподілити маркетинговий бюджет? Які ризики має рекомендація?    
