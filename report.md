@@ -537,99 +537,88 @@ Anschließend wurden alle 3.000 Kunden nach Umsatz absteigend sortiert und die u
 Для кожного клієнта була розрахована загальна чиста виручка, після чого всі 3 000 клієнтів були відсортовані від найбільшої виручки до найменшої і вибрані верхні 5%.     
 
 Das entspricht:
+## 150 Kunden
 
-150 Kunden
-Ergebnis 1: Umsatzkonzentration
-Результат 1: Концентрація виручки
+### Ergebnis 1: Umsatzkonzentration
+### Результат 1: Концентрація виручки
 
-Die 150 Top-Kunden generieren rund 1,218 Mio. $ beziehungsweise 35,1 % des gesamten Umsatzes.
-
-Українською: 150 найцінніших клієнтів генерують приблизно $1,218 млн, або 35,1% усієї виручки.
+`Die 150 Top-Kunden` generieren rund `1,218 Mio. $` beziehungsweise `35,1 %` des gesamten Umsatzes.        
+150 найцінніших клієнтів генерують приблизно $1,218 млн, або 35,1% усієї виручки.    
 
 Damit erzeugen nur:
+5 % der Kunden mehr als ein Drittel des Umsatzes.    
+Лише 5% клієнтів забезпечують більше третини всієї виручки.    
 
-5 % der Kunden mehr als ein Drittel des Umsatzes.
+| Region | Top-5%-Umsatz | Anteil |
+| :--- | :--- | :--- |
+| Europe | ≈ $355,5K | ≈ 29,2% |
+| Southeast Asia | ≈ $344,6K | ≈ 28,3% |
+| North America | ≈ $343,5K | ≈ 28,2% |
+| Middle East | ≈ $93,8K | ≈ 7,7% |
+| Latin America | ≈ $80,8K | ≈ 6,6% |
 
-Українською: Лише 5% клієнтів забезпечують більше третини всієї виручки.
+Europa, Südostasien und Nordamerika generieren zusammen rund 85,7 % des Umsatzes der Top-5%-Kunden.    
+Європа, Південно-Східна Азія та Північна Америка разом забезпечують близько 85,7% виручки Top-5% клієнтів.    
 
-Ergebnis 2: Regionen
-Результат 2: Регіони
-Region	Top-5%-Umsatz	Anteil
-Europe	≈ $355,5K	≈29,2%
-Southeast Asia	≈ $344,6K	≈28,3%
-North America	≈ $343,5K	≈28,2%
-Middle East	≈ $93,8K	≈7,7%
-Latin America	≈ $80,8K	≈6,6%
+| Kanal | Top-5%-Umsatz | Anteil |
+| :--- | :--- | :--- |
+| Influencer | ≈ $344,1K | ≈ 28,2% |
+| Organic | ≈ $295,9K | ≈ 24,3% |
+| Referral | ≈ $198,3K | ≈ 16,3% |
+| Social Ads | ≈ $143,5K | ≈ 11,8% |
+| Paid Search | ≈ $120,7K | ≈ 9,9% |
+| Email | ≈ $115,8K | ≈ 9,5% |
 
-Europa, Südostasien und Nordamerika generieren zusammen rund 85,7 % des Umsatzes der Top-5%-Kunden.
+Influencer und Organic generieren gemeinsam rund 52,5 % des gesamten Top-5%-Umsatzes.    
+Influencer та Organic разом забезпечують приблизно 52,5% усієї виручки Top-5% клієнтів.    
 
-Українською: Європа, Південно-Східна Азія та Північна Америка разом забезпечують близько 85,7% виручки Top-5% клієнтів.
+Stärkste Region-Kanal-Kombinationen    
+Найсильніші комбінації регіон–канал     
 
-Ergebnis 3: Akquisitionskanäle
-Результат 3: Канали залучення
-Kanal	Top-5%-Umsatz	Anteil
-Influencer	≈ $344,1K	≈28,2%
-Organic	≈ $295,9K	≈24,3%
-Referral	≈ $198,3K	≈16,3%
-Social Ads	≈ $143,5K	≈11,8%
-Paid Search	≈ $120,7K	≈9,9%
-Email	≈ $115,8K	≈9,5%
+`Europe × Influencer` — $125.894
+`Southeast Asia × Organic` — $117.095
+`Southeast Asia × Influencer` — $104.978
+`North America × Influencer` — $95.328
+`North America × Organic` — $89.250
 
-Influencer und Organic generieren gemeinsam rund 52,5 % des gesamten Top-5%-Umsatzes.
+### Verbindung zu Case A
+### Зв'язок із Кейсом А
 
-Українською: Influencer та Organic разом забезпечують приблизно 52,5% усієї виручки Top-5% клієнтів.
+Das Ergebnis bestätigt die Marketinganalyse. Organic besitzt den höchsten ROI, während Influencer den höchsten Kunden-LTV erzielt.
+Gleichzeitig erzeugen genau diese beiden Kanäle mehr als die Hälfte des Umsatzes der Top-5%-Kunden.    
+Результат підтверджує маркетинговий аналіз: Organic має найвищий ROI, Influencer — найвищий LTV, і саме ці два канали разом забезпечують понад половину виручки Top-5% клієнтів.    
 
-Stärkste Region-Kanal-Kombinationen
-Найсильніші комбінації регіон–канал
-Europe × Influencer — $125.894
-Southeast Asia × Organic — $117.095
-Southeast Asia × Influencer — $104.978
-North America × Influencer — $95.328
-North America × Organic — $89.250
-Verbindung zu Case A
-Зв'язок із Кейсом А
-
-Das Ergebnis bestätigt die Marketinganalyse. Organic besitzt den höchsten ROI, während Influencer den höchsten Kunden-LTV erzielt. Gleichzeitig erzeugen genau diese beiden Kanäle mehr als die Hälfte des Umsatzes der Top-5%-Kunden.
-
-Українською: Результат підтверджує маркетинговий аналіз: Organic має найвищий ROI, Influencer — найвищий LTV, і саме ці два канали разом забезпечують понад половину виручки Top-5% клієнтів.
-
-Paid Search erhält dagegen:
-
+`Paid Search` erhält dagegen:    
 45,95 % des Marketingbudgets
+erzeugt aber nur:   
+rund 9,9 % des Top-5%-Umsatzes.    
+`Paid Search` отримує 45,95% маркетингового бюджету, але забезпечує лише близько 9,9% виручки Top-5% клієнтів.    
 
-erzeugt aber nur:
+## Business-Empfehlung
+## Бізнес-рекомендація
 
-rund 9,9 % des Top-5%-Umsatzes.
+Die Top-5%-Kunden sollten mit einer eigenen VIP- und Retention-Strategie geschützt werden.    
+Top-5% клієнтів потрібно утримувати за допомогою окремої VIP- та retention-стратегії.
 
-Українською: Paid Search отримує 45,95% маркетингового бюджету, але забезпечує лише близько 9,9% виручки Top-5% клієнтів.
+Empfohlen werden:     
 
-Business-Empfehlung
-Бізнес-рекомендація
+- Loyalty-Programm — програма лояльності    
+- personalisierte Angebote — персоналізовані пропозиції    
+- Early Access — ранній доступ до нових товарів    
+- Priority Customer Service — пріоритетне обслуговування    
+- Churn-Frühwarnsystem — система раннього попередження про відтік     
 
-Die Top-5%-Kunden sollten mit einer eigenen VIP- und Retention-Strategie geschützt werden.
+Zusätzlich sollten Kunden knapp unterhalb der Top-5%-Grenze gezielt entwickelt werden.     
+Також варто працювати з клієнтами, які знаходяться трохи нижче Top-5%, і поступово переводити їх у High-Value сегмент.     
 
-Українською: Top-5% клієнтів потрібно утримувати за допомогою окремої VIP- та retention-стратегії.
+# Gesamtfazit des strategischen Blocks
+# Загальний висновок стратегічного блоку
 
-Empfohlen werden:
+Die Analyse zeigt, dass ShopSphere nicht nur Wachstum, sondern vor allem die Qualität dieses Wachstums steuern sollte. Marketingbudget, Produktportfolio und Kundenbindungsmaßnahmen sollten stärker nach tatsächlicher Effizienz und langfristigem Kundenwert priorisiert werden.    
+Аналіз показує, що ShopSphere має керувати не лише зростанням, а насамперед якістю цього зростання. Маркетинговий бюджет, продуктовий портфель і заходи з утримання клієнтів слід пріоритезувати на основі реальної ефективності та довгострокової цінності клієнта.    
 
-Loyalty-Programm — програма лояльності
-personalisierte Angebote — персоналізовані пропозиції
-Early Access — ранній доступ до нових товарів
-Priority Customer Service — пріоритетне обслуговування
-Churn-Frühwarnsystem — система раннього попередження про відтік
-
-Zusätzlich sollten Kunden knapp unterhalb der Top-5%-Grenze gezielt entwickelt werden.
-
-Українською: Також варто працювати з клієнтами, які знаходяться трохи нижче Top-5%, і поступово переводити їх у High-Value сегмент.
-
-Gesamtfazit des strategischen Blocks
-Загальний висновок стратегічного блоку
-
-Die Analyse zeigt, dass ShopSphere nicht nur Wachstum, sondern vor allem die Qualität dieses Wachstums steuern sollte. Marketingbudget, Produktportfolio und Kundenbindungsmaßnahmen sollten stärker nach tatsächlicher Effizienz und langfristigem Kundenwert priorisiert werden.
-
-Українською: Аналіз показує, що ShopSphere має керувати не лише зростанням, а насамперед якістю цього зростання. Маркетинговий бюджет, продуктовий портфель і заходи з утримання клієнтів слід пріоритезувати на основі реальної ефективності та довгострокової цінності клієнта.
-
-Konkret bedeutet das: weniger Abhängigkeit von Paid Search und pauschalen Rabatten, stärkere Investitionen in Organic, Influencer und wertvolle Kundenbeziehungen sowie eine kontrollierte Skalierung profitabler Kategorien wie Beauty.
-
-Українською: Практично це означає: менша залежність від Paid Search і масових знижок, більше уваги Organic, Influencer та роботі з цінними клієнтами, а також контрольоване масштабування прибуткових категорій, таких як Beauty.
+Konkret bedeutet das: weniger Abhängigkeit von Paid Search und pauschalen Rabatten, stärkere Investitionen in Organic, Influencer und wertvolle Kundenbeziehungen
+sowie eine kontrollierte Skalierung profitabler Kategorien wie Beauty.    
+Практично це означає: менша залежність від Paid Search і масових знижок, більше уваги Organic, Influencer та роботі з цінними клієнтами, 
+а також контрольоване масштабування прибуткових категорій, таких як Beauty.    
 
