@@ -1,5 +1,5 @@
 # Frage 1. Beschreiben Sie die Logik der Dashboard-Komposition: Welche Geschichte erzählt das Dashboard von oben nach unten und warum wurde diese Reihenfolge gewählt?    
-# Питання 1. Опишіть логіку композиції дашборду: яку історію він розповідає зверху вниз і чому обрано саме такий порядок?
+## Питання 1. Опишіть логіку композиції дашборду: яку історію він розповідає зверху вниз і чому обрано саме такий порядок?
 
 ## Vorgehensweise    
 ## Методика
