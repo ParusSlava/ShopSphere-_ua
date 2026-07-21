@@ -1,106 +1,102 @@
-# Frage 1. Beschreiben Sie die Logik der Dashboard-Komposition: Welche Geschichte erzählt das Dashboard von oben nach unten und warum wurde diese Reihenfolge gewählt?
+# Frage 1. Beschreiben Sie die Logik der Dashboard-Komposition: Welche Geschichte erzählt das Dashboard von oben nach unten und warum wurde diese Reihenfolge gewählt?    
 # Питання 1. Опишіть логіку композиції дашборду: яку історію він розповідає зверху вниз і чому обрано саме такий порядок?
 
-## Vorgehensweise
+## Vorgehensweise    
 ## Методика
 
-Das CEO-Dashboard wurde nach dem Prinzip „vom Überblick zur Erklärung“ aufgebaut.
-Der Leser soll zuerst innerhalb weniger Sekunden den aktuellen Zustand des Unternehmens verstehen und danach schrittweise erkennen, wodurch dieser Zustand entsteht und wo Chancen oder Risiken liegen.
+Das CEO-Dashboard wurde nach dem Prinzip „vom Überblick zur Erklärung“ aufgebaut.    
+Der Leser soll zuerst innerhalb weniger Sekunden den aktuellen Zustand des Unternehmens verstehen und danach schrittweise erkennen, wodurch dieser Zustand entsteht und wo Chancen oder Risiken liegen.         
 
-CEO-дашборд побудований за принципом «від загальної картини до пояснення». Спочатку читач за кілька секунд має зрозуміти поточний стан бізнесу, а потім поступово побачити, що формує цей результат і де знаходяться можливості та ризики.
+CEO-дашборд побудований за принципом «від загальної картини до пояснення». Спочатку читач за кілька секунд має зрозуміти поточний стан бізнесу, а потім поступово побачити, що формує цей результат і де знаходяться можливості та ризики.     
 
-### Ebene 1: Zentrale Unternehmens-KPIs
-### Рівень 1: Ключові KPI компанії
+### Ebene 1: Zentrale Unternehmens-KPIs    
+### Рівень 1: Ключові KPI компанії    
 
-Im oberen Bereich stehen vier zentrale Kennzahlen:
+Im oberen Bereich stehen vier zentrale Kennzahlen:    
 
-12.274 Bestellungen — 12 274 замовлення
-3,47 Mio. $ Nettoumsatz — $3,47 млн чистої виручки
-283 $ durchschnittlicher Bestellwert — $283 середній чек
-9,77 % Retourenquote — 9,77% частка повернень
+12.274 Bestellungen — 12 274 замовлення    
+3,47 Mio. $ Nettoumsatz — $3,47 млн чистої виручки    
+283 $ durchschnittlicher Bestellwert — $283 середній чек    
+9,77 % Retourenquote — 9,77% частка повернень    
 
-Diese Kennzahlen beantworten zuerst die Frage: „Wie groß ist das Geschäft und wie sieht die aktuelle Gesamtleistung aus?“
-Ці KPI першими відповідають на запитання: «Який масштаб бізнесу і яким є його загальний результат?»
+Diese Kennzahlen beantworten zuerst die Frage: „Wie groß ist das Geschäft und wie sieht die aktuelle Gesamtleistung aus?“    
+Ці KPI першими відповідають на запитання: «Який масштаб бізнесу і яким є його загальний результат?»    
 
-Rechts befinden sich zusätzlich die Filter:
+Rechts befinden sich zusätzlich die Filter:    
 
-Jahr — рік
-Region — регіон
+`Jahr` — рік    
+`Region` — регіон    
 
-Dadurch kann der Benutzer die gesamte Analyse interaktiv auf einen bestimmten Zeitraum oder Markt einschränken.
-Фільтри дозволяють інтерактивно аналізувати той самий дашборд для конкретного року або регіону.
+Dadurch kann der Benutzer die gesamte Analyse interaktiv auf einen bestimmten Zeitraum oder Markt einschränken.    
+Фільтри дозволяють інтерактивно аналізувати той самий дашборд для конкретного року або регіону.        
 
-### Ebene 2: Umsatzentwicklung und regionale Dynamik
-### Рівень 2: Динаміка виручки та регіональний розвиток
+### Ebene 2: Umsatzentwicklung und regionale Dynamik    
+### Рівень 2: Динаміка виручки та регіональний розвиток         
 
-Als Nächstes folgen:
+Als Nächstes folgen:        
 
-Umsatzentwicklung 2022–2024 — динаміка виручки 2022–2024
-Regionale Umsatzentwicklung 2022–2024 — динаміка виручки за регіонами
+Umsatzentwicklung 2022–2024 — динаміка виручки 2022–2024         
+Regionale Umsatzentwicklung 2022–2024 — динаміка виручки за регіонами          
 
-Nach dem Überblick über die KPIs wird damit gezeigt, wie sich das Geschäft über die Zeit entwickelt und welche Regionen dieses Wachstum treiben.
+Nach dem Überblick über die KPIs wird damit gezeigt, wie sich das Geschäft über die Zeit entwickelt und welche Regionen dieses Wachstum treiben.     
+Після загальних KPI дашборд показує, як бізнес змінювався в часі і які регіони є основними драйверами зростання.     
 
-Після загальних KPI дашборд показує, як бізнес змінювався в часі і які регіони є основними драйверами зростання.
+### Ebene 3: Qualität des Umsatzes und Kundenkonzentration    
+### Рівень 3: Якість виручки та концентрація клієнтів     
 
-### Ebene 3: Qualität des Umsatzes und Kundenkonzentration
-### Рівень 3: Якість виручки та концентрація клієнтів
+Im unteren Bereich werden zwei strategische Fragen beantwortet:     
 
-Im unteren Bereich werden zwei strategische Fragen beantwortet:
+Welche Produktkategorien erzeugen nicht nur Umsatz, sondern auch wirtschaftlich attraktive Margen?     
+— Які категорії створюють не лише виручку, а й економічно привабливу маржу?     
 
-Welche Produktkategorien erzeugen nicht nur Umsatz, sondern auch wirtschaftlich attraktive Margen?
-— Які категорії створюють не лише виручку, а й економічно привабливу маржу?
-Wie stark hängt der Umsatz von einer kleinen Gruppe besonders wertvoller Kunden ab?
-— Наскільки виручка залежить від невеликої групи найцінніших клієнтів?
+Wie stark hängt der Umsatz von einer kleinen Gruppe besonders wertvoller Kunden ab?     
+— Наскільки виручка залежить від невеликої групи найцінніших клієнтів?     
 
-Dafür werden verwendet:
+Dafür werden verwendet:    
 
-Kategorienperformance: Nettoumsatz, Marge und Retouren
-— Ефективність категорій: чиста виручка, маржа та повернення
-Pareto-Analyse der Kunden
-— Парето-аналіз клієнтів
+Kategorienperformance: Nettoumsatz, Marge und Retouren     
+— Ефективність категорій: чиста виручка, маржа та повернення     
+Pareto-Analyse der Kunden     
+— Парето-аналіз клієнтів     
 
-### Fazit
-### Підсумок
+### Fazit     
+### Підсумок      
 
-Die Komposition folgt damit einer klaren Management-Logik:
-Gesamtleistung → Entwicklung → regionale Wachstumstreiber → Qualität des Umsatzes → Kundenkonzentration.
-Композиція дашборду має чітку управлінську логіку:
-загальний результат → динаміка → регіональні драйвери → якість виручки → концентрація клієнтів.
+Die Komposition folgt damit einer klaren Management-Logik:     
+Gesamtleistung → Entwicklung → regionale Wachstumstreiber → Qualität des Umsatzes → Kundenkonzentration.     
+Композиція дашборду має чітку управлінську логіку:     
+загальний результат → динаміка → регіональні драйвери → якість виручки → концентрація клієнтів.     
 
-Diese Reihenfolge wurde gewählt, weil ein CEO zuerst wissen muss, was passiert, danach wo und warum es passiert und schließlich, welche strategischen Risiken oder Chancen daraus entstehen.
-Такий порядок обраний тому, що CEO спочатку має зрозуміти, що відбувається з бізнесом, потім — де і чому це відбувається, а вже після цього — які стратегічні можливості та ризики виникають.
+Diese Reihenfolge wurde gewählt, weil ein CEO zuerst wissen muss, was passiert, danach wo und warum es passiert und schließlich, welche strategischen Risiken oder Chancen daraus entstehen.     
+Такий порядок обраний тому, що CEO спочатку має зрозуміти, що відбувається з бізнесом, потім — де і чому це відбувається, а вже після цього — які стратегічні можливості та ризики виникають.     
 
-### Frage 2. Welche drei Insights sollte der Leser innerhalb der ersten 30 Sekunden erkennen?
-### Питання 2. Які три інсайти читач має зрозуміти за перші 30 секунд?
-#### Insight 1: Das Umsatzwachstum beschleunigt sich stark
-#### Інсайт 1: Зростання виручки суттєво прискорюється
+### Frage 2. Welche drei Insights sollte der Leser innerhalb der ersten 30 Sekunden erkennen?     
+### Питання 2. Які три інсайти читач має зрозуміти за перші 30 секунд?   
 
-Die Umsatzentwicklung zeigt eine deutliche Beschleunigung im Jahr 2024. Im Dezember 2024 erreicht der monatliche Nettoumsatz mit rund 759,4 Tsd. $ einen neuen Höchststand.
-Динаміка показує різке прискорення зростання у 2024 році. У грудні 2024 року місячна чиста виручка досягає нового максимуму — приблизно $759,4 тис.
+#### Insight 1: Das Umsatzwachstum beschleunigt sich stark     
+#### Інсайт 1: Зростання виручки суттєво прискорюється     
+Die Umsatzentwicklung zeigt eine deutliche Beschleunigung im Jahr 2024. Im Dezember 2024 erreicht der monatliche Nettoumsatz mit rund 759,4 Tsd. $ einen neuen Höchststand.    
+Динаміка показує різке прискорення зростання у 2024 році. У грудні 2024 року місячна чиста виручка досягає нового максимуму — приблизно $759,4 тис.     
 
-#### Kernaussage
-#### Головна думка
+#### Kernaussage    
+#### Головна думка     
+ShopSphere befindet sich am Ende des Analysezeitraums in einer starken Wachstumsphase.     
+Наприкінці аналізованого періоду ShopSphere знаходиться у фазі сильного зростання.    
 
-ShopSphere befindet sich am Ende des Analysezeitraums in einer starken Wachstumsphase.
-Наприкінці аналізованого періоду ShopSphere знаходиться у фазі сильного зростання.
+#### Insight 2: Nordamerika führt, Südostasien wächst am stärksten    
+#### Інсайт 2: Північна Америка лідирує, а Південно-Східна Азія зростає найшвидше    
+Nordamerika erzielt 2024 den höchsten Umsatz. Gleichzeitig zeigt Südostasien die stärkste Wachstumsdynamik und nähert sich dem führenden Markt deutlich an.    
+У 2024 році Північна Америка має найбільшу виручку, але Південно-Східна Азія демонструє найсильнішу динаміку зростання і швидко наближається до лідера.    
 
-#### Insight 2: Nordamerika führt, Südostasien wächst am stärksten
-#### Інсайт 2: Північна Америка лідирує, а Південно-Східна Азія зростає найшвидше
+#### Kernaussage    
+#### Головна думка    
+Nordamerika ist derzeit der wichtigste Umsatzmarkt, während Südostasien das größte zusätzliche Wachstumspotenzial zeigt.    
+Північна Америка зараз є головним ринком за виручкою, а Південно-Східна Азія має найбільший потенціал подальшого масштабування.    
 
-Nordamerika erzielt 2024 den höchsten Umsatz. Gleichzeitig zeigt Südostasien die stärkste Wachstumsdynamik und nähert sich dem führenden Markt deutlich an.
-У 2024 році Північна Америка має найбільшу виручку, але Південно-Східна Азія демонструє найсильнішу динаміку зростання і швидко наближається до лідера.
-
-#### Kernaussage
-#### Головна думка
-
-Nordamerika ist derzeit der wichtigste Umsatzmarkt, während Südostasien das größte zusätzliche Wachstumspotenzial zeigt.
-Північна Америка зараз є головним ринком за виручкою, а Південно-Східна Азія має найбільший потенціал подальшого масштабування.
-
-#### Insight 3: Hoher Umsatz bedeutet nicht automatisch hohe wirtschaftliche Qualität
-#### Інсайт 3: Велика виручка не означає автоматично високу економічну ефективність
-
-Electronics dominiert den Umsatz mit rund 2 Mio. $, weist aber mit nur 12 % die niedrigste Marge unter allen Kategorien und gleichzeitig ein ungünstiges Retourenprofil auf.
-Electronics домінує за виручкою — близько $2 млн, але має лише 12% маржі, найнижчої серед усіх категорій, і водночас несприятливий профіль повернень.
+#### Insight 3: Hoher Umsatz bedeutet nicht automatisch hohe wirtschaftliche Qualität    
+#### Інсайт 3: Велика виручка не означає автоматично високу економічну ефективність    
+Electronics dominiert den Umsatz mit rund 2 Mio. $, weist aber mit nur 12 % die niedrigste Marge unter allen Kategorien und gleichzeitig ein ungünstiges Retourenprofil auf.    
+Electronics домінує за виручкою — близько $2 млн, але має лише 12% маржі, найнижчої серед усіх категорій, і водночас несприятливий профіль повернень.    
 
 Zusätzlich zeigen die Kundendaten:
 
@@ -109,28 +105,27 @@ Nur 5 % der Kunden generieren bereits 35,1 % des gesamten Umsatzes.
 
 #### Fazit
 #### Підсумок
+Das Unternehmen wächst stark, aber Wachstum, Profitabilität und Kundenwert sind ungleich verteilt.     
+Genau diese Unterschiede bilden die Grundlage für die strategischen Entscheidungen in den folgenden Cases.    
+Компанія активно зростає, але зростання, прибутковість і цінність клієнтів розподілені нерівномірно.     
+Саме ці відмінності стають основою стратегічних рішень у наступних кейсах.    
 
-Das Unternehmen wächst stark, aber Wachstum, Profitabilität und Kundenwert sind ungleich verteilt. 
-Genau diese Unterschiede bilden die Grundlage für die strategischen Entscheidungen in den folgenden Cases.
-Компанія активно зростає, але зростання, прибутковість і цінність клієнтів розподілені нерівномірно. 
-Саме ці відмінності стають основою стратегічних рішень у наступних кейсах.
+### Frage 3. Welcher Kanal bringt den höchsten ROI? Welcher den niedrigsten? Wohin fließt aktuell der größte Budgetanteil und ist das sinnvoll?    
+### Питання 3. Який канал має найбільший ROI? Який — найменший? Куди зараз іде найбільша частина бюджету і чи це розумно?  
 
-### Frage 3. Welcher Kanal bringt den höchsten ROI? Welcher den niedrigsten? Wohin fließt aktuell der größte Budgetanteil und ist das sinnvoll?
-### Питання 3. Який канал має найбільший ROI? Який — найменший? Куди зараз іде найбільша частина бюджету і чи це розумно?
-#### Vorgehensweise
-#### Методика
-
-Für jeden Marketingkanal wurden das Gesamtbudget, der zugerechnete Umsatz und die im Projekt verwendete ROI-Kennzahl miteinander verglichen.
-Для кожного маркетингового каналу були порівняні загальний бюджет, attributed revenue — виручка, віднесена до цього каналу, — та показник ROI, використаний у проєкті.
+#### Vorgehensweise    
+#### Методика    
+Für jeden Marketingkanal wurden das Gesamtbudget, der zugerechnete Umsatz und die im Projekt verwendete ROI-Kennzahl miteinander verglichen.    
+Для кожного маркетингового каналу були порівняні загальний бюджет, attributed revenue — виручка, віднесена до цього каналу, — та показник ROI, використаний у проєкті.    
 
 Die Visualisierung „Marketingeffizienz: Budget vs. ROI“ zeigt:
 
-X-Achse = Marketingbudget
-Y-Achse = ROI
-Punktgröße = attributed revenue
-Farbe = Marketingkanal
-Ergebnis: ROI nach Kanal
+`X-Achse` = Marketingbudget    
+`Y-Achse` = ROI    
+`Punktgröße` = attributed revenue    
+`Farbe` = Marketingkanal    
 
+#### Ergebnis: ROI nach Kanal
 #### Результат: ROI за каналами
 
 | Канал | ROI |
@@ -142,25 +137,23 @@ Ergebnis: ROI nach Kanal
 | Social Ads | 2,06 |
 | Paid Search | 1,33 |
 
-#### Kernaussage
-#### Головний висновок
-
-Organic erzielt mit 8,02 den höchsten ROI. Paid Search weist mit 1,33 den niedrigsten ROI auf. Damit ist Organic nach dieser Kennzahl rund sechsmal effizienter als Paid Search.
-Organic має найвищий ROI — 8,02, а Paid Search — найнижчий, лише 1,33. За цим показником Organic приблизно у 6 разів ефективніший за Paid Search.
+#### Kernaussage    
+#### Головний висновок    
+Organic erzielt mit 8,02 den höchsten ROI. Paid Search weist mit 1,33 den niedrigsten ROI auf. Damit ist Organic nach dieser Kennzahl rund sechsmal effizienter als Paid Search.    
+Organic має найвищий ROI — 8,02, а Paid Search — найнижчий, лише 1,33. За цим показником Organic приблизно у 6 разів ефективніший за Paid Search.    
 
 #### Aktuelle Budgetverteilung
 #### Поточний розподіл бюджету
 
 Besonders auffällig ist Paid Search:
+`Budget:` ca. 450.959 $
+`45,95 %` des gesamten Marketingbudgets
+aber nur `25,17 %` des attributed revenue    
 
-Budget: ca. 450.959 $
-45,95 % des gesamten Marketingbudgets
-aber nur 25,17 % des attributed revenue
+Paid Search отримує приблизно `$450 959`, тобто `45,95%` усього маркетингового бюджету,    
+але забезпечує лише `25,17%` attributed revenue.    
 
-Paid Search отримує приблизно $450 959, тобто 45,95% усього маркетингового бюджету,
-але забезпечує лише 25,17% attributed revenue.
-
-Zum Vergleich:
+Zum Vergleich:   
 
 | Kanal | Budgetanteil | Anteil attributed revenue |
 |---|---|---|
@@ -169,33 +162,30 @@ Zum Vergleich:
 | Email | 3,82% | 10,24% |
 | Organic | 2,08% | 6,87% |
 
-#### Interpretation
-#### Інтерпретація
-
+#### Interpretation    
+#### Інтерпретація     
 Die aktuelle Budgetverteilung wirkt damit nicht optimal. Fast die Hälfte des Budgets fließt in den Kanal mit dem niedrigsten ROI, 
-während deutlich effizientere Kanäle wie Organic und Email nur einen sehr kleinen Teil des Budgets erhalten.
+während deutlich effizientere Kanäle wie Organic und Email nur einen sehr kleinen Teil des Budgets erhalten.    
 Поточний розподіл бюджету виглядає неоптимальним. Майже половина бюджету спрямовується в канал із найнижчим ROI, 
-тоді як значно ефективніші Organic та Email отримують дуже невелику частку бюджету.
+тоді як значно ефективніші Organic та Email отримують дуже невелику частку бюджету.    
 
 #### Fazit
 #### Підсумок
-
-Paid Search ist aktuell übergewichtet. Organic, Email und Influencer zeigen ein deutlich besseres Verhältnis zwischen eingesetztem Budget und erzieltem Ergebnis.
-Paid Search зараз має надто велику частку бюджету. Organic, Email та Influencer демонструють значно кращу ефективність вкладених коштів.
+Paid Search ist aktuell übergewichtet. Organic, Email und Influencer zeigen ein deutlich besseres Verhältnis zwischen eingesetztem Budget und erzieltem Ergebnis.    
+Paid Search зараз має надто велику частку бюджету. Organic, Email та Influencer демонструють значно кращу ефективність вкладених коштів.     
 
 Visualisierung
-
 Marketingeffizienz: Budget vs. ROI
 — Ефективність маркетингу: бюджет проти ROI
 
-### Frage 4. Wie unterscheiden sich die Kanäle nach ROI und langfristigem Kundenwert (LTV)? Stimmen die Ergebnisse überein?
+### Frage 4. Wie unterscheiden sich die Kanäle nach ROI und langfristigem Kundenwert (LTV)? Stimmen die Ergebnisse     überein?    
 ### Питання 4. Як відрізняються канали за ROI та довгостроковою цінністю клієнта (LTV)? Чи збігаються результати?
 
 #### Vorgehensweise
 #### Методика
 
-Zusätzlich zum kurzfristigen Marketing-ROI wurde für jeden Kunden die gesamte Kaufsumme berechnet und anschließend der durchschnittliche und mediane LTV nach Acquisition Channel verglichen.
-Окрім короткострокового ROI маркетингу, для кожного клієнта була розрахована його загальна сума покупок, після чого порівняно середній та медіанний LTV за каналами залучення.
+Zusätzlich zum kurzfristigen Marketing-ROI wurde für jeden Kunden die gesamte Kaufsumme berechnet und anschließend der durchschnittliche und mediane LTV nach Acquisition Channel verglichen.    
+Окрім короткострокового ROI маркетингу, для кожного клієнта була розрахована його загальна сума покупок, після чого порівняно середній та медіанний LTV за каналами залучення.     
 
 #### Ergebnis
 #### Результат
@@ -209,60 +199,58 @@ Zusätzlich zum kurzfristigen Marketing-ROI wurde für jeden Kunden die gesamte 
 | Social Ads | $0,82K | $0,45K | 2,06 |
 | Paid Search | $0,65K | $0,28K | 1,33 |
 
-Organic und Email sind kurzfristig besonders effizient. Sie besitzen die beiden höchsten ROI-Werte, führen jedoch nicht beim langfristigen Kundenwert.
-Organic та Email є особливо ефективними короткостроково: вони мають два найвищі ROI, але не є лідерами за довгостроковою цінністю клієнтів.
+Organic und Email sind kurzfristig besonders effizient. Sie besitzen die beiden höchsten ROI-Werte, führen jedoch nicht beim langfristigen Kundenwert.    
+Organic та Email є особливо ефективними короткостроково: вони мають два найвищі ROI, але не є лідерами за довгостроковою цінністю клієнтів.     
 
-#### Influencer und Referral
-
-Influencer und Referral besitzen einen niedrigeren ROI als Organic und Email, generieren dafür aber die Kunden mit den höchsten langfristigen Werten.
-Influencer і Referral мають нижчий ROI, ніж Organic та Email, але залучають клієнтів із найвищим LTV.
+#### Influencer und Referral    
+Influencer und Referral besitzen einen niedrigeren ROI als Organic und Email, generieren dafür aber die Kunden mit den höchsten langfristigen Werten.     
+Influencer і Referral мають нижчий ROI, ніж Organic та Email, але залучають клієнтів із найвищим LTV.    
 
 #### Paid Search
+Paid Search ist sowohl kurzfristig als auch langfristig der schwächste Kanal: niedrigster ROI, niedrigster durchschnittlicher LTV und niedrigster Median-LTV.    
+Paid Search є найслабшим як у короткостроковій, так і в довгостроковій перспективі: найнижчий ROI, найнижчий середній LTV і найнижчий медіанний LTV.    
 
-Paid Search ist sowohl kurzfristig als auch langfristig der schwächste Kanal: niedrigster ROI, niedrigster durchschnittlicher LTV und niedrigster Median-LTV.
-Paid Search є найслабшим як у короткостроковій, так і в довгостроковій перспективі: найнижчий ROI, найнижчий середній LTV і найнижчий медіанний LTV.
+Warum wurde auch der Median betrachtet?    
+Чому ми також використовували медіану?    
 
-Warum wurde auch der Median betrachtet?
-Чому ми також використовували медіану?
+Bei allen Kanälen liegt der durchschnittliche LTV deutlich über dem Median. Die Boxplots zeigen außerdem zahlreiche High-LTV-Ausreißer.     
+Deshalb kann der Durchschnitt durch wenige besonders wertvolle Kunden nach oben verzerrt werden.    
+Для всіх каналів середній LTV суттєво вищий за медіану. Boxplot також показує багато дуже дорогих клієнтів-викидів.      
+Тому середнє може бути завищене невеликою кількістю особливо цінних клієнтів.    
 
-Bei allen Kanälen liegt der durchschnittliche LTV deutlich über dem Median. Die Boxplots zeigen außerdem zahlreiche High-LTV-Ausreißer. 
-Deshalb kann der Durchschnitt durch wenige besonders wertvolle Kunden nach oben verzerrt werden.
-Для всіх каналів середній LTV суттєво вищий за медіану. Boxplot також показує багато дуже дорогих клієнтів-викидів. 
-Тому середнє може бути завищене невеликою кількістю особливо цінних клієнтів.
+Der Median beschreibt daher den typischen Kunden robuster.    
+Тому медіана краще описує типового клієнта.    
 
-Der Median beschreibt daher den typischen Kunden robuster.
-Тому медіана краще описує типового клієнта.
-
-#### Fazit
-#### Підсумок
+#### Fazit   
+#### Підсумок    
 
 ROI und LTV führen nur teilweise zu denselben Ergebnissen. Organic und Email überzeugen durch kurzfristige Effizienz, während Influencer und Referral besonders wertvolle Kunden langfristig gewinnen.
-Paid Search bleibt in beiden Perspektiven schwach.
+Paid Search bleibt in beiden Perspektiven schwach.    
 ROI та LTV дають лише частково однакові висновки. Organic та Email сильні за короткостроковою ефективністю, Influencer і Referral — за довгостроковою цінністю клієнтів. 
-Paid Search залишається слабким за обома напрямами.
+Paid Search залишається слабким за обома напрямами.    
 
 Visualisierungen
 Marketingeffizienz: Budget vs. ROI — Бюджет проти ROI
 Durchschnittlicher vs. medianer LTV nach Akquisitionskanal — Середній проти медіанного LTV
 Verteilung des Kunden-LTV nach Akquisitionskanal — Розподіл LTV за каналами
-Frage 5. Wie sollte das Marketingbudget neu verteilt werden? Welche Risiken bestehen?
-Питання 5. Як варто перерозподілити маркетинговий бюджет? Які ризики має рекомендація?
-Ausgangslage
-Вихідна ситуація
 
+### Frage 5. Wie sollte das Marketingbudget neu verteilt werden? Welche Risiken bestehen?    
+### Питання 5. Як варто перерозподілити маркетинговий бюджет? Які ризики має рекомендація?    
+#### Ausgangslage     
+#### Вихідна ситуація     
 Das gesamte Marketingbudget beträgt rund:
 
-981.000 $
+#### 981.000 $
 
-Die Analyse zeigt:
+Die Analyse zeigt:    
 
-Paid Search erhält 45,95 % des Budgets, besitzt aber nur ROI 1,33
-Organic: ROI 8,02
-Email: ROI 6,50
-Influencer: ROI 4,62 und höchster LTV
-Referral: niedrigerer ROI, aber sehr hoher LTV
-Empfehlung: schrittweise Budgetverschiebung
-Рекомендація: поступове перерозподілення бюджету
+`Paid Search` erhält 45,95 % des Budgets, besitzt aber nur ROI 1,33    
+`Organic:` ROI 8,02     
+`Email:` ROI 6,50    
+`Influencer:` ROI 4,62 und höchster LTV    
+`Referral:` niedrigerer ROI, aber sehr hoher LTV    
+##### Empfehlung: schrittweise Budgetverschiebung
+##### Рекомендація: поступове перерозподілення бюджету
 
 Als Testszenario wird folgende Zielstruktur vorgeschlagen:
 
@@ -274,85 +262,76 @@ Referral	12%	≈ $117,7K
 Email	10%	≈ $98,1K
 Organic	10%	≈ $98,1K
 
-Diese Verteilung ist kein mathematisch berechnetes Optimum, sondern ein strategisches Testszenario auf Basis der beobachteten ROI- und LTV-Unterschiede.
+| Kanal | Empfohlener Anteil | Budget bei 981K $ |
+|---|---|---|
+| Paid Search | 30% | ≈ $294,3K |
+| Social Ads | 20% | ≈ $196,2K |
+| Influencer | 18% | ≈ $176,6K |
+| Referral | 12% | ≈ $117,7K |
+| Email | 10% | ≈ $98,1K |
+| Organic | 10% | ≈ $98,1K |
 
-Українською: Це не математично оптимальний бюджет, а стратегічний тестовий сценарій, побудований на основі різниці в ROI та LTV.
+Diese Verteilung ist kein mathematisch berechnetes Optimum, sondern ein strategisches Testszenario auf Basis der beobachteten ROI- und LTV-Unterschiede.    
+Це не математично оптимальний бюджет, а стратегічний тестовий сценарій, побудований на основі різниці в ROI та LTV.    
 
-Begründung
-Обґрунтування
-Paid Search reduzieren
+#### Begründung
+#### Обґрунтування
 
-Paid Search sollte reduziert werden, weil der Kanal gleichzeitig den niedrigsten ROI und den niedrigsten LTV aufweist.
+`Paid Search reduzieren`
+Paid Search sollte reduziert werden, weil der Kanal gleichzeitig den niedrigsten ROI und den niedrigsten LTV aufweist.    
+Paid Search доцільно скоротити, оскільки він одночасно має найнижчий ROI і найнижчий LTV.    
 
-Українською: Paid Search доцільно скоротити, оскільки він одночасно має найнижчий ROI і найнижчий LTV.
+`Organic und Email erhöhen`
+Organic und Email sollten mehr Budget erhalten, weil sie bei relativ kleinen Budgets sehr hohe ROI-Werte erzielen.    
+Organic та Email варто збільшити, оскільки вони при невеликих бюджетах демонструють дуже високий ROI.    
 
-Organic und Email erhöhen
+`Influencer erhöhen`
+Influencer sollte ausgebaut werden, weil dieser Kanal gleichzeitig einen guten ROI und den höchsten langfristigen Kundenwert besitzt.    
+Influencer варто масштабувати, тому що він поєднує хороший ROI із найвищим LTV.    
 
-Organic und Email sollten mehr Budget erhalten, weil sie bei relativ kleinen Budgets sehr hohe ROI-Werte erzielen.
+`Referral stärken`
+Referral sollte ebenfalls stärker berücksichtigt werden, da sein ROI zwar nur im Mittelfeld liegt, der LTV jedoch sehr hoch ist.     
+Referral також заслуговує на більшу частку бюджету: його ROI середній, але LTV дуже високий.    
 
-Українською: Organic та Email варто збільшити, оскільки вони при невеликих бюджетах демонструють дуже високий ROI.
+### Risiken
+### Ризики
+`1. Diminishing Returns`
+Ein aktuell hoher ROI garantiert nicht, dass derselbe ROI bei einem deutlich höheren Budget erhalten bleibt.    
+Високий ROI зараз не гарантує, що він залишиться таким самим після значного збільшення бюджету.    
 
-Influencer erhöhen
+`2. Attribution Bias`
+Ein Teil des Umsatzes kann mehreren Marketingkontakten gleichzeitig zugeordnet werden.     
+Частина виручки може бути результатом одночасного впливу кількох маркетингових каналів.     
 
-Influencer sollte ausgebaut werden, weil dieser Kanal gleichzeitig einen guten ROI und den höchsten langfristigen Kundenwert besitzt.
+`3. Wechselwirkungen zwischen Kanälen`
+Beispielsweise kann Influencer-Marketing Interesse erzeugen, während die spätere Conversion über Paid Search erfolgt.    
+Наприклад, Influencer може сформувати інтерес, а фінальна покупка відбудеться через Paid Search.    
 
-Українською: Influencer варто масштабувати, тому що він поєднує хороший ROI із найвищим LTV.
+`4. Skalierbarkeit`
+Kleine, sehr effiziente Kanäle lassen sich möglicherweise nicht unbegrenzt skalieren.     
+Невеликі ефективні канали можуть мати обмеження масштабування.    
 
-Referral stärken
+#### Fazit
+#### Підсумок
+Die Budgetverschiebung sollte deshalb schrittweise erfolgen. Nach jeder Stufe sollten ROI, CAC, Conversion Rate und LTV der neu gewonnenen Kunden erneut überprüft werden.    
+Перерозподіл бюджету варто проводити поступово, перевіряючи після кожного етапу ROI, CAC, конверсію та LTV нових клієнтів.    
 
-Referral sollte ebenfalls stärker berücksichtigt werden, da sein ROI zwar nur im Mittelfeld liegt, der LTV jedoch sehr hoch ist.
-
-Українською: Referral також заслуговує на більшу частку бюджету: його ROI середній, але LTV дуже високий.
-
-Risiken
-Ризики
-1. Diminishing Returns
-
-Ein aktuell hoher ROI garantiert nicht, dass derselbe ROI bei einem deutlich höheren Budget erhalten bleibt.
-
-Українською: Високий ROI зараз не гарантує, що він залишиться таким самим після значного збільшення бюджету.
-
-2. Attribution Bias
-
-Ein Teil des Umsatzes kann mehreren Marketingkontakten gleichzeitig zugeordnet werden.
-
-Українською: Частина виручки може бути результатом одночасного впливу кількох маркетингових каналів.
-
-3. Wechselwirkungen zwischen Kanälen
-
-Beispielsweise kann Influencer-Marketing Interesse erzeugen, während die spätere Conversion über Paid Search erfolgt.
-
-Українською: Наприклад, Influencer може сформувати інтерес, а фінальна покупка відбудеться через Paid Search.
-
-4. Skalierbarkeit
-
-Kleine, sehr effiziente Kanäle lassen sich möglicherweise nicht unbegrenzt skalieren.
-
-Українською: Невеликі ефективні канали можуть мати обмеження масштабування.
-
-Fazit
-Підсумок
-
-Die Budgetverschiebung sollte deshalb schrittweise erfolgen. Nach jeder Stufe sollten ROI, CAC, Conversion Rate und LTV der neu gewonnenen Kunden erneut überprüft werden.
-
-Українською: Перерозподіл бюджету варто проводити поступово, перевіряючи після кожного етапу ROI, CAC, конверсію та LTV нових клієнтів.
-
-Frage 6. Welche Kategorie erzeugt eine „Volumenillusion“?
-Питання 6. Яка категорія створює «ілюзію обсягу»?
-Vorgehensweise
-Методика
+### Frage 6. Welche Kategorie erzeugt eine „Volumenillusion“?
+### Питання 6. Яка категорія створює «ілюзію обсягу»?
+#### Vorgehensweise
+#### Методика
 
 Die Kategorien wurden gleichzeitig anhand von drei Dimensionen verglichen:
-
-Nettoumsatz — чиста виручка
-durchschnittliche Marge — середня маржа
-Retourenquote — частка повернень
+1. Nettoumsatz — чиста виручка
+2. durchschnittliche Marge — середня маржа
+3. Retourenquote — частка повернень
 
 Die Visualisierung verwendet:
 
-X-Achse = Nettoumsatz
-Y-Achse = Marge
-Punktgröße = Retourenquote
+`X-Achse` = Nettoumsatz
+`Y-Achse` = Marge
+`Punktgröße` = Retourenquote
+
 Ergebnis
 Результат
 
@@ -369,36 +348,52 @@ Electronics	12%
 Volumenillusion: Electronics
 Ілюзія обсягу: Electronics
 
-Electronics erzielt mit ungefähr 2 Mio. $ den mit Abstand höchsten Nettoumsatz und generiert damit mehr als die Hälfte des gesamten Unternehmensumsatzes. Gleichzeitig beträgt die durchschnittliche Marge lediglich 12 % – der niedrigste Wert aller Kategorien. Zusätzlich zeigt die Kategorie ein vergleichsweise ungünstiges Retourenprofil.
+| Kategorie | Durchschnittliche Marge |
+|---|---|
+| Beauty | 55% |
+| Clothing | 45% |
+| Toys | 40% |
+| Home & Kitchen | 35% |
+| Sports | 30% |
+| Books | 25% |
+| Electronics | 12% |
 
-Українською: Electronics має близько $2 млн виручки та генерує більше половини всієї виручки компанії. Водночас середня маржа становить лише 12% — це найнижчий показник серед категорій. Крім того, категорія має відносно несприятливий профіль повернень.
+#### Ілюзія обсягу: Electronics
 
-Interpretation
-Інтерпретація
+Electronics erzielt mit ungefähr 2 Mio. $ den mit Abstand höchsten Nettoumsatz und generiert damit mehr als die Hälfte des gesamten Unternehmensumsatzes.
+Gleichzeitig beträgt die durchschnittliche Marge lediglich 12 % – der niedrigste Wert aller Kategorien.
+Zusätzlich zeigt die Kategorie ein vergleichsweise ungünstiges Retourenprofil.    
+Electronics має близько $2 млн виручки та генерує більше половини всієї виручки компанії.
+Водночас середня маржа становить лише 12% — це найнижчий показник серед категорій. Крім того, категорія має відносно несприятливий профіль повернень.    
 
-Wer nur den Umsatz betrachtet, könnte Electronics als wirtschaftlich stärkste Kategorie einstufen. Die Kombination aus niedriger Marge und hoher Retourenbelastung zeigt jedoch, dass der hohe Umsatz ihre tatsächliche wirtschaftliche Attraktivität überschätzt.
+#### Interpretation
+#### Інтерпретація
 
-Українською: Якщо дивитися лише на виручку, Electronics може здаватися найкращою категорією. Але низька маржа та високі повернення показують, що великий обсяг продажів переоцінює її реальну економічну ефективність.
+Wer nur den Umsatz betrachtet, könnte Electronics als wirtschaftlich stärkste Kategorie einstufen.
+Die Kombination aus niedriger Marge und hoher Retourenbelastung zeigt jedoch, dass der hohe Umsatz ihre tatsächliche wirtschaftliche Attraktivität überschätzt.
+Якщо дивитися лише на виручку, Electronics може здаватися найкращою категорією.
+Але низька маржа та високі повернення показують, що великий обсяг продажів переоцінює її реальну економічну ефективність.    
 
-Empfehlung
-Рекомендація
+#### Empfehlung
+#### Рекомендація
 
 Für Electronics sollte ShopSphere vor allem:
 
-Einkaufskonditionen verbessern;
-Preisstrategie überprüfen;
-Ursachen für Retouren analysieren;
-Produktqualität und Produktbeschreibungen verbessern;
-besonders retournenträchtige Produkte identifizieren.
+- Einkaufskonditionen verbessern;
+- Preisstrategie überprüfen;
+- Ursachen für Retouren analysieren;
+- Produktqualität und Produktbeschreibungen verbessern;
+- besonders retournenträchtige Produkte identifizieren.
+Для Electronics потрібно насамперед:
+-  покращувати закупівельні умови,
+-  переглядати цінову політику,
+-  аналізувати причини повернень і працювати з товарами, які створюють найбільше повернень.
 
-Українською: Для Electronics потрібно насамперед покращувати закупівельні умови, переглядати цінову політику, аналізувати причини повернень і працювати з товарами, які створюють найбільше повернень.
+#### Fazit
+#### Підсумок
 
-Fazit
-Підсумок
-
-Electronics ist das deutlichste Beispiel für eine „Volumenillusion“: sehr hoher Umsatz, aber die niedrigste Marge und ein ungünstiges Retourenprofil.
-
-Українською: Electronics є найочевиднішим прикладом «ілюзії обсягу»: дуже велика виручка, але найнижча маржа і несприятливий рівень повернень.
+Electronics ist das deutlichste Beispiel für eine „Volumenillusion“: sehr hoher Umsatz, aber die niedrigste Marge und ein ungünstiges Retourenprofil.    
+Electronics є найочевиднішим прикладом «ілюзії обсягу»: дуже велика виручка, але найнижча маржа і несприятливий рівень повернень.     
 
 Frage 7. Gibt es einen „Hidden Diamond“?
 Питання 7. Чи є «прихований діамант»?
