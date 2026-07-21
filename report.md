@@ -395,125 +395,124 @@ Für Electronics sollte ShopSphere vor allem:
 Electronics ist das deutlichste Beispiel für eine „Volumenillusion“: sehr hoher Umsatz, aber die niedrigste Marge und ein ungünstiges Retourenprofil.    
 Electronics є найочевиднішим прикладом «ілюзії обсягу»: дуже велика виручка, але найнижча маржа і несприятливий рівень повернень.     
 
-Frage 7. Gibt es einen „Hidden Diamond“?
-Питання 7. Чи є «прихований діамант»?
-Ergebnis
-Результат
+# Frage 7. Gibt es einen „Hidden Diamond“?
+# Питання 7. Чи є «прихований діамант»?
+### Ergebnis
+### Результат
 
 Der stärkste Kandidat ist:
 
-Beauty
+## Beauty
 
-Beauty erzielt nur einen relativ kleinen Umsatz von ungefähr 0,14 Mio. $, besitzt jedoch mit 55 % die höchste Marge im gesamten Kategorienportfolio und gleichzeitig ein deutlich günstigeres Retourenprofil als Electronics.
+Beauty erzielt nur einen relativ kleinen Umsatz von ungefähr 0,14 Mio. $, besitzt jedoch mit 55 % die höchste Marge im gesamten Kategorienportfolio und gleichzeitig ein deutlich günstigeres Retourenprofil als Electronics.    
+Beauty має відносно невелику виручку — приблизно $140 тис., але при цьому найвищу маржу серед усіх категорій — 55%, а також значно кращий профіль повернень, ніж Electronics.    
 
-Українською: Beauty має відносно невелику виручку — приблизно $140 тис., але при цьому найвищу маржу серед усіх категорій — 55%, а також значно кращий профіль повернень, ніж Electronics.
-
-Warum ist Beauty ein Hidden Diamond?
-Чому Beauty — «прихований діамант»?
+### Warum ist Beauty ein Hidden Diamond?
+### Чому Beauty — «прихований діамант»?
 
 Die Kategorie kombiniert:
 
-relativ kleines Umsatzvolumen;
-höchste Marge = 55 %;
-vergleichsweise günstige Retouren;
-damit attraktives Skalierungspotenzial.
+- relativ kleines Umsatzvolumen;
+- höchste Marge = 55 %;
+- vergleichsweise günstige Retouren;
+- damit attraktives Skalierungspotenzial.
+     
+ Категорія поєднує:
+- невелику поточну виручку,
+- найвищу маржу 55%,
+- відносно сприятливий рівень повернень і тому має хороший потенціал масштабування.    
 
-Українською: Категорія поєднує невелику поточну виручку, найвищу маржу 55%, відносно сприятливий рівень повернень і тому має хороший потенціал масштабування.
+## Empfehlung
+## Рекомендація
+Beauty sollte kontrolliert skaliert werden.    
+Beauty варто масштабувати контрольовано.    
 
-Empfehlung
-Рекомендація
+Empfohlene Maßnahmen:    
+- Sortiment erweitern;    
+- Sichtbarkeit auf der Plattform erhöhen;    
+- gezielte Marketingkampagnen testen;    
+- Cross-Selling mit anderen Kategorien einsetzen;    
+- Lagerbestand vorsichtig erhöhen;    
+- Marge und Retourenquote während des Wachstums beobachten.     
 
-Beauty sollte kontrolliert skaliert werden.
+Рекомендується:
+- розширювати асортимент,
+-  підвищувати видимість категорії,
+-  тестувати маркетингові кампанії,
+-  використовувати cross-selling,
+-  обережно збільшувати запас товарів і контролювати, чи не погіршуються маржа та повернення при масштабуванні.    
 
-Українською: Beauty варто масштабувати контрольовано.
+### Fazit
+### Підсумок
+Beauty ist der stärkste „Hidden Diamond“: derzeit noch relativ klein, aber aufgrund der außergewöhnlich hohen Marge wirtschaftlich sehr attraktiv.     
+Beauty — найсильніший «прихований діамант»: категорія поки невелика, але через надзвичайно високу маржу має дуже привабливий економічний потенціал.     
 
-Empfohlene Maßnahmen:
+# Frage 8. Binden hohe Rabatte Kunden langfristig?
+# Питання 8. Чи допомагають високі знижки утримувати клієнтів?
+## Vorgehensweise
+## Методика
 
-Sortiment erweitern;
-Sichtbarkeit auf der Plattform erhöhen;
-gezielte Marketingkampagnen testen;
-Cross-Selling mit anderen Kategorien einsetzen;
-Lagerbestand vorsichtig erhöhen;
-Marge und Retourenquote während des Wachstums beobachten.
-
-Українською: Рекомендується розширювати асортимент, підвищувати видимість категорії, тестувати маркетингові кампанії, використовувати cross-selling, обережно збільшувати запас товарів і контролювати, чи не погіршуються маржа та повернення при масштабуванні.
-
-Fazit
-Підсумок
-
-Beauty ist der stärkste „Hidden Diamond“: derzeit noch relativ klein, aber aufgrund der außergewöhnlich hohen Marge wirtschaftlich sehr attraktiv.
-
-Українською: Beauty — найсильніший «прихований діамант»: категорія поки невелика, але через надзвичайно високу маржу має дуже привабливий економічний потенціал.
-
-Frage 8. Binden hohe Rabatte Kunden langfristig?
-Питання 8. Чи допомагають високі знижки утримувати клієнтів?
-Vorgehensweise
-Методика
-
-Da die Frage das Verhalten von Kunden und nicht einzelner Bestellungen betrifft, wurden die Bestelldaten zuerst auf Kundenebene aggregiert.
-
-Українською: Оскільки питання стосується поведінки клієнтів, а не окремих замовлень, дані спочатку були агреговані до рівня клієнта.
+Da die Frage das Verhalten von Kunden und nicht einzelner Bestellungen betrifft, wurden die Bestelldaten zuerst auf Kundenebene aggregiert.    
+Оскільки питання стосується поведінки клієнтів, а не окремих замовлень, дані спочатку були агреговані до рівня клієнта.    
 
 Für jeden Kunden wurden berechnet:
-
-durchschnittlicher Rabatt;
-Anzahl der Bestellungen.
+- durchschnittlicher Rabatt;
+- Anzahl der Bestellungen.
 
 Danach wurden zwei Segmente gebildet:
-
-Rabattorientiert (>20 %)
-
+- Rabattorientiert (>20 %)
 — клієнти із середньою знижкою понад 20%
 
-Übrige Kunden (≤20 %)
-
+- Übrige Kunden (≤20 %)
 — інші клієнти із середньою знижкою до 20% включно
 
-Ergebnis
-Результат
-Rabattorientierte Kunden
-352 Kunden
-durchschnittlicher Rabatt: 30,67 %
-durchschnittliche Bestellungen: 2,17
-Median: 2 Bestellungen
-Einmalkäuferquote: 25,0 %
-Wiederkäuferquote: 75,0 %
+### Ergebnis
+### Результат
 
-Українською: Серед клієнтів із високими знижками:
+#### Rabattorientierte Kunden:
+- `352` Kunden
+- `durchschnittlicher Rabatt:` 30,67 %
+- `durchschnittliche Bestellungen:` 2,17
+- `Median: `2 Bestellungen
+-`Einmalkäuferquote:` 25,0 %
+-`Wiederkäuferquote:` 75,0 %
 
-352 клієнти;
-середня знижка 30,67%;
-2,17 замовлення на клієнта;
-медіана — 2 замовлення;
-25% зробили лише одну покупку;
-75% здійснили повторну покупку.
-Übrige Kunden
-durchschnittlich rund 4,35 Bestellungen
-Einmalkäuferquote: 16,6 %
-Wiederkäuferquote: ungefähr 83,4 %
+Серед клієнтів із високими знижками:
+`352` клієнти;
+`середня знижка` 30,67%;
+2,17 `замовлення на клієнта`;
+`медіана` — 2 замовлення;
+25% з`робили лише одну покупку`;
+75% `здійснили повторну покупку`.
 
-Українською: Інші клієнти роблять у середньому приблизно 4,35 замовлення, а частка одноразових покупців становить лише 16,6%.
+#### Übrige Kunden
+`durchschnittlich rund` 4,35 Bestellungen
+`Einmalkäuferquote:` 16,6 %
+`Wiederkäuferquote:` ungefähr 83,4 %
 
-Interpretation
-Інтерпретація
+Інші клієнти роблять у середньому;
+- приблизно 4,35 замовлення, а частка одноразових покупців становить лише 16,6%.
 
-Rabattorientierte Kunden tätigen damit ungefähr 50 % weniger Bestellungen als die übrigen Kunden. Gleichzeitig ist ihre Einmalkäuferquote mit 25 % deutlich höher als bei den übrigen Kunden mit 16,6 %.
+#### Interpretation
+#### Інтерпретація
 
-Українською: Клієнти з високими знижками роблять приблизно на 50% менше замовлень, а частка одноразових покупців серед них суттєво вища: 25% проти 16,6%.
+Rabattorientierte Kunden tätigen damit ungefähr 50 % weniger Bestellungen als die übrigen Kunden.
+Gleichzeitig ist ihre Einmalkäuferquote mit 25 % deutlich höher als bei den übrigen Kunden mit 16,6 %.    
+Клієнти з високими знижками роблять приблизно на 50% менше замовлень, а частка одноразових покупців серед них суттєво вища: 25% проти 16,6%.    
 
-Fazit
-Підсумок
+#### Fazit
+#### Підсумок
 
-Die Daten zeigen keinen positiven Zusammenhang zwischen hohen Rabatten und einer stärkeren Wiederkaufsaktivität. Im Gegenteil: Kunden mit hohen durchschnittlichen Rabatten bestellen seltener und bleiben häufiger Einmalkäufer.
+Die Daten zeigen keinen positiven Zusammenhang zwischen hohen Rabatten und einer stärkeren Wiederkaufsaktivität.
+Im Gegenteil: Kunden mit hohen durchschnittlichen Rabatten bestellen seltener und bleiben häufiger Einmalkäufer.    
+Дані не показують позитивного зв'язку між високими знижками та повторними покупками.
+Навпаки: клієнти з великими середніми знижками купують рідше і частіше залишаються одноразовими покупцями.    
 
-Українською: Дані не показують позитивного зв'язку між високими знижками та повторними покупками. Навпаки: клієнти з великими середніми знижками купують рідше і частіше залишаються одноразовими покупцями.
+### Empfehlung
+### Рекомендація
 
-Empfehlung
-Рекомендація
-
-Hohe pauschale Rabatte sollten nicht als zentrales Kundenbindungsinstrument eingesetzt werden.
-
-Українською: Великі масові знижки не варто використовувати як головний інструмент утримання клієнтів.
+Hohe pauschale Rabatte sollten nicht als zentrales Kundenbindungsinstrument eingesetzt werden.     
+Великі масові знижки не варто використовувати як головний інструмент утримання клієнтів.     
 
 Stattdessen:
 
@@ -523,19 +522,19 @@ personalisierte Angebote;
 Loyalty-Programm;
 zeitlich begrenzte Promotions.
 
-Українською: Краще використовувати цільову welcome-знижку, стимул для другої покупки, персоналізовані пропозиції, програму лояльності та обмежені в часі акції.
+Краще використовувати цільову welcome-знижку, стимул для другої покупки, персоналізовані пропозиції, програму лояльності та обмежені в часі акції.     
 
 Visualisierungen
 Bestellhäufigkeit nach Rabattsegment — Частота замовлень за сегментом знижок
 Anteil der Einmalkäufer nach Rabattsegment — Частка одноразових покупців за сегментом знижок
-Frage 9. Welchen Umsatzanteil generieren die Top-5 % der Kunden? Wer sind diese Kunden und wie kann das Unternehmen sie binden?
-Питання 9. Яку частку виручки генерують топ-5% клієнтів? Хто ці клієнти і як компанії їх утримати?
-Vorgehensweise
-Методика
 
-Für jeden Kunden wurde zuerst der gesamte Nettoumsatz über alle Bestellungen berechnet. Anschließend wurden alle 3.000 Kunden nach Umsatz absteigend sortiert und die umsatzstärksten 5 % ausgewählt.
-
-Українською: Для кожного клієнта була розрахована загальна чиста виручка, після чого всі 3 000 клієнтів були відсортовані від найбільшої виручки до найменшої і вибрані верхні 5%.
+# Frage 9. Welchen Umsatzanteil generieren die Top-5 % der Kunden? Wer sind diese Kunden und wie kann das Unternehmen sie binden?
+# Питання 9. Яку частку виручки генерують топ-5% клієнтів? Хто ці клієнти і як компанії їх утримати?
+## Vorgehensweise
+## Методика
+Für jeden Kunden wurde zuerst der gesamte Nettoumsatz über alle Bestellungen berechnet.
+Anschließend wurden alle 3.000 Kunden nach Umsatz absteigend sortiert und die umsatzstärksten 5 % ausgewählt.     
+Для кожного клієнта була розрахована загальна чиста виручка, після чого всі 3 000 клієнтів були відсортовані від найбільшої виручки до найменшої і вибрані верхні 5%.     
 
 Das entspricht:
 
