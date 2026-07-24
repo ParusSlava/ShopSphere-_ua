@@ -996,4 +996,379 @@ Top-5% клієнтів доцільно виділити в окремий **Hi
 При цьому високий темп зростання необхідно інтерпретувати обережно: частково він пояснюється низькою початковою базою.
 Europe також демонструє стабільне зростання — приблизно від $100.8K у 2022 році до $545.6K у 2024 році.
 
+---
 
+## 2.6. Cross-Device поведінка та майбутня цінність клієнта
+
+### Бізнес-питання
+
+Чи є використання різних пристроїв на початку customer journey сигналом більш високої майбутньої цінності клієнта?
+
+Іншими словами:
+
+**Чи приносять клієнти, які здійснюють перші дві покупки з різних пристроїв, більше майбутньої виручки та частіше повертаються за наступною покупкою?**
+
+Цей аналіз був доданий як творчий exploratory analysis, щоб перевірити, чи можна використовувати ранню Cross-Device поведінку як потенційний сигнал майбутнього customer value.
+
+### Використані дані
+
+Для аналізу використовувалась таблиця `orders`.
+
+Основні поля:
+
+- `customer_id` — унікальний клієнт;
+- `order_id` — унікальне замовлення;
+- `order_date` — дата замовлення;
+- `device` — пристрій, з якого було зроблено замовлення;
+- `net_amount` — чиста сума замовлення;
+- `is_returned` — ознака повернення.
+
+### Логіка сегментації
+
+Для кожного клієнта замовлення були розташовані у хронологічному порядку.
+
+Після цього аналізувалися пристрої, використані під час першої та другої покупки.
+
+Було сформовано два сегменти:
+
+- **Same-Device** — перша та друга покупки зроблені з одного типу пристрою;
+- **Cross-Device** — перша та друга покупки зроблені з різних типів пристроїв.
+
+Серед усіх **2 473 клієнтів, які мали щонайменше дві покупки**:
+
+- 1 381 клієнт, або **55.84%**, належав до Cross-Device;
+- 1 092 клієнти, або **44.16%**, належали до Same-Device.
+
+Отже, використання різних пристроїв уже на початку customer journey є досить поширеним явищем.
+
+### Чому використано 90-денне вікно?
+
+Датасет закінчується 31 грудня 2024 року.
+
+Якщо просто порівнювати всю майбутню історію клієнтів, старі клієнти матимуть більше часу для здійснення повторних покупок, ніж клієнти, які з'явилися наприкінці періоду.
+
+Тому для коректного порівняння було використано однакове **90-денне observation window після другої покупки**.
+
+До фінального аналізу включалися лише клієнти, друга покупка яких відбулася не пізніше:
+
+`2024-10-02`.
+
+Таким чином кожний клієнт мав потенційно повні 90 днів для наступної активності.
+
+### SQL-запит
+```
+WITH ranked_orders AS (
+
+    SELECT
+        customer_id,
+        order_id,
+        order_date,
+        device,
+        net_amount,
+        is_returned,
+
+        ROW_NUMBER() OVER (
+            PARTITION BY customer_id
+            ORDER BY order_date, order_id
+        ) AS order_number
+
+    FROM orders
+
+    WHERE customer_id IS NOT NULL
+      AND device IS NOT NULL
+      AND TRIM(device) <> ''
+),
+
+customer_journey AS (
+
+    SELECT
+        customer_id,
+
+        MAX(
+            CASE
+                WHEN order_number = 1 THEN device
+            END
+        ) AS first_device,
+
+        MAX(
+            CASE
+                WHEN order_number = 2 THEN device
+            END
+        ) AS second_device,
+
+        MAX(
+            CASE
+                WHEN order_number = 2 THEN order_date
+            END
+        ) AS second_order_date
+
+    FROM ranked_orders
+
+    GROUP BY customer_id
+
+    HAVING COUNT(*) >= 2
+),
+
+eligible_customers AS (
+
+    SELECT
+        customer_id,
+        second_order_date,
+
+        CASE
+            WHEN first_device = second_device
+                THEN 'Same-Device'
+            ELSE 'Cross-Device'
+        END AS journey_segment
+
+    FROM customer_journey
+
+    WHERE second_order_date <= '2024-10-02'
+),
+
+customer_90d AS (
+
+    SELECT
+        e.customer_id,
+        e.journey_segment,
+
+        COUNT(r.order_id) AS future_orders_90d,
+
+        COALESCE(
+            SUM(r.net_amount),
+            0
+        ) AS future_revenue_90d,
+
+        COALESCE(
+            SUM(r.is_returned),
+            0
+        ) AS returned_orders_90d,
+
+        CASE
+            WHEN COUNT(r.order_id) > 0
+                THEN 1
+            ELSE 0
+        END AS third_purchase_within_90d
+
+    FROM eligible_customers AS e
+
+    LEFT JOIN ranked_orders AS r
+        ON e.customer_id = r.customer_id
+        AND r.order_number >= 3
+        AND (
+            julianday(r.order_date)
+            - julianday(e.second_order_date)
+        ) BETWEEN 0 AND 90
+
+    GROUP BY
+        e.customer_id,
+        e.journey_segment
+)
+
+SELECT
+    journey_segment,
+
+    COUNT(*) AS eligible_customers,
+
+    SUM(third_purchase_within_90d)
+        AS customers_with_third_purchase_90d,
+
+    ROUND(
+        100.0 * SUM(third_purchase_within_90d)
+        / COUNT(*),
+        2
+    ) AS third_purchase_rate_pct,
+
+    ROUND(
+        AVG(future_orders_90d),
+        2
+    ) AS avg_future_orders_90d,
+
+    ROUND(
+        AVG(future_revenue_90d),
+        2
+    ) AS avg_future_revenue_90d,
+
+    ROUND(
+        CASE
+            WHEN SUM(future_orders_90d) > 0
+            THEN
+                1.0 * SUM(future_revenue_90d)
+                / SUM(future_orders_90d)
+        END,
+        2
+    ) AS avg_future_order_value_90d,
+
+    ROUND(
+        CASE
+            WHEN SUM(future_orders_90d) > 0
+            THEN
+                100.0 * SUM(returned_orders_90d)
+                / SUM(future_orders_90d)
+        END,
+        2
+    ) AS future_return_rate_pct
+
+FROM customer_90d
+
+GROUP BY journey_segment
+
+ORDER BY avg_future_revenue_90d DESC;
+```
+### Що робить SQL-запит?
+
+Аналіз побудований у чотири основні етапи.
+
+#### 1. Підготовка та впорядкування замовлень
+
+У CTE `ranked_orders` використовуються лише замовлення, для яких відомий клієнт і пристрій:
+
+- `customer_id IS NOT NULL`;
+- `device IS NOT NULL`;
+- порожні значення `device` виключаються.
+
+Після цього всі покупки кожного клієнта розташовуються у хронологічному порядку.
+
+Для цього використовується:
+
+```sql
+ROW_NUMBER() OVER (
+    PARTITION BY customer_id
+    ORDER BY order_date, order_id
+)
+```
+#### 2. Визначає пристрої перших двох покупок
+
+Для кожного клієнта визначаються:
+
+- `first_device`;
+- `second_device`;
+- `second_order_date`.
+
+#### 3. Формує Cross-Device сегменти
+
+Якщо пристрої першої та другої покупки однакові:
+
+`Same-Device`
+
+Якщо різні:
+
+`Cross-Device`
+
+#### 4. Формує однакове 90-денне вікно
+
+Для уникнення bias через різну тривалість спостереження аналізуються тільки покупки протягом 90 днів після другої покупки.
+
+#### 5. Розраховує майбутню поведінку
+
+Для кожного сегмента розраховуються:
+
+- кількість eligible customers;
+- частка клієнтів, які зробили третю покупку;
+- середня кількість наступних замовлень;
+- середня майбутня виручка на клієнта;
+- середня вартість майбутнього замовлення;
+- частка повернень.
+
+### Результат SQL
+
+| Показник | Same-Device | Cross-Device |
+|---|---:|---:|
+| Eligible customers | 787 | 939 |
+| Third purchase rate | 45.11% | 45.05% |
+| Avg future orders, 90D | 0.90 | 0.86 |
+| Avg future revenue, 90D | $285.57 | $266.55 |
+| Avg future order value | $315.65 | $309.77 |
+| Future return rate | 10.53% | 11.01% |
+
+### Візуалізація Tableau
+
+![Cross-Device customer value](Tableau/2.6_Cross-Device%20Kundenwert.jpg)
+
+Основний графік порівнює:
+
+**90-Tage-Umsatz pro Kunde — майбутню 90-денну виручку на одного клієнта.**
+
+Same-Device клієнти в середньому генерують:
+
+**$285.57**
+
+проти:
+
+**$266.55**
+
+для Cross-Device клієнтів.
+
+### Інтерпретація
+
+На перший погляд можна було очікувати, що Cross-Device клієнти будуть більш залученими та матимуть вищу майбутню цінність.
+
+Дані цього не підтверджують.
+
+Same-Device клієнти навіть демонструють трохи вищу середню 90-денну виручку:
+
+**$285.57 проти $266.55.**
+
+Різниця становить приблизно **$19 на клієнта**, однак статистичний тест для цієї різниці в межах цього exploratory analysis не проводився.
+
+Тому коректний висновок полягає не в тому, що Same-Device клієнти однозначно кращі, а в тому, що:
+
+**у даних немає очевидної переваги Cross-Device клієнтів.**
+
+Це підтверджується й іншими показниками.
+
+Частка третьої покупки практично однакова:
+
+- Same-Device — **45.11%**;
+- Cross-Device — **45.05%**.
+
+Середня кількість наступних замовлень:
+
+- Same-Device — **0.90**;
+- Cross-Device — **0.86**.
+
+Повернення також дуже схожі:
+
+- Same-Device — **10.53%**;
+- Cross-Device — **11.01%**.
+
+### Бізнес-висновок
+
+Cross-Device поведінка є поширеною: більше половини клієнтів з двома і більше покупками використовували різні пристрої під час перших двох покупок.
+
+Проте сама по собі така поведінка **не є надійним сигналом більш високої майбутньої цінності клієнта**.
+
+Тому не варто автоматично вважати Cross-Device клієнтів High-Value сегментом або використовувати лише факт зміни пристрою для пріоритизації retention-кампаній.
+
+### Бізнес-рекомендація
+
+Cross-Device поведінку доцільно використовувати як **додатковий поведінковий сигнал**, але не як самостійний критерій сегментації.
+
+Для прогнозування майбутнього customer value варто поєднувати її з сильнішими показниками:
+
+- кількістю покупок;
+- recency;
+- frequency;
+- monetary value;
+- acquisition channel;
+- discount behavior;
+- категоріями покупок;
+- LTV.
+
+Водночас висока частка Cross-Device клієнтів показує інший важливий бізнес-сигнал:
+
+**customer experience повинен бути безшовним між пристроями.**
+
+Тому бізнесу важливо забезпечити:
+
+- синхронізацію кошика;
+- єдиний customer account;
+- збереження історії переглядів;
+- однаковий checkout experience;
+- коректний cross-device tracking.
+
+### Головний управлінський висновок
+
+**Cross-Device використання є поширеним, але не показує переваги у майбутній 90-денній цінності клієнта.**
+
+Отже, Cross-Device поведінка важлива насамперед для побудови якісного omnichannel customer experience, але не повинна самостійно використовуватися як ознака High-Value клієнта.
