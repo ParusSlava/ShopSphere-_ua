@@ -1,70 +1,68 @@
-# ShopSphere — аналіз глобального маркетплейсу
+# ShopSphere — Analyse eines globalen Marktplatzes
 
 ## Executive Summary
 
-ShopSphere — аналітичний проєкт глобального маркетплейсу за 2022–2024 роки.
+ShopSphere ist ein Analyseprojekt eines globalen Marktplatzes für den Zeitraum 2022–2024.
 
-Мета — оцінити не лише зростання бізнесу, а й **якість цього зростання**: ефективність маркетингу, цінність клієнтів, привабливість категорій, регіональний потенціал і результат A/B-тесту checkout.
+Ziel ist es, nicht nur das Unternehmenswachstum zu beschreiben, sondern auch die **Qualität dieses Wachstums** zu bewerten: Marketingeffizienz, Kundenwert, Attraktivität der Produktkategorien, regionales Wachstumspotenzial und die Ergebnisse des A/B-Tests für den Checkout.
 
-Основний аналітичний процес:
+Der analytische Prozess:
 
 **Raw Data → SQL → Analytical Dataset → Python Statistics → Tableau → Business Decision**
 
-Створено три фінальні Dashboard:
+Es wurden drei finale Dashboards erstellt:
 
-1. **CEO Dashboard** — загальна картина бізнесу.
-2. **Marketing & Customer LTV Dashboard** — ефективність маркетингу та цінність клієнтів.
-3. **A/B Test Checkout Dashboard** — статистична оцінка продуктового експерименту.
+1. **CEO Dashboard** — Gesamtüberblick über die Unternehmensperformance.
+2. **Marketing & Customer LTV Dashboard** — Marketingeffizienz und langfristiger Kundenwert.
+3. **A/B Test Checkout Dashboard** — statistische Bewertung eines Produktexperiments.
 
 ---
 
-## Data & Methodology
+## Daten & Methodik
 
-Для аналізу використано п'ять основних таблиць:
+Für die Analyse wurden fünf zentrale Tabellen verwendet:
 
-| Таблиця | Призначення |
+| Tabelle | Inhalt |
 |---|---|
-| `customers` | клієнти, регіони, країни, acquisition channel, signup date |
-| `orders` | замовлення, device, discount, net amount, returns, A/B variant |
-| `order_items` | товарні позиції всередині замовлення |
-| `products` | товари, категорії, ціна, собівартість, margin |
-| `marketing` | channel, budget, impressions, clicks, conversions, attributed revenue |
+| `customers` | Kunden, Regionen, Länder, Acquisition Channel, Signup Date |
+| `orders` | Bestellungen, Device, Discount, Net Amount, Returns, A/B Variant |
+| `order_items` | einzelne Produktpositionen innerhalb einer Bestellung |
+| `products` | Produkte, Kategorien, Preis, Kosten und Marge |
+| `marketing` | Channel, Budget, Impressions, Clicks, Conversions, Attributed Revenue |
 
-### Інструменти
+### Verwendete Tools
 
 **SQL**
-- JOIN та агрегації;
-- розрахунок KPI;
-- сегментація клієнтів;
-- window functions;
-- Pareto-аналіз;
-- підготовка датасетів для Tableau та A/B-тесту.
+- JOINs und Aggregationen;
+- KPI-Berechnung;
+- Kundensegmentierung;
+- Window Functions;
+- Pareto-Analyse;
+- Vorbereitung der Datensätze für Tableau und den A/B-Test.
 
 **Python / Google Colab**
-- descriptive statistics;
-- Welch t-test;
-- 95% confidence intervals;
-- p-values.
+- deskriptive Statistik;
+- Welch-t-Test;
+- 95%-Konfidenzintervalle;
+- p-Werte.
 
 **Tableau**
-- exploratory visualizations;
-- KPI;
-- інтерактивні фільтри;
-- фінальні управлінські Dashboard.
+- explorative Visualisierungen;
+- KPI-Darstellung;
+- interaktive Filter;
+- Erstellung der finalen Management-Dashboards.
 
 ---
 
-# Блок 2. Exploratory Analysis
+# Block 2. Explorative Analyse
 
-## 2.1. Сезонність та динаміка виручки
+## 2.1. Saisonalität und Umsatzentwicklung
 
-*Tableau: Saisonalität und Umsatzentwicklung — сезонність і динаміка виручки*
+### Geschäftsfrage
 
-### Бізнес-питання
+Wie entwickelt sich der Nettoumsatz von ShopSphere im Zeitverlauf und gibt es wiederkehrende saisonale Umsatzspitzen?
 
-Як змінюється чиста виручка ShopSphere у часі та чи є повторювані сезонні піки?
-
-### SQL-запит
+### SQL-Abfrage
 
 ```sql
 SELECT
@@ -82,45 +80,43 @@ ORDER BY
     order_month;
 ```
 
-### SQL-запит та результат у SQLiteOnline
+### SQL-Abfrage und Ergebnis in SQLiteOnline
 
 ![SQL-запит: місячна динаміка замовлень і чистої виручки](SQL/2.1_monthly_revenue.jpg)
 
-Запит агрегує `orders` до рівня місяця та формує часовий ряд для Tableau.
+Die Abfrage aggregiert die Tabelle `orders` auf Monatsebene und erzeugt eine Zeitreihe für Tableau.
 
-### Візуалізація Tableau
+### Tableau-Visualisierung
 
 ![Сезонність та динаміка виручки](Tableau/2.1_Sansonalität.jpg)
 
-### Ключовий результат
+### Kernergebnis
 
-- виручка демонструє сильний довгостроковий ріст;
-- листопад–грудень повторюються як сезонний пік;
-- грудень 2024 року — приблизно **$759.4K**, максимум за весь період.
+- Der Umsatz zeigt einen starken langfristigen Wachstumstrend.
+- November und Dezember bilden wiederkehrende saisonale Spitzen.
+- Dezember 2024 erreicht mit rund **$759.4K** den höchsten Monatsumsatz im gesamten Analysezeitraum.
 
-### Бізнес-висновок
+### Geschäftliche Schlussfolgerung
 
-ShopSphere варто заздалегідь готувати inventory, logistics, маркетингові кампанії та customer support до пікового навантаження наприкінці року.
+ShopSphere sollte Lagerbestand, Logistik, Marketingkampagnen und Customer Support frühzeitig auf die erhöhte Nachfrage zum Jahresende vorbereiten.
 
 ---
 
-## 2.2. Ефективність маркетингових каналів: Budget vs. ROI
+## 2.2. Effizienz der Marketingkanäle: Budget vs. ROI
 
-*Tableau: Marketingeffizienz: Budget vs. ROI — ефективність маркетингу: бюджет проти ROI*
+### Geschäftsfrage
 
-### Бізнес-питання
+Welche Marketingkanäle nutzen das verfügbare Budget am effizientesten?
 
-Які маркетингові канали найефективніше використовують бюджет?
-
-У проєкті ROI розраховується як:
+Im Projekt wird ROI wie folgt berechnet:
 
 `Attributed Revenue / Marketing Budget`
 
-Показник показує, скільки доларів атрибутованої виручки припадає на кожний $1 маркетингового бюджету.
+Der Wert zeigt, wie viel attribuierter Umsatz pro investiertem Marketing-Dollar generiert wird.
 
-> Технічно показник ближчий до ROAS, але в завданні та Tableau використовується назва ROI.
+> Technisch entspricht diese Kennzahl eher dem ROAS. In der Aufgabenstellung und im Tableau-Dashboard wird jedoch die Bezeichnung ROI verwendet.
 
-### SQL-запит
+### SQL-Abfrage
 
 ```sql
 SELECT
@@ -136,13 +132,13 @@ GROUP BY channel
 ORDER BY roi DESC;
 ```
 
-### SQL-запит та результат у SQLiteOnline
+### SQL-Abfrage und Ergebnis in SQLiteOnline
 
 ![SQL-запит і результат — Marketing Budget vs ROI](SQL/2.2_marketing%20budget%20vs%20roi.jpg)
 
-### Результат
+### Ergebnis
 
-| Канал | Бюджет | Частка бюджету | Атрибутована виручка | ROI |
+| Kanal | Budget | Budgetanteil | Attribuierter Umsatz | ROI |
 |---|---:|---:|---:|---:|
 | Organic | $20,364 | 2.08% | $163,398 | 8.02 |
 | Email | $37,468 | 3.82% | $243,610 | 6.50 |
@@ -151,33 +147,31 @@ ORDER BY roi DESC;
 | Social Ads | $286,488 | 29.19% | $589,544 | 2.06 |
 | Paid Search | $450,959 | 45.95% | $598,703 | 1.33 |
 
-### Візуалізація Tableau
+### Tableau-Visualisierung
 
 ![Marketingeffizienz: Budget vs. ROI](Tableau/2.2_Marketing%20Budget%20vs%20ROI.jpg)
 
-### Ключовий результат
+### Kernergebnis
 
-- **Organic** — найвищий ROI: **8.02**;
-- **Email** — ROI **6.50**;
-- **Paid Search** отримує **45.95% бюджету**, але має найнижчий ROI — **1.33**.
+- **Organic** erzielt mit **8.02** den höchsten ROI.
+- **Email** erreicht einen ROI von **6.50**.
+- **Paid Search** erhält **45.95% des gesamten Budgets**, erzielt aber mit **1.33** den niedrigsten ROI.
 
-### Бізнес-висновок
+### Geschäftliche Schlussfolgerung
 
-Paid Search не варто різко вимикати, оскільки він генерує великий абсолютний обсяг виручки.
+Paid Search sollte nicht abrupt reduziert oder abgeschaltet werden, da der Kanal weiterhin einen hohen absoluten Umsatz generiert.
 
-Оптимальніше — **поетапно тестувати новий marketing mix**, поступово збільшуючи інвестиції в Organic, Email та Influencer і контролюючи marginal ROI, CAC та LTV.
+Sinnvoller ist ein **schrittweises Testen eines neuen Marketing-Mix**, bei dem Investitionen in Organic, Email und Influencer kontrolliert erhöht und gleichzeitig marginaler ROI, CAC und LTV überwacht werden.
 
 ---
 
-## 2.3. Продуктивність категорій: виручка, маржа та повернення
+## 2.3. Kategorienperformance: Nettoumsatz, Marge und Retouren
 
-*Tableau: Kategorienperformance: Nettoumsatz, Marge und Retouren — ефективність категорій: чиста виручка, маржа та повернення*
+### Geschäftsfrage
 
-### Бізнес-питання
+Welche Produktkategorien sind wirtschaftlich besonders attraktiv, wenn Nettoumsatz, Marge und Retouren gleichzeitig berücksichtigt werden?
 
-Які товарні категорії справді економічно привабливі, якщо одночасно врахувати чисту виручку, маржу та повернення?
-
-### SQL-запит
+### SQL-Abfrage
 
 ```sql
 WITH order_totals AS (
@@ -250,15 +244,15 @@ GROUP BY oi.category
 ORDER BY total_net_revenue DESC;
 ```
 
-### SQL-запит та результат у SQLiteOnline
+### SQL-Abfrage und Ergebnis in SQLiteOnline
 
 ![SQL-запит і результат — продуктивність категорій](SQL/2.3.%20Kategorienperformance.jpg)
 
-Оскільки одне замовлення може містити товари з різних категорій, `net_amount` пропорційно розподіляється між товарними позиціями. Це дозволяє уникнути подвійного підрахунку чистої виручки після JOIN.
+Da eine Bestellung Produkte aus mehreren Kategorien enthalten kann, wird `net_amount` proportional auf die einzelnen Positionen verteilt. Dadurch wird eine doppelte Zählung des Nettoumsatzes nach dem JOIN vermieden.
 
-### Результат
+### Ergebnis
 
-| Категорія | Чиста виручка | Середня маржа | Повернення |
+| Kategorie | Nettoumsatz | Durchschnittliche Marge | Retourenquote |
 |---|---:|---:|---:|
 | Electronics | $1,986,033.63 | 12% | 15.97% |
 | Home & Kitchen | $549,700.83 | 35% | 10.27% |
@@ -268,33 +262,33 @@ ORDER BY total_net_revenue DESC;
 | Toys | $132,623.76 | 40% | 8.98% |
 | Books | $85,762.67 | 25% | 8.13% |
 
-### Візуалізація Tableau
+### Tableau-Visualisierung
 
 ![Продуктивність категорій — чиста виручка, маржа та повернення](Tableau/2.3_Kategorienperfomance.jpg)
 
-### Ключовий результат
+### Kernergebnis
 
-- **Electronics** — ~$1.99M чистої виручки, але лише **12% маржі** та **15.97% повернень**.
-- **Beauty** — ~$159K виручки, **55% маржі**, 9.97% повернень.
-- **Clothing** — висока маржа 45%, але найвищий рівень повернень — 16%.
+- **Electronics** generiert rund **$1.99M Nettoumsatz**, hat aber nur **12% Marge** und eine hohe Retourenquote von **15.97%**.
+- **Beauty** erzielt rund $159K Umsatz, hat mit **55% die höchste Marge** und eine Retourenquote von 9.97%.
+- **Clothing** hat eine hohe Marge von 45%, gleichzeitig aber mit 16% die höchste Retourenquote.
 
-### Бізнес-висновок
+### Geschäftliche Schlussfolgerung
 
-Категорії не можна оцінювати лише за виручкою.
+Produktkategorien sollten nicht ausschließlich anhand des Umsatzes bewertet werden.
 
-- **Electronics** — працювати над маржею, асортиментом і причинами повернень.
-- **Beauty** — тестувати контрольоване масштабування.
-- **Clothing** — окремо дослідити причини високих повернень.
+- **Electronics:** Marge, Sortiment und Retourengründe optimieren.
+- **Beauty:** kontrollierte Skalierung testen.
+- **Clothing:** Ursachen der hohen Retourenquote genauer untersuchen.
 
 ---
 
-## 2.4. Регіональна динаміка 2022–2024
+## 2.4. Regionale Umsatzentwicklung 2022–2024
 
-### Бізнес-питання
+### Geschäftsfrage
 
-Які регіони є найбільшими за виручкою і де знаходиться потенціал для подальшого масштабування ShopSphere?
+Welche Regionen erzielen den höchsten Umsatz und wo besteht das größte Potenzial für weiteres Wachstum?
 
-### SQL-запит
+### SQL-Abfrage
 
 ```sql
 SELECT
@@ -313,41 +307,41 @@ ORDER BY
     o.order_year;
 ```
 
-### SQL-запит та результат у SQLiteOnline
+### SQL-Abfrage und Ergebnis in SQLiteOnline
 
 ![SQL-запит — регіональна динаміка](SQL/2.4%20Regionen%20im%20Wandel.jpg)
 
-### Візуалізація Tableau
+### Tableau-Visualisierung
 
 ![Регіональна динаміка 2022–2024](Tableau/2.4_Regionen%20im%20Wandel.jpg)
 
-### Ключовий результат
+### Kernergebnis
 
-У 2024 році:
+Im Jahr 2024:
 
-- **North America** — 2,632 замовлення, ~$718.7K чистої виручки;
-- **Southeast Asia** — 2,029 замовлень, ~$613.9K;
-- **Europe** — ~$545.6K.
+- **North America** — 2,632 Bestellungen und rund $718.7K Nettoumsatz;
+- **Southeast Asia** — 2,029 Bestellungen und rund $613.9K Nettoumsatz;
+- **Europe** — rund $545.6K Nettoumsatz.
 
-Southeast Asia демонструє дуже сильну динаміку, але частково це пояснюється низькою базою 2022 року — близько $12.7K.
+Southeast Asia zeigt eine besonders starke Wachstumsdynamik. Ein Teil dieses hohen relativen Wachstums ist jedoch durch die niedrige Ausgangsbasis von rund $12.7K im Jahr 2022 erklärbar.
 
-### Бізнес-висновок
+### Geschäftliche Schlussfolgerung
 
-**North America** — поточний лідер за масштабом.
+**North America** ist aktuell der größte Markt.
 
-**Southeast Asia** — один із найперспективніших регіонів для контрольованого масштабування.
+**Southeast Asia** gehört zu den interessantesten Regionen für eine kontrollierte Skalierung.
 
-Рекомендується збільшувати інвестиції поступово, контролюючи ROI, LTV, абсолютну виручку та рівень повернень.
+Zusätzliche Investitionen sollten schrittweise erfolgen und anhand von ROI, LTV, absolutem Umsatz und Retourenquote bewertet werden.
 
 ---
 
-## 2.5. Pareto-аналіз клієнтів
+## 2.5. Pareto-Analyse der Kunden
 
-### Бізнес-питання
+### Geschäftsfrage
 
-Наскільки виручка ShopSphere концентрується серед найбільш цінних клієнтів і чи виконується класичне правило 80/20?
+Wie stark konzentriert sich der Umsatz auf die wertvollsten Kunden und bestätigt sich die klassische 80/20-Regel?
 
-### SQL-запит
+### SQL-Abfrage
 
 ```sql
 WITH customer_totals AS (
@@ -398,50 +392,50 @@ FROM ranked
 ORDER BY customer_rank;
 ```
 
-### SQL-запит та результат у SQLiteOnline
+### SQL-Abfrage und Ergebnis in SQLiteOnline
 
 ![SQL-запит — Pareto-аналіз клієнтів](SQL/2.5_pareto_customers.jpg)
 
-SQL агрегує виручку на рівні клієнта, ранжує клієнтів за `total_spent` і розраховує накопичену частку виручки.
+Die SQL-Abfrage aggregiert den Umsatz auf Kundenebene, sortiert die Kunden nach `total_spent` und berechnet den kumulierten Umsatzanteil.
 
-У Tableau клієнтів об'єднано у групи по 5%.
+In Tableau wurden die Kunden anschließend in 5%-Gruppen zusammengefasst.
 
-### Візуалізація Tableau
+### Tableau-Visualisierung
 
 ![Pareto-аналіз клієнтів](Tableau/2.5_Pareto-Verteilung%20der%20Kunden.jpg)
 
-### Ключовий результат
+### Kernergebnis
 
-- загалом **3,000 клієнтів**;
-- Top-5% = **150 клієнтів**;
-- вони генерують близько **$1.22M**;
-- це **35.1% загальної виручки**;
-- класичне правило 80/20 **не підтверджується**.
+- insgesamt **3,000 Kunden**;
+- Top-5% = **150 Kunden**;
+- diese Kunden generieren rund **$1.22M Umsatz**;
+- das entspricht **35.1% des Gesamtumsatzes**;
+- die klassische 80/20-Regel wird **nicht bestätigt**.
 
-### Бізнес-висновок
+### Geschäftliche Schlussfolgerung
 
-Top-5% клієнтів потребують окремої retention-стратегії.
+Die Top-5% sollten mit einer eigenen Retention-Strategie geschützt werden.
 
-Одночасно варто розвивати сегмент 5–20%, щоб переводити частину клієнтів у High-Value групу та зменшувати концентраційний ризик.
+Gleichzeitig sollte besonders das Segment zwischen 5% und 20% entwickelt werden, um weitere Kunden in das High-Value-Segment zu überführen und das Konzentrationsrisiko zu reduzieren.
 
 ---
 
-## 2.6. Cross-Device поведінка та майбутня цінність клієнта
+## 2.6. Cross-Device-Verhalten und zukünftiger Kundenwert
 
-### Бізнес-питання
+### Geschäftsfrage
 
-Чи є використання різних пристроїв під час перших двох покупок сигналом вищої майбутньої цінності клієнта?
+Ist die Nutzung verschiedener Geräte während der ersten beiden Käufe ein Signal für einen höheren zukünftigen Kundenwert?
 
-Клієнти поділені на:
+Die Kunden wurden in zwei Segmente unterteilt:
 
-- **Same-Device** — перша і друга покупки зроблені з одного типу пристрою;
-- **Cross-Device** — покупки зроблені з різних пристроїв.
+- **Same-Device** — erster und zweiter Kauf mit demselben Gerätetyp;
+- **Cross-Device** — erster und zweiter Kauf mit unterschiedlichen Gerätetypen.
 
-Щоб уникнути bias через різну тривалість спостереження, використано однакове **90-денне вікно після другої покупки**.
+Um Verzerrungen durch unterschiedliche Beobachtungszeiträume zu vermeiden, wurde für alle Kunden ein identisches **90-Tage-Fenster nach dem zweiten Kauf** verwendet.
 
-До фінального аналізу включено клієнтів, друга покупка яких відбулася не пізніше `2024-10-02`.
+In die finale Analyse wurden nur Kunden aufgenommen, deren zweiter Kauf spätestens am `2024-10-02` stattfand.
 
-### SQL-запит
+### SQL-Abfrage
 
 ```sql
 WITH ranked_orders AS (
@@ -601,203 +595,171 @@ GROUP BY journey_segment
 ORDER BY avg_future_revenue_90d DESC;
 ```
 
-### SQL-запит та результат у SQLiteOnline
+### SQL-Abfrage und Ergebnis in SQLiteOnline
 
 ![SQL-запит — Cross-Device поведінка та майбутня цінність клієнта](SQL/2.6_cross_device_customer_value.jpg)
 
-### Результат
+### Ergebnis
 
-| Показник | Same-Device | Cross-Device |
+| Kennzahl | Same-Device | Cross-Device |
 |---|---:|---:|
-| Eligible customers | 787 | 939 |
-| Third purchase rate | 45.11% | 45.05% |
-| Avg future orders, 90D | 0.90 | 0.86 |
-| Avg future revenue, 90D | $285.57 | $266.55 |
-| Avg future order value | $315.65 | $309.77 |
-| Future return rate | 10.53% | 11.01% |
+| Eligible Customers | 787 | 939 |
+| Third Purchase Rate | 45.11% | 45.05% |
+| Avg Future Orders, 90D | 0.90 | 0.86 |
+| Avg Future Revenue, 90D | $285.57 | $266.55 |
+| Avg Future Order Value | $315.65 | $309.77 |
+| Future Return Rate | 10.53% | 11.01% |
 
-### Візуалізація Tableau
+### Tableau-Visualisierung
 
 ![Cross-Device customer value](Tableau/2.6_Cross-Device%20Kundenwert.jpg)
 
-### Ключовий результат
+### Kernergebnis
 
-Cross-Device клієнти **не показали очевидної переваги**:
+Cross-Device-Kunden zeigen **keinen offensichtlichen Vorteil**:
 
-- third purchase rate майже однаковий — 45.11% vs 45.05%;
-- 90-day revenue — $285.57 Same-Device vs $266.55 Cross-Device;
-- повернення також дуже схожі.
+- Third Purchase Rate: 45.11% vs. 45.05%;
+- 90-Tage-Umsatz: $285.57 bei Same-Device vs. $266.55 bei Cross-Device;
+- auch die Retourenquoten sind nahezu identisch.
 
-Статистичний тест для цієї різниці не проводився, тому її не можна трактувати як доведений причинний ефект.
+Für diesen Unterschied wurde kein statistischer Signifikanztest durchgeführt. Daher darf er nicht als nachgewiesener kausaler Effekt interpretiert werden.
 
-### Бізнес-висновок
+### Geschäftliche Schlussfolgerung
 
-Cross-Device поведінка є поширеною, але не повинна самостійно використовуватися як ознака High-Value клієнта.
+Cross-Device-Verhalten ist verbreitet, sollte aber nicht allein als Merkmal für High-Value-Kunden verwendet werden.
 
-Її краще поєднувати з recency, frequency, monetary value, acquisition channel та LTV.
+Sinnvoller ist eine Kombination mit Recency, Frequency, Monetary Value, Acquisition Channel und LTV.
 
-Водночас бізнесу важливо забезпечити безшовний cross-device customer experience.
+Gleichzeitig sollte ShopSphere einen möglichst nahtlosen Cross-Device Customer Experience sicherstellen.
 
 ---
 
-# Блок 3. Фінальні Tableau Dashboard
+# Block 3. Finale Tableau-Dashboards
 
-Фінальні Dashboard побудовані за логікою:
+Die finalen Dashboards folgen der Logik:
 
 **Monitor → Diagnose → Decide**
 
-**побачити результат → зрозуміти драйвери → прийняти рішення**
+**Ergebnis erkennen → Treiber verstehen → Entscheidung treffen**
 
-| Dashboard | Основне питання |
+| Dashboard | Zentrale Frage |
 |---|---|
-| CEO Dashboard | Що відбувається з бізнесом? |
-| Marketing & LTV | Де створюється маркетингова та клієнтська цінність? |
-| A/B Test Checkout | Яке продуктове рішення потрібно прийняти? |
+| CEO Dashboard | Was passiert im Unternehmen? |
+| Marketing & LTV | Wo entsteht Marketing- und Kundenwert? |
+| A/B Test Checkout | Welche Produktentscheidung sollte getroffen werden? |
 
 ---
 
 ## 3.1. CEO Dashboard
 
-*Leistung des globalen Marktplatzes — результати глобального маркетплейсу*
+*Leistung des globalen Marktplatzes*
 
 ![ShopSphere CEO Dashboard](Tableau/CEO-Dashboard-Endfassung.jpg)
 
-### Основні KPI
+### Zentrale KPI
 
-| KPI | Значення | Значення для бізнесу |
+| KPI | Wert | Bedeutung |
 |---|---:|---|
-| Bestellungen — замовлення | 12,274 | масштаб продажів |
-| Nettoumsatz — чиста виручка | $3.47M | фінансовий результат |
-| Bestellwert — середній чек | $283 | цінність одного замовлення |
-| Retourenquote — повернення | 9.77% | якість продажів |
+| Bestellungen | 12,274 | Umfang des Geschäfts |
+| Nettoumsatz | $3.47M | finanzielles Ergebnis |
+| Durchschnittlicher Bestellwert | $283 | Wert einer durchschnittlichen Bestellung |
+| Retourenquote | 9.77% | Qualität der Verkäufe |
 
-### Що CEO має побачити
+### Was sollte der CEO sofort erkennen?
 
-1. **ShopSphere швидко зростає**, а листопад–грудень є ключовим сезонним періодом.
-2. **North America** — найбільший ринок; **Southeast Asia** — сильний кандидат на масштабування.
-3. **Electronics** домінує за виручкою, але має низьку маржу та високі повернення; **Beauty** має найвищу маржинальність.
-4. Top-5% клієнтів генерують **35.1% виручки**.
+1. **ShopSphere wächst stark**, gleichzeitig sind November und Dezember besonders wichtige saisonale Monate.
+2. **North America** ist aktuell der größte Markt; **Southeast Asia** ist ein starker Kandidat für weiteres Wachstum.
+3. **Electronics** dominiert beim Umsatz, hat aber eine niedrige Marge und hohe Retouren; **Beauty** weist die höchste Marge auf.
+4. Die Top-5% der Kunden generieren **35.1% des Gesamtumsatzes**.
 
-Фільтри **Jahr — рік** і **Region — регіон** дозволяють деталізувати KPI та графіки.
+Die Filter **Jahr** und **Region** ermöglichen eine detaillierte Analyse einzelner Zeiträume und Märkte.
 
 ---
 
 ## 3.2. Marketing & Customer LTV Dashboard
 
-*Marketingkanäle: ROI vs. Kunden-LTV — маркетингові канали: ROI проти LTV*
+*Marketingkanäle: ROI vs. Kunden-LTV*
 
 ![Marketing ROI and Customer LTV Dashboard](Tableau/CEO-Dashboard-Endfassung_2.jpg)
 
-Dashboard поєднує:
+Das Dashboard verbindet zwei Perspektiven:
 
-- **короткострокову ефективність — ROI**;
-- **довгострокову цінність — Customer LTV**.
+- **kurzfristige Effizienz — ROI**;
+- **langfristiger Kundenwert — Customer LTV**.
 
-### Ключові сигнали
+### Zentrale Signale
 
-- **Organic — ROI Leader — лідер за ROI:** 8.02.
+- **Organic — ROI Leader:** 8.02.
 - **Email:** ROI 6.50.
-- **Influencer & Referral — LTV Leader — лідери за LTV.**
-- **Paid Search — Optimierungsbedarf — потребує оптимізації:** 45.95% бюджету, ROI 1.33 і слабкий median LTV.
+- **Influencer & Referral — LTV Leader.**
+- **Paid Search — Optimierungsbedarf:** 45.95% des Budgets, ROI 1.33 und schwacher Median-LTV.
 
 ### Customer LTV
 
-- Influencer — AVG ~$1.99K, median ~$1.20K;
-- Referral — AVG ~$1.79K, median ~$1.12K;
-- Paid Search — AVG ~$0.65K, median ~$0.28K.
+- Influencer — AVG ~$1.99K, Median ~$1.20K;
+- Referral — AVG ~$1.79K, Median ~$1.12K;
+- Paid Search — AVG ~$0.65K, Median ~$0.28K.
 
-Heatmap Top-5% показує, **з яких комбінацій `region × acquisition channel` приходить найбільше High-Value виручки**.
+Die Top-5%-Heatmap zeigt, **aus welchen Kombinationen von `region × acquisition channel` der größte High-Value-Umsatz stammt**.
 
-### Бізнес-висновок
+### Geschäftliche Schlussfolgerung
 
-Маркетинг не варто оцінювати лише за одним KPI.
+Marketingeffizienz sollte nicht anhand einer einzigen Kennzahl bewertet werden.
 
-Organic та Email сильні за ROI, Influencer та Referral — за LTV, а Paid Search — головний кандидат на контрольовану оптимізацію бюджету.
+Organic und Email sind stark beim ROI, Influencer und Referral beim langfristigen LTV. Paid Search ist der wichtigste Kandidat für eine kontrollierte Budgetoptimierung.
 
 ---
 
 ## 3.3. A/B Test Checkout Dashboard
 
-*Ergebnis und Rollout — результат і рішення щодо rollout*
+*Ergebnis und Rollout*
 
 ![A/B Test Checkout Dashboard](Tableau/CEO-Dashboard-Endfassung_3.jpg)
 
-### Основні результати
+### Zentrale Ergebnisse
 
-| Сегмент | Різниця B − A | Lift |
+| Segment | Differenz B − A | Lift |
 |---|---:|---:|
-| Gesamt — усі клієнти | +$5.54 | +1.97% |
-| Neukunden — нові клієнти | +$39.41 | +17.64% |
-| Wiederkehrende Kunden — повторні клієнти | +$4.01 | +1.38% |
+| Gesamt | +$5.54 | +1.97% |
+| Neukunden | +$39.41 | +17.64% |
+| Wiederkehrende Kunden | +$4.01 | +1.38% |
 
-Variant B має вищий середній Bestellwert у всіх сегментах.
+Variante B zeigt in allen Segmenten einen höheren durchschnittlichen Bestellwert.
 
-Однак:
+Allerdings:
 
-- усі 95% confidence intervals перетинають 0;
-- усі p-values > 0.05.
+- alle 95%-Konfidenzintervalle enthalten den Wert 0;
+- alle p-Werte liegen über 0.05.
 
-Отже, статистично підтвердженої переваги Variant B немає.
+Damit gibt es **keinen statistisch bestätigten Vorteil von Variante B**.
 
-### Rollout Decision
+### Rollout-Entscheidung
 
-**Kein voller Rollout — не робити повний rollout.**
+**Kein voller Rollout.**
 
-Рекомендація — продовжити тест серед **Neukunden — нових клієнтів**, де observed uplift найбільший (+17.64%), і накопичити більшу вибірку.
-
----
-
-## 3.4. Основні управлінські висновки
-
-1. **ShopSphere активно зростає**, але має виражену сезонність.
-2. **North America** — поточний лідер; **Southeast Asia** — сильний growth opportunity.
-3. Висока виручка не гарантує високої економічної якості: **Electronics** потребує оптимізації, **Beauty** — тестового масштабування.
-4. Top-5% клієнтів створюють **35.1% виручки** і потребують retention-стратегії.
-5. Marketing mix можна покращити: **Paid Search** отримує найбільший бюджет при найнижчому ROI.
-6. Variant B checkout має позитивний сигнал, але доказів для повного rollout поки недостатньо.
+Empfehlung: Den Test speziell bei **Neukunden** fortsetzen, da hier der größte beobachtete Uplift von **+17.64%** vorliegt, und eine größere Stichprobe sammeln.
 
 ---
 
-## 3.5. Рекомендації для бізнесу
+## 3.4. Zentrale Management-Erkenntnisse
 
-1. Підготувати inventory, logistics і customer support до сезонних піків наприкінці року.
-2. Зберігати сильні позиції в North America та контрольовано тестувати масштабування Southeast Asia.
-3. Працювати над margin і returns Electronics та тестувати розвиток Beauty.
-4. Створити retention-стратегію для Top-5% та розвивати клієнтів сегмента 5–20%.
-5. Поетапно оптимізувати marketing mix, контролюючи marginal ROI, CAC і LTV.
-6. Не робити повний rollout Variant B; продовжити тест серед нових клієнтів.
+1. **ShopSphere wächst stark**, weist aber eine klare Saisonalität auf.
+2. **North America** ist der aktuelle Marktführer; **Southeast Asia** bietet starkes Wachstumspotenzial.
+3. Hoher Umsatz bedeutet nicht automatisch hohe wirtschaftliche Qualität: **Electronics** benötigt Optimierung, **Beauty** eignet sich für kontrollierte Wachstumstests.
+4. Die Top-5% der Kunden generieren **35.1% des Umsatzes** und benötigen eine gezielte Retention-Strategie.
+5. Der Marketing-Mix kann optimiert werden: **Paid Search** erhält das größte Budget, erzielt aber den niedrigsten ROI.
+6. Variante B des Checkouts zeigt ein positives Signal, jedoch fehlen derzeit ausreichende statistische Belege für einen vollständigen Rollout.
 
+---
 
+## 3.5. Handlungsempfehlungen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+1. Lagerbestand, Logistik und Customer Support auf die saisonalen Spitzen am Jahresende vorbereiten.
+2. Die starke Position in North America sichern und die Skalierung in Southeast Asia kontrolliert testen.
+3. Marge und Retouren bei Electronics optimieren und das Wachstumspotenzial von Beauty testen.
+4. Eine gezielte Retention-Strategie für die Top-5% entwickeln und das Kundensegment zwischen 5% und 20% weiterentwickeln.
+5. Den Marketing-Mix schrittweise optimieren und dabei marginalen ROI, CAC und LTV überwachen.
+6. Variante B noch nicht vollständig ausrollen; den Test bei Neukunden fortsetzen und eine größere Stichprobe sammeln.
 
 
 
