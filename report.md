@@ -171,7 +171,7 @@ ORDER BY
 ## Tableau-Visualisierung
 ## Візуалізація Tableau
 
-![Umsatzentwicklung 2022–2024](Tableau/2.1_Sansonalität.jpg)
+![Dashboard з Tableau]( Tableau/2.1_Sansonalität.jpg)
 
 На графіку:
 
