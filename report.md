@@ -430,3 +430,215 @@ Paid Search генерує великий абсолютний обсяг атр
 
 Тому рекомендація полягає не в різкому перерозподілі коштів, а в **поетапному тестуванні нового marketing mix — нового розподілу маркетингового бюджету**.
 
+# Аналіз 2.3. Продуктивність категорій: чиста виручка, маржа та повернення
+# Analyse 2.3. Kategorienperformance: Nettoumsatz, Marge und Retouren
+
+## Business Question
+## Бізнес-питання
+
+Welche Produktkategorien sind wirklich attraktiv, wenn Nettoumsatz, Marge und Retouren gleichzeitig berücksichtigt werden?
+Які товарні категорії є справді привабливими, якщо одночасно врахувати чисту виручку, маржу та повернення?
+Додатково аналіз відповідає на питання:
+
+**Welche Kategorie erzeugt eine „Volumenillusion“ – hohen Umsatz, aber eine schwächere wirtschaftliche Qualität?**
+**Яка категорія створює «ілюзію обсягу» — велику виручку, але слабшу економічну якість?**
+
+---
+
+## Verwendete Daten
+## Використані дані
+
+Для аналізу використовувались таблиці:
+
+- `order_items` — товарні позиції всередині замовлень;
+- `orders` — інформація про замовлення;
+- `products` — характеристики товарів.
+
+Основні поля:
+
+- `order_id` — номер замовлення;
+- `product_id` — товар;
+- `category` — категорія товару;
+- `line_total` — сума товарної позиції;
+- `net_amount` — чиста сума замовлення після знижок;
+- `is_returned` — ознака повернення;
+- `margin_pct` — маржинальність товару.
+
+---
+
+## SQL-Abfrage
+## SQL-запит
+
+```sql
+WITH order_totals AS (
+    SELECT
+        order_id,
+        SUM(line_total) AS order_items_total
+    FROM order_items
+    GROUP BY order_id
+),
+
+category_orders AS (
+    SELECT DISTINCT
+        oi.category,
+        oi.order_id,
+        o.is_returned
+    FROM order_items oi
+    JOIN orders o
+        ON oi.order_id = o.order_id
+)
+
+SELECT
+    oi.category,
+
+    ROUND(
+        SUM(oi.line_total),
+        2
+    ) AS total_revenue,
+
+    ROUND(
+        SUM(
+            CASE
+                WHEN ot.order_items_total = 0 THEN 0
+                ELSE oi.line_total * o.net_amount / ot.order_items_total
+            END
+        ),
+        2
+    ) AS total_net_revenue,
+
+    ROUND(
+        AVG(p.margin_pct),
+        2
+    ) AS avg_margin_pct,
+
+    ROUND(
+        100.0 *
+        (
+            SELECT COUNT(*)
+            FROM category_orders co
+            WHERE co.category = oi.category
+              AND co.is_returned = 1
+        )
+        /
+        (
+            SELECT COUNT(*)
+            FROM category_orders co
+            WHERE co.category = oi.category
+        ),
+        2
+    ) AS return_rate_pct
+
+FROM order_items oi
+
+JOIN orders o
+    ON oi.order_id = o.order_id
+
+JOIN products p
+    ON oi.product_id = p.product_id
+
+JOIN order_totals ot
+    ON oi.order_id = ot.order_id
+
+GROUP BY
+    oi.category
+
+ORDER BY
+    total_net_revenue DESC;
+```
+### SQL-запит та результат у SQLiteOnline
+![Dashboard з Tableau](SQL/2.3.%20Kategorienperformance.jpg)
+
+---
+
+# Tableau-блок
+
+
+## Tableau-Visualisierung
+## Візуалізація Tableau
+
+![Kategorienperformance: Nettoumsatz, Marge und Retouren](Tableau/2.3_Kategorienperfomance.jpg)
+
+**X-Achse — вісь X:**  
+Nettoumsatz — чиста виручка.
+
+Чим правіше знаходиться категорія, тим більше чистої виручки вона генерує.
+
+**Y-Achse — вісь Y:**  
+Durchschnittliche Marge — середня маржа.
+
+Чим вище категорія, тим вищою є її маржинальність.
+
+**Größe der Kreise — розмір кружечків:**  
+Retourenquote — частка повернень.
+
+Чим більший кружечок, тим вища частка повернутих замовлень.
+
+## Interpretation
+## Інтерпретація
+
+### Electronics: Volumenillusion
+### Electronics: ілюзія обсягу
+
+Electronics генерує близько **$1.99M чистої виручки**, або приблизно **57.2% загальної чистої виручки**.
+
+Водночас категорія має:
+
+- найнижчу середню маржу — лише **12%**;
+- високу частку повернень — **15.97%**.
+
+Тому Electronics створює дуже великий оборот, але якість цієї виручки слабша, ніж може здаватися при оцінці лише за обсягом продажів.
+Категорію не можна назвати збитковою без повного аналізу витрат, однак її маржинальний профіль і рівень повернень є ризиковими.
+
+### Beauty: Verstecktes Potenzial
+### Beauty: прихований потенціал
+
+Beauty генерує лише близько **$159.2K чистої виручки**, але має найвищу маржу серед усіх категорій — **55%**.
+Частка повернень становить **9.97%**, що значно нижче, ніж у Electronics та Clothing.
+Таким чином Beauty виглядає як потенційний «прихований діамант» — невелика за обсягом категорія з дуже привабливою маржинальністю.
+
+### Home & Kitchen: Kernkategorie
+### Home & Kitchen: основна категорія
+
+Home & Kitchen демонструє найбільш збалансований профіль:
+
+- $549.7K чистої виручки;
+- 35% маржі;
+- 10.27% повернень.
+
+Категорія поєднує відносно великий обсяг із помірною маржею та контрольованим рівнем повернень.
+
+### Clothing
+
+Clothing має високу маржу — **45%**, але також найвищу частку повернень — **16.00%**.
+Це означає, що категорія має хороший економічний потенціал, однак потребує окремого аналізу причин повернень.
+
+## Business Recommendation
+## Бізнес-рекомендація
+
+### Electronics
+
+Необхідно не просто максимізувати оборот, а покращувати якість виручки:
+
+- аналізувати причини повернень;
+- перевірити товари з найнижчою маржею;
+- оптимізувати асортимент;
+- контролювати знижки;
+- оцінити фактичний прибуток після логістики та витрат на повернення.
+
+### Beauty
+
+Рекомендується контрольоване масштабування:
+
+- збільшити видимість категорії;
+- протестувати додатковий маркетинговий бюджет;
+- розширити найбільш маржинальні товарні позиції;
+- використовувати cross-sell та bundles — перехресні продажі та набори;
+- контролювати, чи зберігається маржа при зростанні обсягу.
+
+### Clothing
+
+Через високу маржу та одночасно найвищу частку повернень варто окремо дослідити причини повернень — наприклад, розміри, характеристики товарів, опис або очікування клієнтів.
+
+Загальна рекомендація для бізнесу:
+**не оцінювати категорії лише за виручкою. Для управлінських рішень необхідно одночасно враховувати обсяг, маржу та повернення.**
+
