@@ -121,7 +121,65 @@ Tableau використовувався для:
 
 **Raw Data → SQL → Analytical Dataset → Python Statistics → Tableau → Business Decision**
 
+# Аналіз 2.1. Сезонність та динаміка виручки
+# Analyse 2.1. Saisonalität und Umsatzentwicklung
 
+## Business Question
+## Бізнес-питання
+
+Wie entwickelt sich der Nettoumsatz von ShopSphere im Zeitverlauf und gibt es wiederkehrende saisonale Umsatzspitzen?
+
+Як змінюється чиста виручка ShopSphere у часі та чи існують повторювані сезонні піки продажів?
+
+---
+
+## Verwendete Daten
+## Використані дані
+
+Для аналізу використовувалась таблиця `orders`.
+
+Основні поля:
+
+- `order_id` — унікальний номер замовлення;
+- `order_year` — рік замовлення;
+- `order_month` — місяць замовлення;
+- `net_amount` — чиста сума замовлення після знижки.
+
+Оскільки метою було дослідити динаміку продажів у часі, окремі замовлення були агреговані до рівня місяця.
+
+---
+
+## SQL-Abfrage
+## SQL-запит
+
+```sql
+SELECT
+    order_year,
+    order_month,
+    printf('%04d-%02d-01', order_year, order_month) AS month_date,
+    COUNT(DISTINCT order_id) AS orders_count,
+    ROUND(SUM(net_amount), 2) AS total_net_revenue
+FROM orders
+GROUP BY
+    order_year,
+    order_month
+ORDER BY
+    order_year,
+    order_month;
+```
+
+## Tableau-Visualisierung
+## Візуалізація Tableau
+
+![Umsatzentwicklung 2022–2024](Tableau/2.1_Sansonalität.jpg)
+
+На графіку:
+
+- X-Achse — місяці;
+- Y-Achse — чиста виручка;
+- темна лінія — загальна динаміка виручки;
+- фіолетові ділянки — періоди сезонних піків;
+- підписи показують грудневі максимуми 2022, 2023 та 2024 років.
 
 
 
