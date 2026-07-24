@@ -166,6 +166,9 @@ ORDER BY
     order_year,
     order_month;
 ```
+
+![Dashboard з Tableau]( SQL/2.1_monthly_revenue.jpg)
+
 ## Was macht die SQL-Abfrage?
 ## Що робить SQL-запит?
 
