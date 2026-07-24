@@ -546,7 +546,7 @@ ORDER BY
     total_net_revenue DESC;
 ```
 ### SQL-запит та результат у SQLiteOnline
-![Dashboard з Tableau](SQL/2.3.%20Kategorienperformance.jpg)
+![SQL-запит і результат — продуктивність категорій](SQL/2.3.%20Kategorienperformance.jpg)
 ### Що робить SQL-запит?
 
 Запит об'єднує дані з таблиць `order_items`, `orders` та `products`, щоб оцінити кожну товарну категорію одночасно за трьома параметрами:
@@ -576,7 +576,7 @@ ORDER BY
 ## Tableau-Visualisierung
 ## Візуалізація Tableau
 
-![Dashboard з Tableau]( Tableau/2.3_Kategorienperfomance.jpg)
+![Продуктивність категорій — чиста виручка, маржа та повернення](Tableau/2.3_Kategorienperfomance.jpg)
 
 **X-Achse — вісь X:**  
 Nettoumsatz — чиста виручка.
