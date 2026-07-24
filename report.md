@@ -719,7 +719,7 @@ ORDER BY
 
 ### Візуалізація Tableau
 
-![Регіональна динаміка 2022–2024](Tableau/2.4_Regionen_im_Wandel.jpg)
+![Регіональна динаміка 2022–2024](Tableau/2.4_Regionen%20im%20Wandel.jpg)
 
 ### Інтерпретація
 
