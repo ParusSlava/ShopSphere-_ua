@@ -325,7 +325,7 @@ Ziel war es, technische Analyse mit verständlichem Data Storytelling und konkre
 
 ## Autorin
 
-**Iaroslawa Parusenkova**
+**Iaroslava Parusenkova**
 
 Data Analytics & Engineering  
 Germany, NRW
