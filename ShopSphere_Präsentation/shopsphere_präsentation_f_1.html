@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopSphere — Executive Business Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F6F9;
+    --card:#FFFFFF;
+    --text:#2F2D35;
+    --text-secondary:#706A78;
+    --lavender:#8F7AB8;
+    --lavender-dark:#66538D;
+    --lavender-light:#DDD5EB;
+    --border:#E7E2EC;
+    --green:#5E8C6C;
+    --green-light:#E5EEE7;
+    --amber:#B98A3E;
+    --amber-light:#F4EAD8;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow: 0 2px 16px rgba(47,45,53,0.06);
+    --shadow-hover: 0 10px 32px rgba(102,83,141,0.14);
+    --maxw:1320px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background:var(--bg); color:var(--text); line-height:1.6; font-size:16px;
+    letter-spacing:-0.002em; overflow-x:hidden;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,.display{ font-family:'Plus Jakarta Sans','Inter',sans-serif; letter-spacing:-0.015em; line-height:1.12; }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .wrap-wide{max-width:1680px;}
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  /* ===== HEADER ===== */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(247,246,249,0.88); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border); height:64px;
+  }
+  header .wrap{height:64px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:18px; letter-spacing:-0.02em; white-space:nowrap;}
+  .brand span{color:var(--lavender-dark);}
+  nav.mainnav{display:flex; gap:2px; overflow-x:auto; scrollbar-width:none;}
+  nav.mainnav::-webkit-scrollbar{display:none;}
+  nav.mainnav a{
+    font-size:13.5px; font-weight:600; color:var(--text-secondary);
+    padding:8px 11px; border-radius:8px; white-space:nowrap;
+    transition:color .18s ease, background .18s ease;
+  }
+  nav.mainnav a:hover{color:var(--text); background:var(--lavender-light);}
+  .langswitch{display:flex; align-items:center; gap:2px; background:var(--card); border:1px solid var(--border); border-radius:999px; padding:3px; flex:0 0 auto;}
+  .langswitch button{border:none; background:transparent; padding:6px 13px; font-size:12.5px; font-weight:700; border-radius:999px; color:var(--text-secondary); transition:background .18s ease, color .18s ease;}
+  .langswitch button.active{background:var(--lavender-dark); color:#fff;}
+  .langswitch button:focus-visible, a:focus-visible{outline:2px solid var(--lavender-dark); outline-offset:2px;}
+
+  section{padding:104px 0;}
+  section.tight{padding:64px 0;}
+  .eyebrow{font-size:12.5px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; margin-bottom:16px; display:block;}
+  .eyebrow.c-lav{color:var(--lavender-dark);}
+  .eyebrow.c-green{color:var(--green);}
+  .eyebrow.c-amber{color:var(--amber);}
+  .sec-q{font-size:13px; font-weight:700; color:var(--text-secondary); margin-bottom:10px; text-transform:uppercase; letter-spacing:0.06em;}
+  .sec-title{font-size:clamp(26px,3.2vw,38px); font-weight:800; margin-bottom:14px; max-width:820px;}
+  .sec-answer{font-size:19px; font-weight:600; color:var(--lavender-dark); max-width:700px; margin-bottom:40px;}
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  .decision-tag{
+    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:800;
+    letter-spacing:0.04em; text-transform:uppercase; padding:8px 14px; border-radius:999px; margin-top:8px;
+  }
+  .decision-tag.lav{background:var(--lavender-light); color:var(--lavender-dark);}
+  .decision-tag.green{background:var(--green-light); color:var(--green);}
+  .decision-tag.amber{background:var(--amber-light); color:var(--amber);}
+
+  .decision-line{font-size:14.5px; color:var(--text); margin-top:14px; line-height:1.55;}
+  .decision-line b{font-weight:700;}
+
+  /* ===== HERO ===== */
+  .hero{
+    padding:88px 0 96px;
+    background:linear-gradient(180deg, #FBFAFC 0%, var(--bg) 100%);
+    border-bottom:1px solid var(--border);
+  }
+  .hero .wrap{display:grid; grid-template-columns:1.15fr 0.85fr; gap:64px; align-items:center;}
+  .hero h1{font-size:clamp(42px,5.6vw,64px); font-weight:800; margin-bottom:4px;}
+  .hero .subtitle-line{font-size:16px; font-weight:600; color:var(--lavender-dark); margin-bottom:6px;}
+  .hero .period{font-size:13.5px; color:var(--text-secondary); font-weight:600; margin-bottom:26px;}
+  .hero .statement{font-size:clamp(22px,2.6vw,28px); font-weight:800; line-height:1.28; margin-bottom:16px;}
+  .hero .lede{font-size:15.5px; color:var(--text-secondary); max-width:480px; margin-bottom:34px; line-height:1.6;}
+  .hero-cta{display:flex; gap:12px; flex-wrap:wrap;}
+  .hero-credit{font-size:12.5px; color:var(--text-secondary); margin-top:22px; font-weight:500;}
+  .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:var(--radius-sm); font-size:14px; font-weight:700; border:1px solid transparent; transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;}
+  .btn-primary{background:var(--lavender-dark); color:#fff; box-shadow:var(--shadow);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:var(--shadow-hover);}
+  .btn-secondary{background:transparent; color:var(--text); border-color:var(--border);}
+  .btn-secondary:hover{transform:translateY(-2px); border-color:var(--lavender);}
+
+  .health-panel{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:30px; box-shadow:var(--shadow);}
+  .health-panel .hp-label{font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-secondary); margin-bottom:22px;}
+  .hp-kpis{display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:22px;}
+  .hp-kpi .num{font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(22px,2.4vw,28px); font-weight:800;}
+  .hp-kpi .lbl{font-size:12px; color:var(--text-secondary); font-weight:600; margin-top:4px;}
+  .hp-status{display:flex; gap:8px; flex-wrap:wrap; padding-top:20px; border-top:1px solid var(--border);}
+
+  /* ===== PROJECT QUESTIONS MAP ===== */
+  .qmap-list{display:flex; flex-direction:column; gap:2px; margin-top:8px;}
+  .qmap-item{
+    display:flex; align-items:center; gap:20px; padding:18px 6px;
+    border-bottom:1px solid var(--border); transition:padding-left .18s ease, background .18s ease;
+  }
+  .qmap-item:first-child{border-top:1px solid var(--border);}
+  .qmap-item:hover{padding-left:14px; background:rgba(143,122,184,0.05);}
+  .qmap-item .qn{
+    font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:15px; color:var(--lavender-light);
+    -webkit-text-stroke:1.3px var(--lavender-dark); flex:0 0 auto; width:34px;
+  }
+  .qmap-item .qt{font-size:15.5px; font-weight:600; color:var(--text); flex:1;}
+  .qmap-item .qa{font-size:13px; color:var(--lavender-dark); font-weight:700; flex:0 0 auto;}
+
+  /* ===== FAZIT ===== */
+  .fazit-line{
+    display:flex; gap:12px; align-items:flex-start; background:var(--card); border:1px solid var(--border);
+    border-radius:var(--radius-sm); padding:16px 18px; margin-top:24px; max-width:680px;
+  }
+  .fazit-line .flabel{font-size:12px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; color:var(--lavender-dark); flex:0 0 auto; padding-top:1px;}
+  .fazit-line p{font-size:14px; color:var(--text); line-height:1.55; font-weight:500;}
+
+  /* ===== EXEC ANSWER (3 signals) ===== */
+  .signal-row{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:20px;}
+  .signal-block{background:var(--card); border:1px solid var(--border); border-left:3px solid var(--lavender); border-radius:var(--radius-sm); padding:24px; box-shadow:var(--shadow);}
+  .signal-block.green{border-left-color:var(--green);}
+  .signal-block.amber{border-left-color:var(--amber);}
+  .signal-block .sig-num{font-family:'Plus Jakarta Sans',sans-serif; font-size:26px; font-weight:800; margin:6px 0 10px;}
+  .signal-block p{font-size:13.5px; color:var(--text-secondary); line-height:1.5;}
+
+  /* ===== GROWTH CHART ===== */
+  .growth-wrap{display:grid; grid-template-columns:0.85fr 1.15fr; gap:48px; align-items:center;}
+  .growth-chart-box{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:24px 24px 12px; box-shadow:var(--shadow);}
+  .growth-chart-box svg{width:100%; height:auto; display:block;}
+
+  /* ===== REGIONS ===== */
+  .region-split{display:grid; grid-template-columns:1.3fr 1fr; gap:22px; align-items:stretch;}
+  .region-block{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:32px; box-shadow:var(--shadow); display:flex; flex-direction:column; justify-content:space-between;}
+  .region-block .rlabel{font-size:12px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--lavender-dark); margin-bottom:14px;}
+  .region-block.today .rlabel{color:var(--green);}
+  .region-block h3{font-size:22px; font-weight:800; margin-bottom:12px;}
+  .region-block .rfig{font-family:'Plus Jakarta Sans',sans-serif; font-size:38px; font-weight:800;}
+  .region-block .rsub{font-size:13.5px; color:var(--text-secondary); margin-top:4px; margin-bottom:18px;}
+  .lowbase-note{font-size:12.5px; background:var(--amber-light); color:var(--amber); padding:10px 12px; border-radius:9px; font-weight:600; line-height:1.5;}
+  .europe-note{font-size:12.5px; color:var(--text-secondary); margin-top:16px;}
+
+  /* ===== CATEGORIES ===== */
+  .category-split{display:grid; grid-template-columns:1.3fr 1fr; gap:22px;}
+  .cat-block{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:34px; box-shadow:var(--shadow);}
+  .cat-block .clabel{font-size:12px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:16px;}
+  .cat-block.electronics .clabel{color:var(--amber);}
+  .cat-block.beauty .clabel{color:var(--green);}
+  .cat-block h3{font-size:24px; font-weight:800; margin-bottom:6px;}
+  .cat-figs{display:flex; gap:28px; margin:22px 0; flex-wrap:wrap;}
+  .cat-figs div b{display:block; font-family:'Plus Jakarta Sans',sans-serif; font-size:24px; font-weight:800;}
+  .cat-figs div span{font-size:12px; color:var(--text-secondary); font-weight:600;}
+  .cat-headline{font-size:16px; font-weight:700; margin-bottom:16px; color:var(--text);}
+
+  /* ===== MARKETING ===== */
+  .plain-answer{font-size:18px; font-weight:700; margin-bottom:36px; max-width:640px;}
+  .mkt-groups{display:flex; flex-direction:column; gap:16px;}
+  .mkt-group{background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:24px 26px; box-shadow:var(--shadow); display:grid; grid-template-columns:170px 1fr; gap:24px; align-items:center;}
+  .mkt-group .glabel{font-size:12px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:6px 0;}
+  .mkt-group.efficient{border-left:3px solid var(--green);}
+  .mkt-group.efficient .glabel{color:var(--green);}
+  .mkt-group.value{border-left:3px solid var(--lavender);}
+  .mkt-group.value .glabel{color:var(--lavender-dark);}
+  .mkt-group.optimize{border-left:3px solid var(--amber);}
+  .mkt-group.optimize .glabel{color:var(--amber);}
+  .mkt-items{display:flex; gap:32px; flex-wrap:wrap;}
+  .mkt-item b{display:block; font-size:15px; font-weight:700;}
+  .mkt-item span{font-size:12.5px; color:var(--text-secondary);}
+  .roi-explain{font-size:13px; color:var(--text-secondary); margin-top:18px; max-width:600px; line-height:1.55;}
+  .method-note{font-size:11.5px; color:var(--text-secondary); margin-top:8px; font-style:italic;}
+
+  /* ===== CUSTOMERS ===== */
+  .customer-hero{text-align:left; margin-bottom:36px;}
+  .customer-hero .big{font-family:'Plus Jakarta Sans',sans-serif; font-size:clamp(48px,7vw,88px); font-weight:800; color:var(--lavender-dark); line-height:1;}
+  .concentration-bar{height:14px; border-radius:99px; background:var(--lavender-light); overflow:hidden; margin:22px 0 20px; max-width:520px;}
+  .concentration-fill{height:100%; width:0; background:linear-gradient(90deg,var(--lavender),var(--lavender-dark)); border-radius:99px; transition:width 1.2s ease;}
+  .customer-substats{display:flex; gap:32px; flex-wrap:wrap; margin-bottom:20px;}
+  .customer-substats div b{display:block; font-size:19px; font-weight:800;}
+  .customer-substats div span{font-size:12px; color:var(--text-secondary);}
+  .pareto-note{display:inline-flex; gap:10px; align-items:flex-start; background:var(--lavender-light); padding:12px 14px; border-radius:10px; max-width:560px;}
+  .pareto-note .mark{font-weight:800; color:var(--lavender-dark); font-size:15px; line-height:1;}
+  .pareto-note p{font-size:13px; font-weight:600;}
+
+  .crossdevice{margin-top:44px; padding-top:36px; border-top:1px solid var(--border);}
+  .cd-inner{display:grid; grid-template-columns:0.6fr 1.4fr; gap:28px; align-items:center; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:24px; box-shadow:var(--shadow);}
+  .cd-inner h4{font-size:14.5px; font-weight:700; margin-bottom:6px;}
+  .cd-inner .cd-answer{font-size:13px; color:var(--text-secondary); margin-bottom:4px;}
+  .cd-table{display:flex; gap:24px; flex-wrap:wrap;}
+  .cd-metric{font-size:12px;}
+  .cd-metric b{display:block; font-size:13.5px; font-weight:700; color:var(--text);}
+  .cd-note{font-size:11.5px; color:var(--text-secondary); margin-top:10px; font-style:italic; grid-column:1/-1;}
+
+  /* ===== A/B TEST ===== */
+  .ab-headline{font-size:clamp(22px,2.8vw,30px); font-weight:800; margin-bottom:20px; max-width:760px;}
+  .ab-badge-row{margin-bottom:36px;}
+  .ab-big-badge{display:inline-block; background:var(--lavender-dark); color:#fff; font-size:14px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; padding:14px 28px; border-radius:12px;}
+  .ab-results{display:grid; grid-template-columns:1fr 1.3fr 1fr; gap:18px; margin-bottom:28px;}
+  .ab-result{background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:22px; box-shadow:var(--shadow); text-align:center;}
+  .ab-result.highlight{border:2px solid var(--lavender); transform:scale(1.04);}
+  .ab-result .seg{font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-secondary); margin-bottom:12px;}
+  .ab-result .delta{font-family:'Plus Jakarta Sans',sans-serif; font-size:26px; font-weight:800; color:var(--lavender-dark);}
+  .ab-result .lift{font-size:13.5px; font-weight:700; margin-top:2px;}
+  .ab-plain{font-size:15.5px; font-weight:600; max-width:600px; margin-bottom:10px;}
+  .ab-fine{font-size:12px; color:var(--text-secondary); max-width:600px;}
+
+  /* ===== PILLARS ===== */
+  .pillars{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .pillar{border-radius:var(--radius); padding:30px 24px; display:flex; flex-direction:column; gap:20px;}
+  .pillar.protect{background:var(--lavender-light);}
+  .pillar.grow{background:var(--green-light);}
+  .pillar.optimize{background:var(--amber-light);}
+  .pillar.test{background:var(--card); border:2px dashed var(--lavender);}
+  .pillar .pname{font-family:'Plus Jakarta Sans',sans-serif; font-size:22px; font-weight:800; margin-bottom:2px;}
+  .pillar.protect .pname{color:var(--lavender-dark);}
+  .pillar.grow .pname{color:var(--green);}
+  .pillar.optimize .pname{color:var(--amber);}
+  .pillar.test .pname{color:var(--lavender-dark);}
+  .pillar ul{list-style:none; display:flex; flex-direction:column; gap:16px;}
+  .pillar li{display:flex; flex-direction:column; gap:4px;}
+  .pi-name{font-size:15px; font-weight:800; color:var(--text);}
+  .pi-action{font-size:12.5px; font-weight:500; line-height:1.5; color:var(--text-secondary);}
+
+  /* ===== TABLEAU ===== */
+  .tableau-shell{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:12px; box-shadow:var(--shadow); position:relative;}
+  .tableau-wrapper{position:relative; width:100%; min-height:520px; border-radius:var(--radius-sm); overflow-x:auto; overflow-y:hidden;}
+  .tableau-skeleton{position:absolute; inset:0; z-index:5; background:linear-gradient(100deg, var(--bg) 30%, var(--lavender-light) 50%, var(--bg) 70%); background-size:220% 100%; animation:shimmer 1.6s ease-in-out infinite; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px; transition:opacity .5s ease; border-radius:var(--radius-sm);}
+  .tableau-skeleton.hide{opacity:0; pointer-events:none;}
+  @keyframes shimmer{0%{background-position:0% 0;} 100%{background-position:-220% 0;}}
+  .tableau-skeleton span{font-size:13px; font-weight:600; color:var(--lavender-dark);}
+  .spinner{width:26px; height:26px; border-radius:50%; border:3px solid var(--lavender-light); border-top-color:var(--lavender-dark); animation:spin 0.9s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .tableau-levels{display:flex; gap:16px; margin-bottom:28px; flex-wrap:wrap;}
+  .tlevel{flex:1; min-width:200px; background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:16px 18px;}
+  .tlevel b{display:block; font-size:12.5px; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; color:var(--lavender-dark); margin-bottom:4px;}
+  .tlevel span{font-size:12.5px; color:var(--text-secondary);}
+
+  /* ===== METHODOLOGY ===== */
+  .pipeline{display:flex; align-items:center; gap:0; flex-wrap:wrap; background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); margin-bottom:32px;}
+  .pipe-step{display:flex; flex-direction:column; align-items:center; text-align:center; padding:8px 14px; flex:1; min-width:110px;}
+  .pipe-step .dot{width:11px; height:11px; border-radius:50%; background:var(--lavender); margin-bottom:8px;}
+  .pipe-step:last-child .dot{background:var(--lavender-dark);}
+  .pipe-step span{font-size:12.5px; font-weight:700;}
+  .pipe-arrow{color:var(--lavender-light); font-size:18px; flex:0 0 auto;}
+  .tables-row{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:24px;}
+  .table-chip{background:var(--card); border:1px solid var(--border); border-radius:var(--radius-sm); padding:14px; text-align:center;}
+  .table-chip code{display:block; font-family:'SFMono-Regular',Consolas,monospace; font-size:12.5px; font-weight:700; color:var(--lavender-dark); margin-bottom:6px;}
+  .table-chip p{font-size:11.5px; color:var(--text-secondary); line-height:1.4;}
+  .method-footer{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  .method-footer .tools{font-size:13px; color:var(--text-secondary); font-weight:600;}
+  .method-footer a{font-size:13.5px; font-weight:700; color:var(--lavender-dark);}
+  .method-footer a:hover{text-decoration:underline;}
+
+  /* ===== FINAL ===== */
+  .final{background:linear-gradient(135deg, var(--lavender-dark), #4d3d6b); border-radius:24px; padding:64px 48px; color:#fff; text-align:center; position:relative; overflow:hidden;}
+  .final::before{content:""; position:absolute; inset:0; background:radial-gradient(600px 300px at 20% 0%, rgba(255,255,255,0.10), transparent 60%);}
+  .final-inner{position:relative; z-index:2; max-width:780px; margin:0 auto;}
+  .final .statement{font-size:clamp(22px,3.2vw,32px); font-weight:800; line-height:1.25; margin-bottom:16px;}
+  .final .sub{font-size:14.5px; opacity:0.9; line-height:1.7; margin-bottom:32px;}
+  .final .factors{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:32px;}
+  .final .factors span{font-size:11.5px; font-weight:700; background:rgba(255,255,255,0.14); padding:6px 12px; border-radius:999px;}
+  .final-cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .final-cta a{padding:13px 26px; border-radius:var(--radius-sm); font-size:14px; font-weight:700; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.28); color:#fff; transition:background .18s ease, transform .18s ease;}
+  .final-cta a:hover{background:rgba(255,255,255,0.22); transform:translateY(-2px);}
+
+  footer{padding:40px 0 56px; text-align:center;}
+  footer p{font-size:12px; color:var(--text-secondary);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:1080px){
+    .hero .wrap{grid-template-columns:1fr; gap:40px;}
+    .signal-row{grid-template-columns:1fr;}
+    .growth-wrap{grid-template-columns:1fr;}
+    .region-split{grid-template-columns:1fr;}
+    .category-split{grid-template-columns:1fr;}
+    .mkt-group{grid-template-columns:1fr; gap:12px;}
+    .ab-results{grid-template-columns:1fr;}
+    .ab-result.highlight{transform:none;}
+    .pillars{grid-template-columns:1fr 1fr;}
+    .cd-inner{grid-template-columns:1fr;}
+    .tables-row{grid-template-columns:repeat(2,1fr);}
+    nav.mainnav{display:none;}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px;}
+    section{padding:64px 0;}
+    .pillars{grid-template-columns:1fr;}
+    .tables-row{grid-template-columns:1fr 1fr;}
+    .hp-kpis{grid-template-columns:1fr 1fr;}
+    .pipeline{flex-direction:column; align-items:flex-start;}
+    .pipe-arrow{display:none;}
+    .final{padding:44px 24px;}
+    .cat-figs{gap:18px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Shop<span>Sphere</span></div>
+    <nav class="mainnav">
+      <a href="#overview" data-i18n="nav.overview">Übersicht</a>
+      <a href="#growth" data-i18n="nav.growth">Wachstum</a>
+      <a href="#categories" data-i18n="nav.categories">Kategorien</a>
+      <a href="#marketing" data-i18n="nav.marketing">Marketing</a>
+      <a href="#customers" data-i18n="nav.customers">Kunden</a>
+      <a href="#abtest" data-i18n="nav.abtest">A/B-Test</a>
+      <a href="#decisions" data-i18n="nav.decisions">Entscheidungen</a>
+      <a href="#dashboard" data-i18n="nav.dashboard">Dashboard</a>
+    </nav>
+    <div class="langswitch" role="group" aria-label="Language switch">
+      <button type="button" id="btn-de" aria-pressed="true">DE</button>
+      <button type="button" id="btn-ua" aria-pressed="false">UA</button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO / BUSINESS HEALTH ===== -->
+<section class="hero" id="overview">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow c-lav" data-i18n="hero.eyebrow">Data Analytics Abschlussprojekt</span>
+      <h1>ShopSphere</h1>
+      <div class="subtitle-line" data-i18n="hero.subtitle">Analyse eines globalen Marktplatzes</div>
+      <div class="period" data-i18n="hero.period">2022–2024</div>
+      <p class="statement" data-i18n="hero.statement">ShopSphere wächst schnell — aber wächst das Unternehmen auch gesund?</p>
+      <p class="lede" data-i18n="hero.lede">Analyse von Wachstum, Profitabilität, Marketingeffizienz, Kundenwert und strategischen Wachstumschancen.</p>
+      <div class="hero-cta">
+        <a href="#exec" class="btn btn-primary" data-i18n="hero.btn1">Executive Overview</a>
+        <a href="#dashboard" class="btn btn-secondary" data-i18n="hero.btn2">Live Dashboard</a>
+        <a href="https://github.com/ParusSlava/ShopSphere-_ua" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="hero.btn3">GitHub</a>
+      </div>
+      <p class="hero-credit" data-i18n="hero.credit">Iaroslava Parusenkova · Abschlussprojekt „Data Analytics + KI &amp; Engineering“ · Deutsche Tech Akademie</p>
+    </div>
+
+    <div class="health-panel reveal">
+      <div class="hp-label" data-i18n="hero.panelLabel">Business Health</div>
+      <div class="hp-kpis">
+        <div class="hp-kpi"><div class="num">$3.47M</div><div class="lbl" data-i18n="hero.kpi1">Nettoumsatz</div></div>
+        <div class="hp-kpi"><div class="num">12,274</div><div class="lbl" data-i18n="hero.kpi2">Bestellungen</div></div>
+        <div class="hp-kpi"><div class="num">$283</div><div class="lbl" data-i18n="hero.kpi3">Ø Bestellwert</div></div>
+        <div class="hp-kpi"><div class="num">9.77%</div><div class="lbl" data-i18n="hero.kpi4">Retourenquote</div></div>
+      </div>
+      <div class="hp-status">
+        <span class="decision-tag green" data-i18n="hero.status1">Starkes Wachstum</span>
+        <span class="decision-tag amber" data-i18n="hero.status2">Optimierungsbedarf</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECT QUESTIONS MAP ===== -->
+<section class="tight" style="border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <span class="eyebrow c-lav" data-i18n="qmap.eyebrow">Projektfragen</span>
+    <h2 class="sec-title" data-i18n="qmap.title">Sieben Fragen, die diese Analyse beantwortet</h2>
+    <p class="sec-answer" style="margin-bottom:8px;" data-i18n="qmap.subtitle">Jede Frage wird Schritt für Schritt mit Daten beantwortet — mit einem Fazit am Ende.</p>
+
+    <div class="qmap-list">
+      <a href="#growth" class="qmap-item reveal"><span class="qn">01</span><span class="qt" data-i18n="qmap.q1">Wächst das Unternehmen?</span><span class="qa">→</span></a>
+      <a href="#regions" class="qmap-item reveal"><span class="qn">02</span><span class="qt" data-i18n="qmap.q2">Wo sollten wir wachsen?</span><span class="qa">→</span></a>
+      <a href="#categories" class="qmap-item reveal"><span class="qn">03</span><span class="qt" data-i18n="qmap.q3">Welche Kategorien schaffen wirklich Wert?</span><span class="qa">→</span></a>
+      <a href="#marketing" class="qmap-item reveal"><span class="qn">04</span><span class="qt" data-i18n="qmap.q4">Wohin fließt das Marketingbudget?</span><span class="qa">→</span></a>
+      <a href="#customers" class="qmap-item reveal"><span class="qn">05</span><span class="qt" data-i18n="qmap.q5">Wer sind unsere wertvollsten Kunden?</span><span class="qa">→</span></a>
+      <a href="#abtest" class="qmap-item reveal"><span class="qn">06</span><span class="qt" data-i18n="qmap.q6">Hat der neue Checkout funktioniert?</span><span class="qa">→</span></a>
+      <a href="#decisions" class="qmap-item reveal"><span class="qn">07</span><span class="qt" data-i18n="qmap.q7">Was sollte das Management jetzt tun?</span><span class="qa">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXECUTIVE ANSWER ===== -->
+<section class="tight" id="exec" style="background:#FBFAFC; border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <h2 class="sec-title" data-i18n="exec.title">Was muss das Management zuerst wissen?</h2>
+    <div class="signal-row" style="margin-top:32px;">
+      <div class="signal-block reveal">
+        <span class="eyebrow c-lav" style="margin-bottom:0;" data-i18n="exec.s1.label">Growth</span>
+        <div class="sig-num">$759.4K <span style="font-size:13px; font-weight:600; color:var(--text-secondary);" data-i18n="exec.s1.sub">— Dezember 2024</span></div>
+        <p data-i18n="exec.s1.p">Rekord-Monatsumsatz und wiederkehrende Saisonalität zum Jahresende.</p>
+      </div>
+      <div class="signal-block green reveal">
+        <span class="eyebrow c-green" style="margin-bottom:0;" data-i18n="exec.s2.label">Opportunity</span>
+        <div class="sig-num">$613.9K <span style="font-size:13px; font-weight:600; color:var(--text-secondary);" data-i18n="exec.s2.sub">— Southeast Asia 2024</span></div>
+        <p data-i18n="exec.s2.p">Starke Wachstumschance — der Low-Base-Effekt muss berücksichtigt werden.</p>
+      </div>
+      <div class="signal-block amber reveal">
+        <span class="eyebrow c-amber" style="margin-bottom:0;" data-i18n="exec.s3.label">Watch</span>
+        <div class="sig-num">12% <span style="font-size:13px; font-weight:600; color:var(--text-secondary);" data-i18n="exec.s3.sub">Marge — Electronics</span></div>
+        <p data-i18n="exec.s3.p">Hoher Umsatz bedeutet nicht automatisch hohe wirtschaftliche Qualität.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BQ1 — GROWTH ===== -->
+<section id="growth">
+  <div class="wrap">
+    <div class="sec-q" data-i18n="growth.q">Geschäftsfrage — Wie entwickelt sich ShopSphere?</div>
+    <h2 class="sec-title" data-i18n="growth.title">Wächst das Unternehmen?</h2>
+    <p class="sec-answer" data-i18n="growth.answer">Ja — ShopSphere wächst stark, aber mit klarer Saisonalität.</p>
+
+    <div class="growth-wrap">
+      <div class="reveal">
+        <p style="font-size:15px; color:var(--text-secondary); line-height:1.7; margin-bottom:20px;" data-i18n="growth.meaning">Starkes Wachstum schafft Chancen — aber auch operativen Druck auf Lager, Logistik und Support.</p>
+        <div class="fazit-line reveal"><span class="flabel" data-i18n="fazit.label">Fazit</span><p data-i18n="growth.fazit">ShopSphere wächst über drei Jahre stark, mit wiederkehrenden Umsatzspitzen im November/Dezember.</p></div>
+        <div class="decision-tag lav" style="margin-top:16px;" data-i18n="growth.decisionTag">Entscheidung</div>
+        <p class="decision-line" data-i18n="growth.decision">Lagerbestand, Logistik, Marketing und Customer Support <b>vor November–Dezember</b> vorbereiten.</p>
+      </div>
+
+      <div class="growth-chart-box reveal">
+        <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="gFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8F7AB8" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="#8F7AB8" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path fill="url(#gFill)" d="M20,250 C80,248 120,244 160,238 C200,232 220,150 260,120 C300,90 320,205 360,195 C400,185 430,60 470,35 C500,15 520,10 540,8 L540,270 L20,270 Z"/>
+          <path fill="none" stroke="#8F7AB8" stroke-width="2.5" d="M20,250 C80,248 120,244 160,238 C200,232 220,150 260,120 C300,90 320,205 360,195 C400,185 430,60 470,35 C500,15 520,10 540,8"/>
+          <circle cx="260" cy="120" r="5" fill="#66538D"/>
+          <circle cx="360" cy="195" r="5" fill="#66538D"/>
+          <circle cx="540" cy="8" r="6" fill="#66538D"/>
+          <text x="200" y="105" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="13" fill="#66538D">12.2022</text>
+          <text x="200" y="122" font-family="Inter, sans-serif" font-size="12" fill="#706A78">$72.9K</text>
+          <text x="300" y="180" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="13" fill="#66538D">12.2023</text>
+          <text x="300" y="197" font-family="Inter, sans-serif" font-size="12" fill="#706A78">$206.4K</text>
+          <text x="440" y="-10" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="14" fill="#66538D" transform="translate(0,45)">12.2024</text>
+          <text x="440" y="7" font-family="Inter, sans-serif" font-size="12.5" fill="#706A78" transform="translate(0,45)">$759.4K</text>
+          <line x1="20" y1="270" x2="540" y2="270" stroke="#E7E2EC" stroke-width="1"/>
+          <text x="20" y="288" font-family="Inter, sans-serif" font-size="11" fill="#706A78">2022</text>
+          <text x="270" y="288" font-family="Inter, sans-serif" font-size="11" fill="#706A78">2023</text>
+          <text x="510" y="288" font-family="Inter, sans-serif" font-size="11" fill="#706A78">2024</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BQ2 — REGIONS ===== -->
+<section id="regions" style="background:#FBFAFC; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-q" data-i18n="regions.q">Geschäftsfrage — Wo liegt das nächste Wachstum?</div>
+    <h2 class="sec-title" data-i18n="regions.title">Welche Regionen sind heute stark — und wo wachsen wir morgen?</h2>
+    <p class="sec-answer" data-i18n="regions.answer">North America ist heute der größte Markt. Southeast Asia zeigt das stärkste Wachstumspotenzial.</p>
+
+    <div class="region-split">
+      <div class="region-block today reveal">
+        <div>
+          <div class="rlabel" data-i18n="regions.na.label">Heutiger Marktführer</div>
+          <h3>North America</h3>
+          <div class="rfig">$718.7K</div>
+          <div class="rsub" data-i18n="regions.na.sub">2,632 Bestellungen · 2024</div>
+        </div>
+        <div class="europe-note" data-i18n="regions.europe">Zum Vergleich: Europe erzielt $545.6K.</div>
+      </div>
+      <div class="region-block reveal">
+        <div>
+          <div class="rlabel" data-i18n="regions.sea.label">Nächste Wachstumschance</div>
+          <h3>Southeast Asia</h3>
+          <div class="rfig">$613.9K</div>
+          <div class="rsub" data-i18n="regions.sea.sub">2,029 Bestellungen · 2024</div>
+        </div>
+        <div class="lowbase-note" data-i18n="regions.lowbase">Ausgangsbasis 2022: nur rund $12.7K. Das starke Wachstum startet von einem sehr niedrigen Niveau.</div>
+      </div>
+    </div>
+
+    <div class="fazit-line reveal" style="margin-top:28px;"><span class="flabel" data-i18n="fazit.label">Fazit</span><p data-i18n="regions.fazit">North America bleibt der stabile Kern des Geschäfts. Southeast Asia wächst dynamisch, aber noch von einer kleinen Basis aus.</p></div>
+    <div style="margin-top:16px;">
+      <div class="decision-tag lav" data-i18n="regions.decisionTag">Entscheidung</div>
+      <p class="decision-line" data-i18n="regions.decision"><b>North America schützen.</b> Kontrolliertes Wachstum in Southeast Asia testen — nicht aggressiv skalieren.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BQ3 — CATEGORIES ===== -->
+<section id="categories">
+  <div class="wrap">
+    <div class="sec-q" data-i18n="cat.q">Geschäftsfrage — Wer schafft wirklich Wert?</div>
+    <h2 class="sec-title" data-i18n="cat.title">Welche Kategorien sind wirtschaftlich attraktiv?</h2>
+    <p class="sec-answer" data-i18n="cat.answer">Hoher Umsatz bedeutet nicht automatisch hohe wirtschaftliche Qualität.</p>
+
+    <div class="category-split">
+      <div class="cat-block electronics reveal">
+        <div class="clabel" data-i18n="cat.e.label">Volumenführer</div>
+        <h3>Electronics</h3>
+        <div class="cat-figs">
+          <div><b>$1.99M</b><span data-i18n="cat.e.l1">Nettoumsatz</span></div>
+          <div><b>12%</b><span data-i18n="cat.e.l2">Marge</span></div>
+          <div><b>15.97%</b><span data-i18n="cat.e.l3">Retouren</span></div>
+        </div>
+        <div class="cat-headline" data-i18n="cat.e.headline">Umsatz ≠ wirtschaftliche Qualität.</div>
+        <div class="decision-tag amber" data-i18n="cat.e.decisionTag">Optimieren — nicht aufgeben</div>
+        <p class="decision-line" data-i18n="cat.e.decision">Retourentreiber, Sortiment, Marge und Rabatte gezielt verbessern.</p>
+      </div>
+      <div class="cat-block beauty reveal">
+        <div class="clabel" data-i18n="cat.b.label">Wachstumschance</div>
+        <h3>Beauty</h3>
+        <div class="cat-figs">
+          <div><b>$159K</b><span data-i18n="cat.b.l1">Nettoumsatz</span></div>
+          <div><b>55%</b><span data-i18n="cat.b.l2">Marge</span></div>
+        </div>
+        <div class="decision-tag green" data-i18n="cat.b.decisionTag">Kontrolliert testen</div>
+        <p class="decision-line" data-i18n="cat.b.decision">Kategorie-Wachstum testen — die hohe Marge bleibt beim Skalieren nicht automatisch erhalten.</p>
+      </div>
+    </div>
+
+    <div class="fazit-line reveal" style="margin-top:28px;"><span class="flabel" data-i18n="fazit.label">Fazit</span><p data-i18n="cat.fazit">Volumen und wirtschaftliche Qualität sind zwei verschiedene Dinge — Electronics führt beim Umsatz, Beauty bei der Marge.</p></div>
+  </div>
+</section>
+
+<!-- ===== BQ4 — MARKETING ===== -->
+<section id="marketing" style="background:#FBFAFC; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-q" data-i18n="mkt.q">Geschäftsfrage — Wird das Budget effizient eingesetzt?</div>
+    <h2 class="sec-title" data-i18n="mkt.title">Wohin fließt das Marketingbudget?</h2>
+    <p class="plain-answer" data-i18n="mkt.plain">Das größte Budget arbeitet nicht am effizientesten.</p>
+
+    <div class="mkt-groups">
+      <div class="mkt-group efficient reveal">
+        <div class="glabel" data-i18n="mkt.g1.label">Effizient</div>
+        <div class="mkt-items">
+          <div class="mkt-item"><b>Organic — ROI 8.02</b></div>
+          <div class="mkt-item"><b>Email — ROI 6.50</b></div>
+        </div>
+      </div>
+      <div class="mkt-group value reveal">
+        <div class="glabel" data-i18n="mkt.g2.label">Hoher Kundenwert</div>
+        <div class="mkt-items">
+          <div class="mkt-item"><b>Influencer</b><span data-i18n="mkt.g2.i1">Ø LTV ~$1.99K · Median ~$1.20K</span></div>
+          <div class="mkt-item"><b>Referral</b><span data-i18n="mkt.g2.i2">Ø LTV ~$1.79K · Median ~$1.12K</span></div>
+        </div>
+      </div>
+      <div class="mkt-group optimize reveal">
+        <div class="glabel" data-i18n="mkt.g3.label">Optimieren</div>
+        <div class="mkt-items">
+          <div class="mkt-item"><b>Paid Search</b><span data-i18n="mkt.g3.i1">45.95% Budget ($450,959) · ~$598.7K Umsatz · ROI 1.33 · Median LTV ~$0.28K</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="roi-explain" data-i18n="mkt.roiExplain">Für jeden investierten $1 generiert Paid Search etwa $1.33 an zugeordnetem Umsatz.</p>
+    <p class="method-note" data-i18n="mkt.methodNote">Methodische Anmerkung: Die Kennzahl entspricht technisch eher ROAS (zugeordneter Umsatz ÷ Budget).</p>
+
+    <div class="fazit-line reveal" style="margin-top:24px;"><span class="flabel" data-i18n="fazit.label">Fazit</span><p data-i18n="mkt.fazit">Das größte Budget (Paid Search) liefert den geringsten ROI und Kundenwert — kleinere Kanäle arbeiten effizienter.</p></div>
+    <div style="margin-top:16px;">
+      <div class="decision-tag amber" data-i18n="mkt.decisionTag">Entscheidung</div>
+      <p class="decision-line" data-i18n="mkt.decision">Budget <b>schrittweise umschichten</b>. Marginalen ROI, CAC und Median-LTV beobachten — nicht abrupt stoppen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BQ5 — CUSTOMERS ===== -->
+<section id="customers">
+  <div class="wrap">
+    <div class="sec-q" data-i18n="cust.q">Geschäftsfrage — Wer trägt den Umsatz?</div>
+    <h2 class="sec-title" data-i18n="cust.title">Wer sind unsere wertvollsten Kunden?</h2>
+    <p class="plain-answer" data-i18n="cust.plain">Nur 150 Kunden erzeugen mehr als ein Drittel des gesamten Umsatzes.</p>
+
+    <div class="customer-hero reveal">
+      <div class="big">5% → 35.1%</div>
+      <div class="concentration-bar"><div class="concentration-fill" data-w="35.1"></div></div>
+      <div class="customer-substats">
+        <div><b>3,000</b><span data-i18n="cust.s1">Kunden insgesamt</span></div>
+        <div><b>150</b><span data-i18n="cust.s2">Top-5%-Kunden</span></div>
+        <div><b>~$1.22M</b><span data-i18n="cust.s3">Umsatz der Top-5%</span></div>
+      </div>
+      <div class="pareto-note"><span class="mark">≠</span><p data-i18n="cust.pareto">Die klassische 80/20-Pareto-Regel wird in diesen Daten nicht bestätigt.</p></div>
+    </div>
+
+    <div class="fazit-line reveal" style="margin-top:24px;"><span class="flabel" data-i18n="fazit.label">Fazit</span><p data-i18n="cust.fazit">Der Umsatz ist konzentriert, aber nicht im klassischen 80/20-Muster — eine kleine Kerngruppe ist überproportional wertvoll.</p></div>
+    <div style="margin-top:16px;">
+      <div class="decision-tag lav" data-i18n="cust.decisionTag">Entscheidung</div>
+      <p class="decision-line" data-i18n="cust.decision"><b>Top-5% schützen.</b> Angebote personalisieren. Kunden im Segment 5–20% gezielt weiterentwickeln.</p>
+    </div>
+
+    <div class="crossdevice reveal">
+      <div class="cd-inner">
+        <div>
+          <h4 data-i18n="cd.q">Sind Cross-Device-Kunden wertvoller?</h4>
+          <p class="cd-answer" data-i18n="cd.answer">Kein klarer Vorteil erkennbar.</p>
+        </div>
+        <div class="cd-table">
+          <div class="cd-metric"><b>45.11% / 45.05%</b><span data-i18n="cd.m1">Third Purchase Rate</span></div>
+          <div class="cd-metric"><b>$285.57 / $266.55</b><span data-i18n="cd.m2">90-Tage-Umsatz</span></div>
+          <div class="cd-metric"><b>10.53% / 11.01%</b><span data-i18n="cd.m3">Retourrate</span></div>
+        </div>
+        <div class="cd-note" data-i18n="cd.note">Same-Device vs. Cross-Device — kein Signifikanztest durchgeführt. Kein Beleg für einen eindeutigen Vorteil.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BQ6 — A/B TEST ===== -->
+<section id="abtest" style="background:#FBFAFC; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-q" data-i18n="ab.q">Geschäftsfrage — Hat der neue Checkout funktioniert?</div>
+    <h2 class="ab-headline" data-i18n="ab.headline">Checkout B zeigt Potenzial — aber der Effekt ist noch nicht bewiesen.</h2>
+
+    <div class="ab-badge-row reveal">
+      <span class="ab-big-badge" data-i18n="ab.badge">Kein voller Rollout</span>
+    </div>
+
+    <div class="ab-results">
+      <div class="ab-result reveal">
+        <div class="seg" data-i18n="ab.c1">Gesamt</div>
+        <div class="delta">+$5.54</div>
+        <div class="lift">+1.97%</div>
+      </div>
+      <div class="ab-result highlight reveal">
+        <div class="seg" data-i18n="ab.c2">Neukunden</div>
+        <div class="delta">+$39.41</div>
+        <div class="lift">+17.64%</div>
+      </div>
+      <div class="ab-result reveal">
+        <div class="seg" data-i18n="ab.c3">Wiederkehrende Kunden</div>
+        <div class="delta">+$4.01</div>
+        <div class="lift">+1.38%</div>
+      </div>
+    </div>
+
+    <p class="ab-plain" data-i18n="ab.plain">Der beobachtete Unterschied kann noch durch Zufall erklärt werden.</p>
+    <p class="ab-fine" data-i18n="ab.fine">Alle p-Werte &gt; 0.05. Alle 95%-Konfidenzintervalle enthalten den Wert 0.</p>
+
+    <div class="fazit-line reveal" style="margin-top:24px;"><span class="flabel" data-i18n="fazit.label">Fazit</span><p data-i18n="ab.fazit">Neukunden zeigen den größten beobachteten Effekt, doch statistisch ist noch kein Vorteil bewiesen.</p></div>
+    <div style="margin-top:16px;">
+      <div class="decision-tag lav" data-i18n="ab.decisionTag">Entscheidung</div>
+      <p class="decision-line" data-i18n="ab.decision">Variante B <b>nicht für alle ausrollen</b>. Test bei Neukunden fortsetzen und eine größere Stichprobe sammeln.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MANAGEMENT ACTION PLAN ===== -->
+<section id="decisions">
+  <div class="wrap">
+    <h2 class="sec-title" data-i18n="dec.title">Was sollte das Management jetzt tun?</h2>
+    <p class="sec-answer" data-i18n="dec.subtitle" style="margin-bottom:44px;">Vier strategische Prioritäten.</p>
+
+    <div class="pillars">
+      <div class="pillar protect reveal">
+        <div class="pname" data-i18n="dec.p1">Protect</div>
+        <ul>
+          <li><span class="pi-name">North America</span><span class="pi-action" data-i18n="dec.p1.a1">Logistik, Lagerbestand und Support vor den Saisonspitzen im Q4 absichern.</span></li>
+          <li><span class="pi-name" data-i18n="dec.p1.i2">Top-5%-Kunden</span><span class="pi-action" data-i18n="dec.p1.a2">VIP-/Loyalty-Programm und persönlichen Support aufbauen, um Abwanderung zu vermeiden.</span></li>
+        </ul>
+      </div>
+      <div class="pillar grow reveal">
+        <div class="pname" data-i18n="dec.p2">Grow</div>
+        <ul>
+          <li><span class="pi-name">Southeast Asia</span><span class="pi-action" data-i18n="dec.p2.a1">Pilotbudget für 2 Quartale freigeben, Wachstum beobachten, danach schrittweise skalieren.</span></li>
+          <li><span class="pi-name">Beauty</span><span class="pi-action" data-i18n="dec.p2.a2">Sortiment gezielt erweitern und mit kleinem Testbudget bewerben.</span></li>
+        </ul>
+      </div>
+      <div class="pillar optimize reveal">
+        <div class="pname" data-i18n="dec.p3">Optimize</div>
+        <ul>
+          <li><span class="pi-name">Paid Search</span><span class="pi-action" data-i18n="dec.p3.a1">Budget schrittweise zu Organic/Email verschieben, ROI und CAC monatlich prüfen.</span></li>
+          <li><span class="pi-name">Electronics</span><span class="pi-action" data-i18n="dec.p3.a2">Retourenursachen analysieren, Rabattstrategie und Sortiment überarbeiten.</span></li>
+        </ul>
+      </div>
+      <div class="pillar test reveal">
+        <div class="pname" data-i18n="dec.p4">Test</div>
+        <ul>
+          <li><span class="pi-name" data-i18n="dec.p4.i1">Checkout Variante B</span><span class="pi-action" data-i18n="dec.p4.a1">Test nur bei Neukunden fortsetzen, größere Stichprobe sammeln.</span></li>
+          <li><span class="pi-name" data-i18n="dec.p4.i2b">Rollout-Entscheidung</span><span class="pi-action" data-i18n="dec.p4.a2">Erst bei einem statistisch belastbaren Ergebnis final entscheiden.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TABLEAU ===== -->
+<section id="dashboard" style="background:#FBFAFC; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="wrap wrap-wide">
+    <span class="eyebrow c-lav" data-i18n="tab.eyebrow">Live Dashboard</span>
+    <h2 class="sec-title" data-i18n="tab.title">Die Analyse erkunden</h2>
+    <p class="sec-answer" data-i18n="tab.subtitle">Alle zentralen Ergebnisse können im interaktiven Dashboard im Detail untersucht werden.</p>
+
+    <div class="tableau-levels">
+      <div class="tlevel"><b data-i18n="tab.l1.h">CEO Overview</b><span data-i18n="tab.l1.p">Business Health</span></div>
+      <div class="tlevel"><b data-i18n="tab.l2.h">Marketing &amp; LTV</b><span data-i18n="tab.l2.p">Marketingeffizienz und Kundenwert</span></div>
+      <div class="tlevel"><b data-i18n="tab.l3.h">A/B Test</b><span data-i18n="tab.l3.p">Experiment und Rollout-Entscheidung</span></div>
+    </div>
+
+    <div class="tableau-shell reveal">
+      <div class="tableau-wrapper" id="tableau-wrapper">
+        <div class="tableau-skeleton" id="tableau-skeleton">
+          <div class="spinner"></div>
+          <span data-i18n="tab.loading">Dashboard wird geladen…</span>
+        </div>
+        <div class='tableauPlaceholder' id='viz1784924854611' style='position: relative'>
+          <noscript><a href='#'><img alt=' ' src='https://public.tableau.com/static/images/Sh/ShopSphereAnalysenzumglobalenMarktplatz_DTA26/CEO-DashboardEndfassung/1_rss.png' style='border: none' /></a></noscript>
+          <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='ShopSphereAnalysenzumglobalenMarktplatz_DTA26/CEO-DashboardEndfassung' />
+            <param name='tabs' value='yes' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/Sh/ShopSphereAnalysenzumglobalenMarktplatz_DTA26/CEO-DashboardEndfassung/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+          </object>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHODOLOGY ===== -->
+<section class="tight" id="methodology">
+  <div class="wrap">
+    <span class="eyebrow c-lav" data-i18n="meth.eyebrow">Methodik</span>
+    <h2 class="sec-title" data-i18n="meth.title">Wie wurde die Analyse erstellt?</h2>
+    <p class="sec-answer" style="margin-bottom:28px;" data-i18n="meth.source">Datengrundlage: 5 verknüpfte Tabellen eines simulierten globalen Marktplatzes (3.000 Kunden, 250 Produkte), Zeitraum 2022–2024 — bereitgestellt im Rahmen des Kurses und in SQL analysiert.</p>
+
+    <div class="pipeline reveal">
+      <div class="pipe-step"><div class="dot"></div><span data-i18n="meth.p0">Business Question</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="dot"></div><span>SQL</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="dot"></div><span data-i18n="meth.p2">Analytical Dataset</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="dot"></div><span data-i18n="meth.p3">Python Statistics</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="dot"></div><span>Tableau</span></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-step"><div class="dot"></div><span data-i18n="meth.p5">Business Decision</span></div>
+    </div>
+
+    <div class="tables-row reveal">
+      <div class="table-chip"><code>customers</code><p data-i18n="meth.t.customers">3.000 Kunden: Region, Land, Akquisitionskanal</p></div>
+      <div class="table-chip"><code>orders</code><p data-i18n="meth.t.orders">Bestellungen, Rabatte, Retouren, A/B-Variante</p></div>
+      <div class="table-chip"><code>order_items</code><p data-i18n="meth.t.items">Einzelne Produktpositionen je Bestellung</p></div>
+      <div class="table-chip"><code>products</code><p data-i18n="meth.t.products">250 Produkte: Kategorie, Preis, Marge</p></div>
+      <div class="table-chip"><code>marketing</code><p data-i18n="meth.t.marketing">Kanäle, Budget, Klicks, Conversions</p></div>
+    </div>
+
+    <div class="method-footer">
+      <div class="tools">SQL · Python · Google Colab · Tableau · GitHub</div>
+      <a href="https://github.com/ParusSlava/ShopSphere-_ua" target="_blank" rel="noopener" data-i18n="meth.link">Alle SQL-Abfragen auf GitHub ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL TAKEAWAY ===== -->
+<section class="tight">
+  <div class="wrap">
+    <div class="final reveal">
+      <div class="final-inner">
+        <p class="statement" data-i18n="final.statement">ShopSphere wächst stark — aber nachhaltiges Wachstum hängt von der Qualität dieses Wachstums ab.</p>
+        <p class="sub" data-i18n="final.sub">Management-Entscheidungen sollten mehrere Faktoren gemeinsam betrachten:</p>
+        <div class="factors">
+          <span data-i18n="final.f1">Umsatz</span><span data-i18n="final.f2">Marge</span><span data-i18n="final.f3">Retouren</span>
+          <span data-i18n="final.f4">Marketingeffizienz</span><span data-i18n="final.f5">Customer LTV</span>
+          <span data-i18n="final.f6">Retention</span><span data-i18n="final.f7">Statistische Evidenz</span>
+        </div>
+        <div class="final-cta">
+          <a href="#dashboard" data-i18n="final.cta1">Tableau erkunden</a>
+          <a href="https://github.com/ParusSlava/ShopSphere-_ua" target="_blank" rel="noopener" data-i18n="final.cta2">GitHub-Report ansehen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p data-i18n="footer.text">Iaroslava Parusenkova · Abschlussprojekt „Data Analytics + KI &amp; Engineering“ · Deutsche Tech Akademie</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var T = {
+    de: {
+      "nav.overview":"Übersicht","nav.growth":"Wachstum","nav.categories":"Kategorien","nav.marketing":"Marketing",
+      "nav.customers":"Kunden","nav.abtest":"A/B-Test","nav.decisions":"Entscheidungen","nav.dashboard":"Dashboard",
+
+      "hero.eyebrow":"Data Analytics Abschlussprojekt","hero.subtitle":"Analyse eines globalen Marktplatzes","hero.period":"2022–2024",
+      "hero.statement":"ShopSphere wächst schnell — aber wächst das Unternehmen auch gesund?",
+      "hero.lede":"Analyse von Wachstum, Profitabilität, Marketingeffizienz, Kundenwert und strategischen Wachstumschancen.",
+      "hero.btn1":"Executive Overview","hero.btn2":"Live Dashboard","hero.btn3":"GitHub",
+      "hero.credit":"Iaroslava Parusenkova · Abschlussprojekt „Data Analytics + KI &amp; Engineering“ · Deutsche Tech Akademie",
+      "hero.panelLabel":"Business Health",
+      "hero.kpi1":"Nettoumsatz","hero.kpi2":"Bestellungen","hero.kpi3":"Ø Bestellwert","hero.kpi4":"Retourenquote",
+      "hero.status1":"Starkes Wachstum","hero.status2":"Optimierungsbedarf",
+
+      "qmap.eyebrow":"Projektfragen","qmap.title":"Sieben Fragen, die diese Analyse beantwortet",
+      "qmap.subtitle":"Jede Frage wird Schritt für Schritt mit Daten beantwortet — mit einem Fazit am Ende.",
+      "qmap.q1":"Wächst das Unternehmen?","qmap.q2":"Wo sollten wir wachsen?",
+      "qmap.q3":"Welche Kategorien schaffen wirklich Wert?","qmap.q4":"Wohin fließt das Marketingbudget?",
+      "qmap.q5":"Wer sind unsere wertvollsten Kunden?","qmap.q6":"Hat der neue Checkout funktioniert?",
+      "qmap.q7":"Was sollte das Management jetzt tun?",
+
+      "fazit.label":"Fazit",
+
+      "exec.title":"Was muss das Management zuerst wissen?",
+      "exec.s1.label":"Growth","exec.s1.sub":"— Dezember 2024","exec.s1.p":"Rekord-Monatsumsatz und wiederkehrende Saisonalität zum Jahresende.",
+      "exec.s2.label":"Opportunity","exec.s2.sub":"— Southeast Asia 2024","exec.s2.p":"Starke Wachstumschance — der Low-Base-Effekt muss berücksichtigt werden.",
+      "exec.s3.label":"Watch","exec.s3.sub":"Marge — Electronics","exec.s3.p":"Hoher Umsatz bedeutet nicht automatisch hohe wirtschaftliche Qualität.",
+
+      "growth.q":"Geschäftsfrage — Wie entwickelt sich ShopSphere?","growth.title":"Wächst das Unternehmen?",
+      "growth.answer":"Ja — ShopSphere wächst stark, aber mit klarer Saisonalität.",
+      "growth.meaning":"Starkes Wachstum schafft Chancen — aber auch operativen Druck auf Lager, Logistik und Support.",
+      "growth.fazit":"ShopSphere wächst über drei Jahre stark, mit wiederkehrenden Umsatzspitzen im November/Dezember.",
+      "growth.decisionTag":"Entscheidung","growth.decision":"Lagerbestand, Logistik, Marketing und Customer Support <b>vor November–Dezember</b> vorbereiten.",
+
+      "regions.q":"Geschäftsfrage — Wo liegt das nächste Wachstum?","regions.title":"Welche Regionen sind heute stark — und wo wachsen wir morgen?",
+      "regions.answer":"North America ist heute der größte Markt. Southeast Asia zeigt das stärkste Wachstumspotenzial.",
+      "regions.na.label":"Heutiger Marktführer","regions.na.sub":"2,632 Bestellungen · 2024",
+      "regions.sea.label":"Nächste Wachstumschance","regions.sea.sub":"2,029 Bestellungen · 2024",
+      "regions.lowbase":"Ausgangsbasis 2022: nur rund $12.7K. Das starke Wachstum startet von einem sehr niedrigen Niveau.",
+      "regions.europe":"Zum Vergleich: Europe erzielt $545.6K.",
+      "regions.fazit":"North America bleibt der stabile Kern des Geschäfts. Southeast Asia wächst dynamisch, aber noch von einer kleinen Basis aus.",
+      "regions.decisionTag":"Entscheidung","regions.decision":"<b>North America schützen.</b> Kontrolliertes Wachstum in Southeast Asia testen — nicht aggressiv skalieren.",
+
+      "cat.q":"Geschäftsfrage — Wer schafft wirklich Wert?","cat.title":"Welche Kategorien sind wirtschaftlich attraktiv?",
+      "cat.answer":"Hoher Umsatz bedeutet nicht automatisch hohe wirtschaftliche Qualität.",
+      "cat.e.label":"Volumenführer","cat.e.l1":"Nettoumsatz","cat.e.l2":"Marge","cat.e.l3":"Retouren",
+      "cat.e.headline":"Umsatz ≠ wirtschaftliche Qualität.","cat.e.decisionTag":"Optimieren — nicht aufgeben",
+      "cat.e.decision":"Retourentreiber, Sortiment, Marge und Rabatte gezielt verbessern.",
+      "cat.b.label":"Wachstumschance","cat.b.l1":"Nettoumsatz","cat.b.l2":"Marge",
+      "cat.b.decisionTag":"Kontrolliert testen","cat.b.decision":"Kategorie-Wachstum testen — die hohe Marge bleibt beim Skalieren nicht automatisch erhalten.",
+      "cat.fazit":"Volumen und wirtschaftliche Qualität sind zwei verschiedene Dinge — Electronics führt beim Umsatz, Beauty bei der Marge.",
+
+      "mkt.q":"Geschäftsfrage — Wird das Budget effizient eingesetzt?","mkt.title":"Wohin fließt das Marketingbudget?",
+      "mkt.plain":"Das größte Budget arbeitet nicht am effizientesten.",
+      "mkt.g1.label":"Effizient","mkt.g2.label":"Hoher Kundenwert",
+      "mkt.g2.i1":"Ø LTV ~$1.99K · Median ~$1.20K","mkt.g2.i2":"Ø LTV ~$1.79K · Median ~$1.12K",
+      "mkt.g3.label":"Optimieren","mkt.g3.i1":"45.95% Budget ($450,959) · ~$598.7K Umsatz · ROI 1.33 · Median LTV ~$0.28K",
+      "mkt.roiExplain":"Für jeden investierten $1 generiert Paid Search etwa $1.33 an zugeordnetem Umsatz.",
+      "mkt.methodNote":"Methodische Anmerkung: Die Kennzahl entspricht technisch eher ROAS (zugeordneter Umsatz ÷ Budget).",
+      "mkt.fazit":"Das größte Budget (Paid Search) liefert den geringsten ROI und Kundenwert — kleinere Kanäle arbeiten effizienter.",
+      "mkt.decisionTag":"Entscheidung","mkt.decision":"Budget <b>schrittweise umschichten</b>. Marginalen ROI, CAC und Median-LTV beobachten — nicht abrupt stoppen.",
+
+      "cust.q":"Geschäftsfrage — Wer trägt den Umsatz?","cust.title":"Wer sind unsere wertvollsten Kunden?",
+      "cust.plain":"Nur 150 Kunden erzeugen mehr als ein Drittel des gesamten Umsatzes.",
+      "cust.s1":"Kunden insgesamt","cust.s2":"Top-5%-Kunden","cust.s3":"Umsatz der Top-5%",
+      "cust.pareto":"Die klassische 80/20-Pareto-Regel wird in diesen Daten nicht bestätigt.",
+      "cust.fazit":"Der Umsatz ist konzentriert, aber nicht im klassischen 80/20-Muster — eine kleine Kerngruppe ist überproportional wertvoll.",
+      "cust.decisionTag":"Entscheidung","cust.decision":"<b>Top-5% schützen.</b> Angebote personalisieren. Kunden im Segment 5–20% gezielt weiterentwickeln.",
+
+      "cd.q":"Sind Cross-Device-Kunden wertvoller?","cd.answer":"Kein klarer Vorteil erkennbar.",
+      "cd.m1":"Third Purchase Rate","cd.m2":"90-Tage-Umsatz","cd.m3":"Retourrate",
+      "cd.note":"Same-Device vs. Cross-Device — kein Signifikanztest durchgeführt. Kein Beleg für einen eindeutigen Vorteil.",
+
+      "ab.q":"Geschäftsfrage — Hat der neue Checkout funktioniert?",
+      "ab.headline":"Checkout B zeigt Potenzial — aber der Effekt ist noch nicht bewiesen.",
+      "ab.badge":"Kein voller Rollout",
+      "ab.c1":"Gesamt","ab.c2":"Neukunden","ab.c3":"Wiederkehrende Kunden",
+      "ab.plain":"Der beobachtete Unterschied kann noch durch Zufall erklärt werden.",
+      "ab.fine":"Alle p-Werte &gt; 0.05. Alle 95%-Konfidenzintervalle enthalten den Wert 0.",
+      "ab.fazit":"Neukunden zeigen den größten beobachteten Effekt, doch statistisch ist noch kein Vorteil bewiesen.",
+      "ab.decisionTag":"Entscheidung","ab.decision":"Variante B <b>nicht für alle ausrollen</b>. Test bei Neukunden fortsetzen und eine größere Stichprobe sammeln.",
+
+      "dec.title":"Was sollte das Management jetzt tun?","dec.subtitle":"Vier strategische Prioritäten.",
+      "dec.p1":"Protect","dec.p1.i2":"Top-5%-Kunden",
+      "dec.p1.a1":"Logistik, Lagerbestand und Support vor den Saisonspitzen im Q4 absichern.",
+      "dec.p1.a2":"VIP-/Loyalty-Programm und persönlichen Support aufbauen, um Abwanderung zu vermeiden.",
+      "dec.p2":"Grow",
+      "dec.p2.a1":"Pilotbudget für 2 Quartale freigeben, Wachstum beobachten, danach schrittweise skalieren.",
+      "dec.p2.a2":"Sortiment gezielt erweitern und mit kleinem Testbudget bewerben.",
+      "dec.p3":"Optimize",
+      "dec.p3.a1":"Budget schrittweise zu Organic/Email verschieben, ROI und CAC monatlich prüfen.",
+      "dec.p3.a2":"Retourenursachen analysieren, Rabattstrategie und Sortiment überarbeiten.",
+      "dec.p4":"Test","dec.p4.i1":"Checkout Variante B","dec.p4.i2b":"Rollout-Entscheidung",
+      "dec.p4.a1":"Test nur bei Neukunden fortsetzen, größere Stichprobe sammeln.",
+      "dec.p4.a2":"Erst bei einem statistisch belastbaren Ergebnis final entscheiden.",
+
+      "tab.eyebrow":"Live Dashboard","tab.title":"Die Analyse erkunden",
+      "tab.subtitle":"Alle zentralen Ergebnisse können im interaktiven Dashboard im Detail untersucht werden.",
+      "tab.l1.h":"CEO Overview","tab.l1.p":"Business Health","tab.l2.h":"Marketing & LTV","tab.l2.p":"Marketingeffizienz und Kundenwert",
+      "tab.l3.h":"A/B Test","tab.l3.p":"Experiment und Rollout-Entscheidung","tab.loading":"Dashboard wird geladen…",
+
+      "meth.eyebrow":"Methodik","meth.title":"Wie wurde die Analyse erstellt?",
+      "meth.source":"Datengrundlage: 5 verknüpfte Tabellen eines simulierten globalen Marktplatzes (3.000 Kunden, 250 Produkte), Zeitraum 2022–2024 — bereitgestellt im Rahmen des Kurses und in SQL analysiert.",
+      "meth.t.customers":"3.000 Kunden: Region, Land, Akquisitionskanal",
+      "meth.t.orders":"Bestellungen, Rabatte, Retouren, A/B-Variante",
+      "meth.t.items":"Einzelne Produktpositionen je Bestellung",
+      "meth.t.products":"250 Produkte: Kategorie, Preis, Marge",
+      "meth.t.marketing":"Kanäle, Budget, Klicks, Conversions",
+      "meth.p0":"Business Question","meth.p2":"Analytical Dataset","meth.p3":"Python Statistics","meth.p5":"Business Decision",
+      "meth.link":"Alle SQL-Abfragen auf GitHub ansehen →",
+
+      "final.statement":"ShopSphere wächst stark — aber nachhaltiges Wachstum hängt von der Qualität dieses Wachstums ab.",
+      "final.sub":"Management-Entscheidungen sollten mehrere Faktoren gemeinsam betrachten:",
+      "final.f1":"Umsatz","final.f2":"Marge","final.f3":"Retouren","final.f4":"Marketingeffizienz","final.f5":"Customer LTV","final.f6":"Retention","final.f7":"Statistische Evidenz",
+      "final.cta1":"Tableau erkunden","final.cta2":"GitHub-Report ansehen",
+      "footer.text":"Iaroslava Parusenkova · Abschlussprojekt „Data Analytics + KI &amp; Engineering“ · Deutsche Tech Akademie"
+    },
+    ua: {
+      "nav.overview":"Огляд","nav.growth":"Зростання","nav.categories":"Категорії","nav.marketing":"Маркетинг",
+      "nav.customers":"Клієнти","nav.abtest":"A/B-тест","nav.decisions":"Рішення","nav.dashboard":"Дашборд",
+
+      "hero.eyebrow":"Випускний проєкт з Data Analytics","hero.subtitle":"Аналіз глобального маркетплейсу","hero.period":"2022–2024",
+      "hero.statement":"ShopSphere швидко зростає — але чи зростає компанія здорово?",
+      "hero.lede":"Аналіз зростання, прибутковості, ефективності маркетингу, цінності клієнтів і стратегічних можливостей.",
+      "hero.btn1":"Executive Overview","hero.btn2":"Live Dashboard","hero.btn3":"GitHub",
+      "hero.credit":"Iaroslava Parusenkova · Випускний проєкт «Data Analytics + KI &amp; Engineering» · Deutsche Tech Akademie",
+      "hero.panelLabel":"Стан бізнесу",
+      "hero.kpi1":"Чиста виручка","hero.kpi2":"Замовлення","hero.kpi3":"Середній чек","hero.kpi4":"Частка повернень",
+      "hero.status1":"Сильне зростання","hero.status2":"Потрібна оптимізація",
+
+      "qmap.eyebrow":"Питання проєкту","qmap.title":"Сім питань, на які відповідає ця аналітика",
+      "qmap.subtitle":"На кожне питання ми відповідаємо крок за кроком, спираючись на дані — з висновком наприкінці.",
+      "qmap.q1":"Чи зростає компанія?","qmap.q2":"Де нам варто зростати?",
+      "qmap.q3":"Які категорії справді створюють цінність?","qmap.q4":"Куди йде маркетинговий бюджет?",
+      "qmap.q5":"Хто наші найцінніші клієнти?","qmap.q6":"Чи спрацював новий checkout?",
+      "qmap.q7":"Що менеджменту робити зараз?",
+
+      "fazit.label":"Висновок",
+
+      "exec.title":"Що менеджменту треба знати першим?",
+      "exec.s1.label":"Growth","exec.s1.sub":"— грудень 2024","exec.s1.p":"Рекордна місячна виручка та сезонність наприкінці року.",
+      "exec.s2.label":"Opportunity","exec.s2.sub":"— Southeast Asia 2024","exec.s2.p":"Сильна можливість зростання — але слід враховувати ефект низької бази.",
+      "exec.s3.label":"Watch","exec.s3.sub":"Маржа — Electronics","exec.s3.p":"Висока виручка не означає автоматично високу економічну якість.",
+
+      "growth.q":"Питання бізнесу — Як розвивається ShopSphere?","growth.title":"Чи зростає компанія?",
+      "growth.answer":"Так — ShopSphere сильно зростає, але з чіткою сезонністю.",
+      "growth.meaning":"Сильне зростання створює можливості — але й операційне навантаження на склад, логістику та підтримку.",
+      "growth.fazit":"ShopSphere демонструє сильне зростання протягом трьох років, із повторюваними піками виручки в листопаді–грудні.",
+      "growth.decisionTag":"Рішення","growth.decision":"Підготувати склад, логістику, маркетинг і підтримку клієнтів <b>до листопада–грудня</b>.",
+
+      "regions.q":"Питання бізнесу — Де наступне зростання?","regions.title":"Які регіони сильні сьогодні — і де зростатимемо завтра?",
+      "regions.answer":"North America — найбільший ринок сьогодні. Southeast Asia показує найсильніший потенціал зростання.",
+      "regions.na.label":"Лідер сьогодні","regions.na.sub":"2,632 замовлення · 2024",
+      "regions.sea.label":"Наступна можливість зростання","regions.sea.sub":"2,029 замовлень · 2024",
+      "regions.lowbase":"База 2022 року: лише близько $12.7K. Сильне зростання починається з дуже низького рівня.",
+      "regions.europe":"Для порівняння: Europe — $545.6K.",
+      "regions.fazit":"North America лишається стабільним ядром бізнесу. Southeast Asia зростає динамічно, але поки що з невеликої бази.",
+      "regions.decisionTag":"Рішення","regions.decision":"<b>Захистити North America.</b> Тестувати контрольоване зростання в Southeast Asia — без агресивного масштабування.",
+
+      "cat.q":"Питання бізнесу — Хто справді створює цінність?","cat.title":"Які категорії економічно привабливі?",
+      "cat.answer":"Висока виручка не означає автоматично високу економічну якість.",
+      "cat.e.label":"Лідер за обсягом","cat.e.l1":"Чиста виручка","cat.e.l2":"Маржа","cat.e.l3":"Повернення",
+      "cat.e.headline":"Виручка ≠ економічна якість.","cat.e.decisionTag":"Оптимізувати — не відмовлятись",
+      "cat.e.decision":"Цілеспрямовано покращити фактори повернень, асортимент, маржу та знижки.",
+      "cat.b.label":"Можливість зростання","cat.b.l1":"Чиста виручка","cat.b.l2":"Маржа",
+      "cat.b.decisionTag":"Тестувати контрольовано","cat.b.decision":"Тестувати зростання категорії — висока маржа не збережеться автоматично при масштабуванні.",
+      "cat.fazit":"Обсяг і економічна якість — це різні речі: Electronics лідирує за виручкою, Beauty — за маржею.",
+
+      "mkt.q":"Питання бізнесу — Чи ефективно працює бюджет?","mkt.title":"Куди йде маркетинговий бюджет?",
+      "mkt.plain":"Найбільший бюджет працює не найефективніше.",
+      "mkt.g1.label":"Ефективні","mkt.g2.label":"Висока цінність клієнтів",
+      "mkt.g2.i1":"Ø LTV ~$1.99K · Медіана ~$1.20K","mkt.g2.i2":"Ø LTV ~$1.79K · Медіана ~$1.12K",
+      "mkt.g3.label":"Оптимізувати","mkt.g3.i1":"45.95% бюджету ($450,959) · ~$598.7K виручки · ROI 1.33 · Медіана LTV ~$0.28K",
+      "mkt.roiExplain":"На кожен вкладений $1 Paid Search генерує близько $1.33 приписаної виручки.",
+      "mkt.methodNote":"Методологічна примітка: показник технічно ближчий до ROAS (приписана виручка ÷ бюджет).",
+      "mkt.fazit":"Найбільший бюджет (Paid Search) дає найнижчий ROI і цінність клієнтів — менші канали працюють ефективніше.",
+      "mkt.decisionTag":"Рішення","mkt.decision":"<b>Поступово перерозподілити</b> бюджет. Відстежувати граничний ROI, CAC і медіанний LTV — без різкої зупинки.",
+
+      "cust.q":"Питання бізнесу — Хто формує виручку?","cust.title":"Хто наші найцінніші клієнти?",
+      "cust.plain":"Лише 150 клієнтів формують понад третину всієї виручки.",
+      "cust.s1":"клієнтів загалом","cust.s2":"клієнтів топ-5%","cust.s3":"виручки топ-5%",
+      "cust.pareto":"Класичне правило Парето 80/20 у цих даних не підтверджується.",
+      "cust.fazit":"Виручка сконцентрована, але не за класичною моделлю 80/20 — невелика основна група клієнтів непропорційно цінна.",
+      "cust.decisionTag":"Рішення","cust.decision":"<b>Захистити топ-5%.</b> Персоналізувати пропозиції. Цілеспрямовано розвивати сегмент 5–20%.",
+
+      "cd.q":"Чи цінніші клієнти з кількох пристроїв?","cd.answer":"Явної переваги не виявлено.",
+      "cd.m1":"Third Purchase Rate","cd.m2":"Виручка за 90 днів","cd.m3":"Частка повернень",
+      "cd.note":"Same-Device проти Cross-Device — тест на значущість не проводився. Немає доказів чіткої переваги.",
+
+      "ab.q":"Питання бізнесу — Чи спрацював новий checkout?",
+      "ab.headline":"Checkout B показує потенціал — але ефект ще не доведено.",
+      "ab.badge":"Без повного розгортання",
+      "ab.c1":"Загалом","ab.c2":"Нові клієнти","ab.c3":"Повторні клієнти",
+      "ab.plain":"Спостережувану різницю ще можна пояснити випадковістю.",
+      "ab.fine":"Усі p-значення &gt; 0.05. Усі 95% довірчі інтервали містять нуль.",
+      "ab.fazit":"Нові клієнти показують найбільший спостережуваний ефект, але статистично перевага ще не доведена.",
+      "ab.decisionTag":"Рішення","ab.decision":"<b>Не розгортати варіант B на всіх.</b> Продовжити тест на нових клієнтах і зібрати більшу вибірку.",
+
+      "dec.title":"Що менеджменту робити зараз?","dec.subtitle":"Чотири стратегічні пріоритети.",
+      "dec.p1":"Protect","dec.p1.i2":"Топ-5% клієнтів",
+      "dec.p1.a1":"Забезпечити логістику, запаси та підтримку перед сезонними піками у Q4.",
+      "dec.p1.a2":"Побудувати VIP-/програму лояльності та персональну підтримку, щоб запобігти відтоку.",
+      "dec.p2":"Grow",
+      "dec.p2.a1":"Виділити пілотний бюджет на 2 квартали, спостерігати за зростанням, далі масштабувати поступово.",
+      "dec.p2.a2":"Цілеспрямовано розширити асортимент і просувати невеликим тестовим бюджетом.",
+      "dec.p3":"Optimize",
+      "dec.p3.a1":"Поступово перерозподілити бюджет на Organic/Email, щомісяця перевіряти ROI і CAC.",
+      "dec.p3.a2":"Проаналізувати причини повернень, переглянути стратегію знижок та асортимент.",
+      "dec.p4":"Test","dec.p4.i1":"Checkout Варіант B","dec.p4.i2b":"Рішення про rollout",
+      "dec.p4.a1":"Продовжити тест лише на нових клієнтах, зібрати більшу вибірку.",
+      "dec.p4.a2":"Приймати фінальне рішення лише за наявності статистично надійного результату.",
+
+      "tab.eyebrow":"Live-дашборд","tab.title":"Дослідити аналітику",
+      "tab.subtitle":"Усі ключові результати можна детально дослідити в інтерактивному дашборді.",
+      "tab.l1.h":"CEO Overview","tab.l1.p":"Стан бізнесу","tab.l2.h":"Marketing & LTV","tab.l2.p":"Ефективність маркетингу та цінність клієнтів",
+      "tab.l3.h":"A/B Test","tab.l3.p":"Експеримент і рішення про rollout","tab.loading":"Завантаження дашборду…",
+
+      "meth.eyebrow":"Методологія","meth.title":"Як була побудована аналітика?",
+      "meth.source":"Дані: 5 пов'язаних таблиць симульованого глобального маркетплейсу (3 000 клієнтів, 250 товарів), період 2022–2024 — надані в межах курсу та проаналізовані за допомогою SQL.",
+      "meth.t.customers":"3 000 клієнтів: регіон, країна, канал залучення",
+      "meth.t.orders":"Замовлення, знижки, повернення, A/B-варіант",
+      "meth.t.items":"Окремі позиції в межах кожного замовлення",
+      "meth.t.products":"250 товарів: категорія, ціна, маржа",
+      "meth.t.marketing":"Канали, бюджет, кліки, конверсії",
+      "meth.p0":"Business Question","meth.p2":"Analytical Dataset","meth.p3":"Python Statistics","meth.p5":"Business Decision",
+      "meth.link":"Переглянути всі SQL-запити на GitHub →",
+
+      "final.statement":"ShopSphere сильно зростає — але стійке зростання залежить від якості цього зростання.",
+      "final.sub":"Рішення менеджменту мають враховувати кілька факторів разом:",
+      "final.f1":"Виручка","final.f2":"Маржа","final.f3":"Повернення","final.f4":"Ефективність маркетингу","final.f5":"Customer LTV","final.f6":"Retention","final.f7":"Статистичні докази",
+      "final.cta1":"Дослідити Tableau","final.cta2":"Переглянути звіт на GitHub",
+      "footer.text":"Iaroslava Parusenkova · Випускний проєкт «Data Analytics + KI &amp; Engineering» · Deutsche Tech Akademie"
+    }
+  };
+
+  function setLanguage(lang){
+    var dict = T[lang];
+    if(!dict) return;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined){ el.innerHTML = dict[key]; }
+    });
+    document.documentElement.lang = lang === 'ua' ? 'uk' : 'de';
+    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+    document.getElementById('btn-ua').classList.toggle('active', lang === 'ua');
+    document.getElementById('btn-de').setAttribute('aria-pressed', lang === 'de');
+    document.getElementById('btn-ua').setAttribute('aria-pressed', lang === 'ua');
+  }
+  document.getElementById('btn-de').addEventListener('click', function(){ setLanguage('de'); });
+  document.getElementById('btn-ua').addEventListener('click', function(){ setLanguage('ua'); });
+  setLanguage('de');
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, {threshold:0.12, rootMargin:"0px 0px -40px 0px"});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+    var barObserved = false;
+    var barEl = document.querySelector('.concentration-bar');
+    if(barEl){
+      var io2 = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting && !barObserved){
+            barObserved = true;
+            var fill = document.querySelector('.concentration-fill');
+            fill.style.width = fill.getAttribute('data-w') + '%';
+            io2.disconnect();
+          }
+        });
+      }, {threshold:0.4});
+      io2.observe(barEl);
+    }
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    var fillFallback = document.querySelector('.concentration-fill');
+    if(fillFallback){ fillFallback.style.width = fillFallback.getAttribute('data-w') + '%'; }
+  }
+
+  var vd = document.getElementById('viz1784924854611');
+  var vizEl = vd.getElementsByTagName('object')[0];
+  function sizeViz(){
+    var w = vd.clientWidth || vd.offsetWidth;
+    vizEl.style.width = '100%';
+    vizEl.style.maxWidth = '100%';
+    vizEl.style.minWidth = '0';
+    var h;
+    if(w > 500){
+      h = Math.round(w * 0.6) + 40; // native ~1600x910 ratio + toolbar/tabs chrome
+      h = Math.max(560, Math.min(h, 980));
+    } else {
+      h = Math.round(w * 1.55); // mobile: taller, stacked Tableau layout
+    }
+    vizEl.style.height = h + 'px';
+    vizEl.style.minHeight = h + 'px';
+    vizEl.style.maxHeight = h + 'px';
+  }
+  sizeViz();
+  if('ResizeObserver' in window){
+    new ResizeObserver(function(){ sizeViz(); }).observe(vd);
+  } else {
+    window.addEventListener('resize', sizeViz);
+  }
+  var tScript = document.createElement('script');
+  tScript.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizEl.parentNode.insertBefore(tScript, vizEl);
+
+  var skeleton = document.getElementById('tableau-skeleton');
+  function hideSkeleton(){ if(skeleton){ skeleton.classList.add('hide'); } }
+  tScript.addEventListener('load', function(){ setTimeout(hideSkeleton, 1800); });
+  setTimeout(hideSkeleton, 6000);
+
+})();
+</script>
+
+</body>
+</html>
